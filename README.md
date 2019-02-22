@@ -85,3 +85,19 @@ Note: This is based on the existing structure of [`textile-go`](https://github.c
     - [ ] [config](https://github.com/textileio/textile-go/blob/master/cmd/config.go)
     - [ ] [logs](https://github.com/textileio/textile-go/blob/master/cmd/logs.go)
     - [ ] ipfs (id, connect, ping, peers)
+    
+## Contribute
+
+Textile's JS HTTP Client is a work in progress. As such, there's a few things you can do right now to help out:
+
+  * Check out [issue 1](https://github.com/textileio/js-textile-http-client/issues/1) for an up-to-date list (maintained by @carsonfarmer) of tasks that could use your help. Feel free to ask questions on that and we'll try to help. Be sure to drop a note if there is anything you'd like to work on and we'll update the issue to let others know. Also [get in touch](https://slack.textile.io) on Slack.
+  * **Perform code reviews**. More eyes will help a) speed the project along b) ensure quality and c) reduce possible future bugs.
+  * Take a look at [textile-go](https://github.com/textileio/textile-go) (which we intend to follow to a point), and also at some of the client repositories: for instance, [`textile-mobile`](https://github.com/textileio/textile-mobile) and the Textile [`react-native-sdk`](https://github.com/textileio/react-native-sdk). Contributions here that would be most helpful are **top-level comments** about how it should look based on our understanding. Again, the more eyes the better.
+  * **Add tests**. There can never be enough tests.
+  * **Contribute to the [Textile WIKI](https://github.com/textileio/textile-go/wiki)** with any additions or questions you have about Textile and its various impmenentations. A good example would be asking, "What is a thread?". If you don't know a term, odds are someone else doesn't either. Eventually, we should have a good understanding of where we need to improve communications and teaching together to make Textile even better.
+  
+ Before you get started, be sure to read our [contributors guide](CONTRIBUTING.md) and our [contributor covenant code of conduct](CODE_OF_CONDUCT.md).
+
+## License
+
+[MIT](LICENSE)
