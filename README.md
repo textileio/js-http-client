@@ -27,7 +27,15 @@ This library will provide access to an underlying `textile-go` node's REST API, 
 
 ### Organization
 
-This repository is currently empty. The eventual structure of the project is as yet to be determined, though work is currently [already underway here](https://github.com/robbynshaw/textile-js-sdk).
+The main entry point is at `index.html`.
+
+This class contains the main `Textile` export which in turn contains each of the sub-modules as properties of the class.
+
+Each sub-module is found in the `modules` folder.
+
+Sub-modules are organized generally by endpoint, so the `textile.thread` module would contain all of the functionality under `/api/v0/threads`.
+
+All unit tests can be found in the `test` folder.
 
 ## Install
 
@@ -35,14 +43,60 @@ This repository is currently empty. The eventual structure of the project is as 
 
 ## Usage
 
-> To be added, but something along the lines of:
+### General
 
 ```javascript
-const { Textile } = require("textile-js-sdk");
+// Import the main Textile client
+const Textile = require("@textile/js-http-client");
 
+// Create an instance of the client using the default options
 const textile = new Textile();
-const peerid = await textile.peer.get();
-console.log("PeerID", peerid);
+
+// Or, create an instance specifying your custom Textile node API connection
+const textile = new Textile({
+  url: "http://mytextile.example.com",
+  port: 7777,
+});
+
+// Get your Textile node's peer ID
+const peerID = await textile.peer.get();
+console.log(`My Peer ID is '${peerID}'.\n`);
+// > My Peer ID is '12324234xx2343232...'
+
+// Get your Textile node's address
+const address = await textile.peer.address();
+console.log(`My node's address is '${address}'.\n`);
+// > My node's address is '9232834kswjlwklj2...'
+
+// Get a paginated list of files
+const files = await textile.files.get({
+  thread: "12D3KooWRfsArD5AJQSYaTLr6KnjruaY9TVexJhnTrHge89jhfJd",
+  limit: 1,
+  offset: "QmYEJpHVsKvNxAvSpphGhYbUPteymXa5uJcHeXNFcnKbEj"
+});
+console.log("Files", files);
+```
+
+For more detailed examples of usage, peruse the `examples` folder.
+
+### Development
+
+```sh
+# Run all the unit tests
+npm test
+
+# Watch the folder and run the unit tests when changes happen
+npm run test-watch
+
+# Lint everything
+# NOTE: Linting uses `prettier` to auto-fix styling issues when possible
+npm run lint
+
+# Watch the folder and run the linter when changes happen
+npm run lint-watch
+
+# Re-build the documentation
+npm run build-docs
 ```
 
 ## Documentation

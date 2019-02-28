@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3>js-textile-http-client 0.1.0</h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Textile JS HTTP Client</h1><blockquote>
+<p>Future home of official Textile JS HTTP wrapper client</p>
+</blockquote>
+<p>Join us on our <a href="https://slack.textile.io/">public Slack channel</a> for news, discussions, and status updates.</p>
+<p>For the current status, and where you can help, please see <a href="https://github.com/textileio/js-textile-http-client/issues/1">issue #1</a>.</p>
+<h2>Table of Contents</h2><ul>
+<li><a href="#background">Background</a><ul>
+<li><a href="#organization">Organization</a></li>
+</ul>
+</li>
+<li><a href="#install">Install</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#roadmap">Roadmap</a></li>
+<li><a href="#contribute">Contribute</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2>Background</h2><p><a href="https://www.textile.io">Textile</a> provides encrypted, recoverable, schema-based, and cross-application data storage built on <a href="https://github.com/ipfs">IPFS</a> and <a href="https://github.com/libp2p">libp2p</a>. We like to think of it as a decentralized data wallet with built-in protocols for sharing and recovery, or more simply, <strong>an open and programmable iCloud</strong>.</p>
+<p>The reference implementation of Textile is <a href="https://github.com/textileio/textile-go">written in Go</a>, and can be compiled to various platforms, including mobile (Android/iOS) and desktop/server (OSX, Windows, Linux, etc). The library in this repo is designed to help support things like browser-based Textile apps, Node.js apps, and other use-cases.</p>
+<p>This library will provide access to an underlying <code>textile-go</code> node's REST API, adding various simplified APIs to support in-browser and programmatic desktop access. For the most part, the API would mimic the command-line and/or mobile APIs of <code>textile-go</code>, with some browser-specific enhancements. Compared to something like <a href="https://github.com/mongodb/node-mongodb-native">MongoDBs JS client</a> a <code>js-textile-http-client</code> client would be pretty simple. The <a href="https://github.com/ipfs/js-ipfs-http-client">IPFS http-client</a> lib is another pretty nice example,  though this is more of a wrapper than a true 'client', in the sense that it is mostly a 1-to-1 API. There are several things that a Textile client must support, including fulfilling Schemas ‘locally’ and providing a useful UI. Some examples of fulfilling a Schema in this way from JS are <a href="https://gist.github.com/carsonfarmer/a26a0d01ae58ffa7b8cd2689e149406b">already available</a> from some previous work.</p>
+<h3>Organization</h3><p>The main entry point is at <code>index.html</code>.</p>
+<p>This class contains the main <code>Textile</code> export which in turn contains each of the sub-modules as properties of the class.</p>
+<p>Each sub-module is found in the <code>modules</code> folder.</p>
+<p>Sub-modules are organized generally by endpoint, so the <code>textile.thread</code> module would contain all of the functionality under <code>/api/v0/threads</code>.</p>
+<p>All unit tests can be found in the <code>test</code> folder.</p>
+<h2>Install</h2><blockquote>
+<p>To be added</p>
+</blockquote>
+<h2>Usage</h2><h3>General</h3><pre class="prettyprint source lang-javascript"><code>// Import the main Textile client
+const Textile = require(&quot;@textile/js-http-client&quot;);
+
+// Create an instance of the client using the default options
+const textile = new Textile();
+
+// Or, create an instance specifying your custom Textile node API connection
+const textile = new Textile({
+  url: &quot;http://mytextile.example.com&quot;,
+  port: 7777,
+});
+
+// Get your Textile node's peer ID
+const peerID = await textile.peer.get();
+console.log(`My Peer ID is '${peerID}'.\n`);
+// > My Peer ID is '12324234xx2343232...'
+
+// Get your Textile node's address
+const address = await textile.peer.address();
+console.log(`My node's address is '${address}'.\n`);
+// > My node's address is '9232834kswjlwklj2...'
+
+// Get a paginated list of files
+const files = await textile.files.get({
+  thread: &quot;12D3KooWRfsArD5AJQSYaTLr6KnjruaY9TVexJhnTrHge89jhfJd&quot;,
+  limit: 1,
+  offset: &quot;QmYEJpHVsKvNxAvSpphGhYbUPteymXa5uJcHeXNFcnKbEj&quot;
+});
+console.log(&quot;Files&quot;, files);</code></pre><p>For more detailed examples of usage, peruse the <code>examples</code> folder.</p>
+<h3>Development</h3><pre class="prettyprint source lang-sh"><code># Run all the unit tests
+npm test
+
+# Watch the folder and run the unit tests when changes happen
+npm run test-watch
+
+# Lint everything
+# NOTE: Linting uses `prettier` to auto-fix styling issues when possible
+npm run lint
+
+# Watch the folder and run the linter when changes happen
+npm run lint-watch
+
+# Re-build the documentation
+npm run build-docs</code></pre><h2>Documentation</h2><blockquote>
+<p>To be added</p>
+</blockquote>
+<h2>Roadmap</h2><p>Note: This is based on the existing structure of <a href="https://github.com/textileio/textile-go"><code>textile-go</code></a>. As such, it may contain inconsistencies until further editing. These checkboxes laid out in the most likely order of difficulty, with each new subgroup depending on the previous ones to some degree. This should provide a useful 'checklist' for community members looking to get involved.</p>
+<ul>
+<li>[ ] <a href="https://github.com/textileio/textile-go/tree/master/wallet">wallet</a> - difficulty level: easy, could be separate module, nearly direct port</li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/tree/master/cmd">cmd</a> - difficulty level: moderate, should be main entry-point for a wrapper, similar to how <code>js-ipfs</code> mimicks the IPFS cli. Required elements here include:<ul>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/account.go">account</a> (address, peers, backup)</li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/profile.go">profile</a> (username, avatar)</li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/threads.go">threads</a><ul>
+<li>[ ] list, get, remove, peers</li>
+<li>[ ] add</li>
+</ul>
+</li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/blocks.go">blocks</a><ul>
+<li>[ ] list, get, remove, </li>
+<li>[ ] add + get comments, add + get likes</li>
+</ul>
+</li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/files.go">files</a><ul>
+<li>[ ] list, get</li>
+<li>[ ] list keys</li>
+</ul>
+</li>
+<li>[ ] schemas + mills<ul>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/core/api_mill.go">mill schema</a></li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/threads.go#L105">create thread w/ custom schema</a></li>
+<li>[ ] <a href="https://github.com/textileio/minimal-client-demo">local schema fulfillment</a></li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/files.go#L112">add thread messages and files</a></li>
+</ul>
+</li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/contacts.go">contacts</a><ul>
+<li>[ ] list, get, remove</li>
+<li>[ ] search, add</li>
+</ul>
+</li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/feed.go">feed</a></li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/sub.go">sub api</a></li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/notifications.go">notifications api</a></li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/cafe.go">cafes</a> (keep simple to start, minimal cafe hosting utilities)<ul>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/tokens.go">add, get, list tokens</a></li>
+<li>[ ] add/register</li>
+<li>[ ] list, get, remove, messages</li>
+</ul>
+</li>
+<li>[ ] others<ul>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/config.go">config</a></li>
+<li>[ ] <a href="https://github.com/textileio/textile-go/blob/master/cmd/logs.go">logs</a></li>
+<li>[ ] ipfs (id, connect, ping, peers)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Contribute</h2><p>Textile's JS HTTP Client is a work in progress. As such, there's a few things you can do right now to help out:</p>
+<ul>
+<li>Check out <a href="https://github.com/textileio/js-textile-http-client/issues/1">issue 1</a> for an up-to-date list (maintained by @carsonfarmer) of tasks that could use your help. Feel free to ask questions on that and we'll try to help. Be sure to drop a note if there is anything you'd like to work on and we'll update the issue to let others know. Also <a href="https://slack.textile.io">get in touch</a> on Slack.</li>
+<li><strong>Perform code reviews</strong>. More eyes will help a) speed the project along b) ensure quality and c) reduce possible future bugs.</li>
+<li>Take a look at <a href="https://github.com/textileio/textile-go">textile-go</a> (which we intend to follow to a point), and also at some of the client repositories: for instance, <a href="https://github.com/textileio/textile-mobile"><code>textile-mobile</code></a> and the Textile <a href="https://github.com/textileio/react-native-sdk"><code>react-native-sdk</code></a>. Contributions here that would be most helpful are <strong>top-level comments</strong> about how it should look based on our understanding. Again, the more eyes the better.</li>
+<li><strong>Add tests</strong>. There can never be enough tests.</li>
+<li><p><strong>Contribute to the <a href="https://github.com/textileio/textile-go/wiki">Textile WIKI</a></strong> with any additions or questions you have about Textile and its various impmenentations. A good example would be asking, &quot;What is a thread?&quot;. If you don't know a term, odds are someone else doesn't either. Eventually, we should have a good understanding of where we need to improve communications and teaching together to make Textile even better.</p>
+<p>Before you get started, be sure to read our <a href="CONTRIBUTING.md">contributors guide</a> and our <a href="CODE_OF_CONDUCT.md">contributor covenant code of conduct</a>.</p>
+</li>
+</ul>
+<h2>License</h2><p><a href="LICENSE">MIT</a></p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="API.html">API</a></li><li><a href="Blocks.html">Blocks</a></li><li><a href="Connection.html">Connection</a></li><li><a href="Files.html">Files</a></li><li><a href="Mills.html">Mills</a></li><li><a href="Peer.html">Peer</a></li><li><a href="Schemas.html">Schemas</a></li><li><a href="Textile.html">Textile</a></li><li><a href="Threads.html">Threads</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Feb 27 2019 20:33:55 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
