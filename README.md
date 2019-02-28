@@ -27,7 +27,7 @@ This library will provide access to an underlying `textile-go` node's REST API, 
 
 ### Organization
 
-The main entry point is at `index.html`.
+The main entry point is at `index.js`.
 
 This class contains the main `Textile` export which in turn contains each of the sub-modules as properties of the class.
 
@@ -101,7 +101,7 @@ npm run build-docs
 
 ## Documentation
 
-> To be added
+For now, the jsdoc-based auto-generated documentation can be found at https://textileio.github.io/js-textile-http-client/.
 
 ## Roadmap
 
