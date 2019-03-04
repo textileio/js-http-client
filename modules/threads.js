@@ -1,5 +1,4 @@
 const { EventEmitter2 } = require("eventemitter2");
-const FormData = require("form-data");
 const API = require("../core/api.js");
 const Mill = require("./mills");
 const SchemaMiller = require("../helpers/schema-miller");
@@ -89,32 +88,12 @@ class Threads extends API {
    * Add a file to a thread in your Textile node
    *
    * @param {string} threadId Id of the thread
-   * @param {object} fileStream Nodejs file stream
-   * @param {string} fileName Name of the file in the stream
-   * @param {object} options Options object
-   * @param {string} options.schema Id of the schema to use for the mill
-   * @param {string} options.caption Caption to add to the image
-   */
-  async addFileStream(threadId, fileStream, fileName, options) {
-    const form = new FormData();
-    form.append("file", fileStream, fileName);
-
-    const headers = form.getHeaders();
-
-    return this.addFile(threadId, form, options, headers);
-  }
-
-  /**
-   * Add a file to a thread in your Textile node
-   *
-   * @param {string} threadId Id of the thread
-   * @param {File} file FormData object
+   * @param {File} file A FormData object or a function for creating a FormData object
    * @param {object} options Options object
    * @param {string} options.schema Schema object to use for the mill
    * @param {string} options.caption Caption to add to the image
-   * @param {object} [headers] Extra headers to send in the request
    */
-  async addFile(threadId, file, options, headers) {
+  async addFile(threadId, file, options) {
     if (!threadId) {
       throw new Error(
         "'threadId' must be provided when adding files to a thread"
@@ -131,11 +110,11 @@ class Threads extends API {
     const milled = await SchemaMiller.mill(
       file,
       opts.schema.links,
-      async link => {
+      async (link, form, headers) => {
         const { data: res } = await this.mill.run(
           link.mill,
           link.opts,
-          file,
+          form,
           headers
         );
         res.name = link.name;

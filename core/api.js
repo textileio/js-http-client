@@ -94,7 +94,9 @@ class API {
    */
   async sendPostMultiPart(url, args, opts, data, headers) {
     const h = createHeaders(args, opts, headers);
-    h["Content-Type"] = "multipart/form-data";
+    if (!h["content-type"]) {
+      h["content-type"] = "multipart/form-data";
+    }
 
     return this.con()({
       method: "post",

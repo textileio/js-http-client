@@ -54,26 +54,34 @@ class SchemaMiller {
     return resolvedMethod;
   }
 
-  // payload = Form: { 'file', file, file.name }
-  // TODO payload could be a stream or a form
   static async mill(payload, schemaLinks, remoteMill) {
     const sorted = SchemaMiller.sortLinksByDependency(schemaLinks);
-
     const payloadsByName = {};
+
     for (let i = 0; i < sorted.length; i += 1) {
-      let body = payload;
+      const body = payload;
+      let form = null;
       const normal = SchemaMiller.normalizeOptions(sorted[i]);
       const resolved = SchemaMiller.resolveDependency(normal, payloadsByName);
+      let headers = {};
 
       if (resolved.opts.use) {
         // It's a file. The hash will pass as the payload.
         // Don't send the file again
-        body = undefined;
+        form = undefined;
+      } else if (typeof body === "function") {
+        form = body();
+      } else {
+        form = body;
+      }
+
+      if (form && form.getHeaders) {
+        headers = form.getHeaders();
       }
 
       // Must be synchronous for dependencies
       // eslint-disable-next-line no-await-in-loop
-      const milled = await remoteMill(resolved, body);
+      const milled = await remoteMill(resolved, form, headers);
       payloadsByName[milled.name] = milled;
     }
 
