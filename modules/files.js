@@ -1,4 +1,3 @@
-const { exec } = require("child_process");
 const API = require("../core/api.js");
 
 /**
