@@ -4,7 +4,7 @@
 
 Join us on our [public Slack channel](https://slack.textile.io/) for news, discussions, and status updates.
 
-For the current status, and where you can help, please see [issue #1](https://github.com/textileio/js-textile-http-client/issues/1).
+For the current status, and where you can help, please see [issue #1](https://github.com/textileio/js-http-client/issues/1).
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ For the current status, and where you can help, please see [issue #1](https://gi
 
 The reference implementation of Textile is [written in Go](https://github.com/textileio/textile-go), and can be compiled to various platforms, including mobile (Android/iOS) and desktop/server (OSX, Windows, Linux, etc). The library in this repo is designed to help support things like browser-based Textile apps, Node.js apps, and other use-cases.
 
-This library will provide access to an underlying `textile-go` node's REST API, adding various simplified APIs to support in-browser and programmatic desktop access. For the most part, the API would mimic the command-line and/or mobile APIs of `textile-go`, with some browser-specific enhancements. Compared to something like [MongoDBs JS client](https://github.com/mongodb/node-mongodb-native) a `js-textile-http-client` client would be pretty simple. The [IPFS http-client](https://github.com/ipfs/js-ipfs-http-client) lib is another pretty nice example,  though this is more of a wrapper than a true 'client', in the sense that it is mostly a 1-to-1 API. There are several things that a Textile client must support, including fulfilling Schemas ‘locally’ and providing a useful UI. Some examples of fulfilling a Schema in this way from JS are [already available](https://gist.github.com/carsonfarmer/a26a0d01ae58ffa7b8cd2689e149406b) from some previous work.
+This library will provide access to an underlying `textile-go` node's REST API, adding various simplified APIs to support in-browser and programmatic desktop access. For the most part, the API would mimic the command-line and/or mobile APIs of `textile-go`, with some browser-specific enhancements. Compared to something like [MongoDBs JS client](https://github.com/mongodb/node-mongodb-native) a `js-http-client` client would be pretty simple. The [IPFS http-client](https://github.com/ipfs/js-ipfs-http-client) lib is another pretty nice example,  though this is more of a wrapper than a true 'client', in the sense that it is mostly a 1-to-1 API. There are several things that a Textile client must support, including fulfilling Schemas ‘locally’ and providing a useful UI. Some examples of fulfilling a Schema in this way from JS are [already available](https://gist.github.com/carsonfarmer/a26a0d01ae58ffa7b8cd2689e149406b) from some previous work.
 
 ### Organization
 
@@ -101,7 +101,7 @@ npm run build-docs
 
 ## Documentation
 
-For now, the jsdoc-based auto-generated documentation can be found at https://textileio.github.io/js-textile-http-client/.
+For now, the jsdoc-based auto-generated documentation can be found at https://textileio.github.io/js-http-client/.
 
 ## Roadmap
 
@@ -144,7 +144,7 @@ Note: This is based on the existing structure of [`textile-go`](https://github.c
 
 Textile's JS HTTP Client is a work in progress. As such, there's a few things you can do right now to help out:
 
-  * Check out [issue 1](https://github.com/textileio/js-textile-http-client/issues/1) for an up-to-date list (maintained by @carsonfarmer) of tasks that could use your help. Feel free to ask questions on that and we'll try to help. Be sure to drop a note if there is anything you'd like to work on and we'll update the issue to let others know. Also [get in touch](https://slack.textile.io) on Slack.
+  * Check out [issue 1](https://github.com/textileio/js-http-client/issues/1) for an up-to-date list (maintained by @carsonfarmer) of tasks that could use your help. Feel free to ask questions on that and we'll try to help. Be sure to drop a note if there is anything you'd like to work on and we'll update the issue to let others know. Also [get in touch](https://slack.textile.io) on Slack.
   * **Perform code reviews**. More eyes will help a) speed the project along b) ensure quality and c) reduce possible future bugs.
   * Take a look at [textile-go](https://github.com/textileio/textile-go) (which we intend to follow to a point), and also at some of the client repositories: for instance, [`textile-mobile`](https://github.com/textileio/textile-mobile) and the Textile [`react-native-sdk`](https://github.com/textileio/react-native-sdk). Contributions here that would be most helpful are **top-level comments** about how it should look based on our understanding. Again, the more eyes the better.
   * **Add tests**. There can never be enough tests.
