@@ -8,7 +8,11 @@
     "test-watch": "./node_modules/.bin/mocha --reporter list --watch --recursive",
     "lint": "./node_modules/.bin/eslint --fix .",
     "lint-watch": "./node_modules/.bin/nodemon --watch */**.js -x './node_modules/.bin/eslint --fix .",
-    "build-docs": "./node_modules/.bin/jsdoc -d docs *"
+    "build-docs": "./node_modules/.bin/jsdoc -d docs *",
+    "precommit": "yarn lint && yarn test",
+    "preversion": "yarn precommit",
+    "release": "yarn version",
+    "postversion": "git push --tags"
   },
   "repository": {
     "type": "git",
