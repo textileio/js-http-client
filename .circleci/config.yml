@@ -94,21 +94,27 @@ jobs:
                 name: Authenticate with registry
                 command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/js-http-client/.npmrc
             - run:
-                    name: Publish package
-                    command: npm publish
+                name: Publish package
+                command: npm publish
                         
 workflows:
     version: 2
     js-http-client:
         jobs:
-            - lint
-            - test
+            - lint:
+                filters:
+                    tags:
+                        only: /^v.*/
+            - test:
+                filters:
+                    tags:
+                        only: /^v.*/
             - deploy:
-                    requires:
-                        - lint
-                        - test
-                    filters:
-                        tags:
-                            only: /^v.*/
-                        branches:
-                            ignore: /.*/
+                requires:
+                    - lint
+                    - test
+                filters:
+                    tags:
+                        only: /^v.*/
+                    branches:
+                        ignore: /.*/
