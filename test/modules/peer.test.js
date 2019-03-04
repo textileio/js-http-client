@@ -21,7 +21,7 @@ describe("peer api get", () => {
       .reply(200, responses.peer);
 
     const rsp = await peer.get();
-    expect(rsp.data).to.equal(
+    expect(rsp).to.equal(
       "12D3KooWNWU8RkgSacfSnrQMlq9RsdciRx7W1wFAJeVNyhUMdSdP"
     );
   });
@@ -34,26 +34,24 @@ describe("peer api address", () => {
       .reply(200, responses.address);
 
     const rsp = await peer.address();
-    expect(rsp.data).to.equal(
-      "P9UcFifmikQr591RhgUShlAJd5Sxfcj3W8hrhwYG9oDTButN"
-    );
+    expect(rsp).to.equal("P9UcFifmikQr591RhgUShlAJd5Sxfcj3W8hrhwYG9oDTButN");
   });
 });
 
-describe("peer api ping", () => {
-  it("should respond with 400", async () => {
-    nock(ROOT)
-      .get("/api/v0/ping")
-      .reply(400, "x");
+// describe("peer api ping", () => {
+//   it("should respond with 400", async () => {
+//     nock(ROOT)
+//       .get("/api/v0/ping")
+//       .reply(400, "x");
 
-    let err;
+//     let err;
 
-    try {
-      await peer.ping();
-    } catch (error) {
-      err = error.message;
-    }
+//     try {
+//       await peer.ping();
+//     } catch (error) {
+//       err = error.message;
+//     }
 
-    expect(err).to.equal("Request failed with status code 400");
-  });
-});
+//     expect(err).to.equal("Request failed with status code 400");
+//   });
+// });

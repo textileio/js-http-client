@@ -1,37 +1,37 @@
 {
-    "name": "media",
-    "pin": true,
-    "plaintext": false,
-    "links": {
-        "large": {
-            "use": ":file",
-            "pin": false,
-            "plaintext": false,
-            "mill": "/image/resize",
-            "opts": {
-                "quality": "80",
-                "width": "800"
-            }
-        },
-        "small": {
-            "use": ":file",
-            "pin": false,
-            "plaintext": false,
-            "mill": "/image/resize",
-            "opts": {
-                "quality": "80",
-                "width": "320"
-            }
-        },
-        "thumb": {
-            "use": "large",
-            "pin": true,
-            "plaintext": false,
-            "mill": "/image/resize",
-            "opts": {
-                "quality": "80",
-                "width": "100"
-            }
-        }
+  "name": "media",
+  "pin": true,
+  "plaintext": false,
+  "links": {
+    "large": {
+      "use": ":file",
+      "pin": false,
+      "plaintext": false,
+      "mill": "/image/resize",
+      "opts": {
+        "quality": "80",
+        "width": "800"
+      }
+    },
+    "small": {
+      "use": ":file",
+      "pin": false,
+      "plaintext": false,
+      "mill": "/image/resize",
+      "opts": {
+        "quality": "80",
+        "width": "320"
+      }
+    },
+    "thumb": {
+      "use": "large",
+      "pin": true,
+      "plaintext": false,
+      "mill": "/image/resize",
+      "opts": {
+        "quality": "80",
+        "width": "100"
+      }
     }
+  }
 }
