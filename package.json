@@ -11,7 +11,7 @@
     "build-docs": "./node_modules/.bin/jsdoc -d docs *",
     "precommit": "yarn lint && yarn test",
     "preversion": "yarn precommit",
-    "release": "yarn version",
+    "release": "yarn version --patch",
     "postversion": "git push --tags"
   },
   "repository": {
