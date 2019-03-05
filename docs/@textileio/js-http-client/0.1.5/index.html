@@ -26,7 +26,7 @@
     
 
 
-    <h3>js-http-client 0.1.0</h3>
+    <h3>@textileio/js-http-client 0.1.5</h3>
 
 
 
@@ -47,7 +47,7 @@
 <p>Future home of official Textile JS HTTP wrapper client</p>
 </blockquote>
 <p>Join us on our <a href="https://slack.textile.io/">public Slack channel</a> for news, discussions, and status updates.</p>
-<p>For the current status, and where you can help, please see <a href="https://github.com/textileio/js-textile-http-client/issues/1">issue #1</a>.</p>
+<p>For the current status, and where you can help, please see <a href="https://github.com/textileio/js-http-client/issues/1">issue #1</a>.</p>
 <h2>Table of Contents</h2><ul>
 <li><a href="#background">Background</a><ul>
 <li><a href="#organization">Organization</a></li>
@@ -62,7 +62,7 @@
 </ul>
 <h2>Background</h2><p><a href="https://www.textile.io">Textile</a> provides encrypted, recoverable, schema-based, and cross-application data storage built on <a href="https://github.com/ipfs">IPFS</a> and <a href="https://github.com/libp2p">libp2p</a>. We like to think of it as a decentralized data wallet with built-in protocols for sharing and recovery, or more simply, <strong>an open and programmable iCloud</strong>.</p>
 <p>The reference implementation of Textile is <a href="https://github.com/textileio/textile-go">written in Go</a>, and can be compiled to various platforms, including mobile (Android/iOS) and desktop/server (OSX, Windows, Linux, etc). The library in this repo is designed to help support things like browser-based Textile apps, Node.js apps, and other use-cases.</p>
-<p>This library will provide access to an underlying <code>textile-go</code> node's REST API, adding various simplified APIs to support in-browser and programmatic desktop access. For the most part, the API would mimic the command-line and/or mobile APIs of <code>textile-go</code>, with some browser-specific enhancements. Compared to something like <a href="https://github.com/mongodb/node-mongodb-native">MongoDBs JS client</a> a <code>js-textile-http-client</code> client would be pretty simple. The <a href="https://github.com/ipfs/js-ipfs-http-client">IPFS http-client</a> lib is another pretty nice example,  though this is more of a wrapper than a true 'client', in the sense that it is mostly a 1-to-1 API. There are several things that a Textile client must support, including fulfilling Schemas ‘locally’ and providing a useful UI. Some examples of fulfilling a Schema in this way from JS are <a href="https://gist.github.com/carsonfarmer/a26a0d01ae58ffa7b8cd2689e149406b">already available</a> from some previous work.</p>
+<p>This library will provide access to an underlying <code>textile-go</code> node's REST API, adding various simplified APIs to support in-browser and programmatic desktop access. For the most part, the API would mimic the command-line and/or mobile APIs of <code>textile-go</code>, with some browser-specific enhancements. Compared to something like <a href="https://github.com/mongodb/node-mongodb-native">MongoDBs JS client</a> a <code>js-http-client</code> client would be pretty simple. The <a href="https://github.com/ipfs/js-ipfs-http-client">IPFS http-client</a> lib is another pretty nice example,  though this is more of a wrapper than a true 'client', in the sense that it is mostly a 1-to-1 API. There are several things that a Textile client must support, including fulfilling Schemas ‘locally’ and providing a useful UI. Some examples of fulfilling a Schema in this way from JS are <a href="https://gist.github.com/carsonfarmer/a26a0d01ae58ffa7b8cd2689e149406b">already available</a> from some previous work.</p>
 <h3>Organization</h3><p>The main entry point is at <code>index.js</code>.</p>
 <p>This class contains the main <code>Textile</code> export which in turn contains each of the sub-modules as properties of the class.</p>
 <p>Each sub-module is found in the <code>modules</code> folder.</p>
@@ -114,7 +114,7 @@ npm run lint
 npm run lint-watch
 
 # Re-build the documentation
-npm run build-docs</code></pre><h2>Documentation</h2><p>For now, the jsdoc-based auto-generated documentation can be found at https://textileio.github.io/js-textile-http-client/.</p>
+npm run build-docs</code></pre><h2>Documentation</h2><p>For now, the jsdoc-based auto-generated documentation can be found at https://textileio.github.io/js-http-client/.</p>
 <h2>Roadmap</h2><p>Note: This is based on the existing structure of <a href="https://github.com/textileio/textile-go"><code>textile-go</code></a>. As such, it may contain inconsistencies until further editing. These checkboxes laid out in the most likely order of difficulty, with each new subgroup depending on the previous ones to some degree. This should provide a useful 'checklist' for community members looking to get involved.</p>
 <ul>
 <li>[ ] <a href="https://github.com/textileio/textile-go/tree/master/wallet">wallet</a> - difficulty level: easy, could be separate module, nearly direct port</li>
@@ -168,7 +168,7 @@ npm run build-docs</code></pre><h2>Documentation</h2><p>For now, the jsdoc-based
 </ul>
 <h2>Contribute</h2><p>Textile's JS HTTP Client is a work in progress. As such, there's a few things you can do right now to help out:</p>
 <ul>
-<li>Check out <a href="https://github.com/textileio/js-textile-http-client/issues/1">issue 1</a> for an up-to-date list (maintained by @carsonfarmer) of tasks that could use your help. Feel free to ask questions on that and we'll try to help. Be sure to drop a note if there is anything you'd like to work on and we'll update the issue to let others know. Also <a href="https://slack.textile.io">get in touch</a> on Slack.</li>
+<li>Check out <a href="https://github.com/textileio/js-http-client/issues/1">issue 1</a> for an up-to-date list (maintained by @carsonfarmer) of tasks that could use your help. Feel free to ask questions on that and we'll try to help. Be sure to drop a note if there is anything you'd like to work on and we'll update the issue to let others know. Also <a href="https://slack.textile.io">get in touch</a> on Slack.</li>
 <li><strong>Perform code reviews</strong>. More eyes will help a) speed the project along b) ensure quality and c) reduce possible future bugs.</li>
 <li>Take a look at <a href="https://github.com/textileio/textile-go">textile-go</a> (which we intend to follow to a point), and also at some of the client repositories: for instance, <a href="https://github.com/textileio/textile-mobile"><code>textile-mobile</code></a> and the Textile <a href="https://github.com/textileio/react-native-sdk"><code>react-native-sdk</code></a>. Contributions here that would be most helpful are <strong>top-level comments</strong> about how it should look based on our understanding. Again, the more eyes the better.</li>
 <li><strong>Add tests</strong>. There can never be enough tests.</li>
@@ -193,7 +193,7 @@ npm run build-docs</code></pre><h2>Documentation</h2><p>For now, the jsdoc-based
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Mar 04 2019 14:58:29 GMT-0800 (PST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Mar 04 2019 16:48:22 GMT-0800 (PST)
 </footer>
 
 <script> prettyPrint(); </script>
