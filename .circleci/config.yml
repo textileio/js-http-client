@@ -9,18 +9,7 @@ jobs:
     lint:
         <<: *defaults    
         steps:
-            - restore_cache: # If any cache exists, it'll way speedup these checkouts
-                keys:
-                    - source-v2-{{ arch }}-{{ .Branch }}-{{ .Revision }}
-                    - source-v2-{{ arch }}-{{ .Branch }}-
-                    - source-v2-{{ arch }}-
-
             - checkout
-
-            - save_cache:
-                key: source-v2-{{ arch }}-{{ .Branch }}-{{ .Revision }}
-                paths:
-                    - ".git"
 
             - restore_cache:
                 key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
@@ -34,13 +23,12 @@ jobs:
                 name: lint
                 command: |
                     yarn lint
-            # cache our yarn cache
+
             - save_cache:
                 key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
                 paths:
                     - ~/.cache/yarn
 
-            # cache our node_modules
             - save_cache:
                 key: node-v1-{{ checksum "package.json" }}-{{ arch }}
                 paths:
@@ -49,18 +37,7 @@ jobs:
     test:
         <<: *defaults    
         steps:
-            - restore_cache: # If any cache exists, it'll way speedup these checkouts
-                keys:
-                    - source-v2-{{ arch }}-{{ .Branch }}-{{ .Revision }}
-                    - source-v2-{{ arch }}-{{ .Branch }}-
-                    - source-v2-{{ arch }}-
-
             - checkout
-
-            - save_cache:
-                key: source-v2-{{ arch }}-{{ .Branch }}-{{ .Revision }}
-                paths:
-                    - ".git"
 
             - restore_cache:
                 key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
@@ -82,6 +59,7 @@ jobs:
 
             - store_test_results:
                 path: ~/junit
+
             - store_artifacts:
                 path: ~/junit
 
