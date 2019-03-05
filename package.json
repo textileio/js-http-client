@@ -1,6 +1,6 @@
 {
   "name": "js-http-client",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Official Textile JS HTTP Wrapper Client",
   "main": "index.js",
   "scripts": {
