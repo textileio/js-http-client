@@ -10,25 +10,19 @@ jobs:
         <<: *defaults    
         steps:
             - checkout
-
             - restore_cache:
                 key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
-
             - restore_cache:
                 key: node-v1-{{ checksum "package.json" }}-{{ arch }}
-
             - run: yarn install
-
             - run:
                 name: lint
                 command: |
                     yarn lint
-
             - save_cache:
                 key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
                 paths:
                     - ~/.cache/yarn
-
             - save_cache:
                 key: node-v1-{{ checksum "package.json" }}-{{ arch }}
                 paths:
@@ -38,17 +32,12 @@ jobs:
         <<: *defaults    
         steps:
             - checkout
-
             - restore_cache:
                 key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
-
             - restore_cache:
                 key: node-v1-{{ checksum "package.json" }}-{{ arch }}
-
             - run: yarn install
-
             - run: mkdir ~/junit
-
             - run:
                 name: test
                 command: |
@@ -56,16 +45,15 @@ jobs:
                 environment:
                     MOCHA_FILE: ~/junit/test-results.xml
                 when: always
-
             - store_test_results:
                 path: ~/junit
-
             - store_artifacts:
                 path: ~/junit
 
     deploy:
         <<: *defaults
         steps:
+            - checkout
             - attach_workspace:
                 at: ~/js-http-client
             - run:
