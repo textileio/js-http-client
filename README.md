@@ -4,12 +4,12 @@
 [![Chat on Slack](https://img.shields.io/badge/slack-slack.textile.io-informational.svg?style=popout-square)](https://slack.textile.io)
 ![Keywords](https://img.shields.io/github/package-json/keywords/textileio/js-http-client.svg?style=popout-square)
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/textileio/js-http-client.svg?style=popout-square)
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/textileio/js-http-client.svg?style=popout-square)](./package.json)
 [![npm (scoped)](https://img.shields.io/npm/v/@textileio/js-http-client.svg?style=popout-square)](https://www.npmjs.com/package/@textileio/js-http-client)
-![node (scoped)](https://img.shields.io/node/v/@textileio/js-http-client.svg?style=popout-square)
+[![node (scoped)](https://img.shields.io/node/v/@textileio/js-http-client.svg?style=popout-square)](https://www.npmjs.com/package/@textileio/js-http-client)
 [![GitHub license](https://img.shields.io/github/license/textileio/js-http-client.svg?style=popout-square)](./LICENSE)
 ![David](https://img.shields.io/david/dev/textileio/js-http-client.svg)
-![CircleCI branch](https://img.shields.io/circleci/project/github/textileio/js-http-client/master.svg?style=popout-square)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/textileio/js-http-client/master.svg?style=popout-square)](https://circleci.com/gh/textileio/js-http-client)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=popout-square)](https://github.com/RichardLitt/standard-readme)
 
 > Official Textile JS HTTP Wrapper Client
