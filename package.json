@@ -1,6 +1,6 @@
 {
   "name": "js-http-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official Textile JS HTTP Wrapper Client",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "precommit": "yarn lint && yarn test",
     "preversion": "yarn precommit",
     "release": "yarn version --patch",
-    "postversion": "git push --tags"
+    "postversion": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
