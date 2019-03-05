@@ -14,9 +14,17 @@
     "release": "yarn version --patch",
     "postversion": "git push --follow-tags"
   },
+  "engines": {
+    "node": ">= 9.0.0",
+    "npm": ">= 3.0.0",
+    "yarn": "^1.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/textileio/js-http-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/textileio/js-http-client/issues"
   },
   "keywords": [
     "textile",
@@ -49,5 +57,9 @@
     "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
     "prettier-eslint": "^8.8.2"
-  }
+  },
+  "contributors": [
+    "Carson Farmer <carson@textile.io>",
+    "Robby Shaw <robbynshaw@gmail.com>"
+  ]
 }
