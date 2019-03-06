@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Schemas</title>
+    <title>JSDoc: Class: API</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Schemas</h1>
+    <h1 class="page-title">Class: API</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Schemas<span class="signature">(opts)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>API<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Schemas is an API module for managing Textile schemas</div>
+            <div class="class-description">API is the base class for all SDK modules.</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="Schemas"><span class="type-signature"></span>new Schemas<span class="signature">(opts)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="API"><span class="type-signature"></span>new API<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -58,55 +58,6 @@
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>opts</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#ApiOptions">ApiOptions</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">API options object</td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -142,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_schemas.js.html">modules/schemas.js</a>, <a href="modules_schemas.js.html#line19">line 19</a>
+        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line66">line 66</a>
     </li></ul></dd>
     
 
@@ -174,17 +125,6 @@
     </div>
 
     
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="API.html">API</a></li>
-    </ul>
-
-
-    
 
     
 
@@ -207,7 +147,7 @@
     
 
     
-    <h4 class="name" id="get"><span class="type-signature">(async) </span>get<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="sendDelete"><span class="type-signature">(async) </span>sendDelete<span class="signature">(url, args, opts)</span><span class="type-signature"></span></h4>
     
 
     
@@ -215,93 +155,7 @@
 
 
 <div class="description">
-    Retrieves a list of known schemas
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_schemas.js.html">modules/schemas.js</a>, <a href="modules_schemas.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="getByName"><span class="type-signature">(async) </span>getByName<span class="signature">(name)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Retrieves a schema for a given name
+    Make a delete request to the Textile node
 </div>
 
 
@@ -337,7 +191,7 @@
 
         <tr>
             
-                <td class="name"><code>name</code></td>
+                <td class="name"><code>url</code></td>
             
 
             <td class="type">
@@ -353,7 +207,53 @@
 
             
 
-            <td class="description last">Name of the schema to retrieve</td>
+            <td class="description last">The relative URL of the API endpoint</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of arguments to pass as Textile args headers</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object of options to pass as Textile options headers</td>
         </tr>
 
     
@@ -394,7 +294,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_schemas.js.html">modules/schemas.js</a>, <a href="modules_schemas.js.html#line37">line 37</a>
+        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line165">line 165</a>
     </li></ul></dd>
     
 
@@ -553,11 +453,6 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="API.html#sendGet">API#sendGet</a>
-    </li></ul></dd>
-    
 
     
 
@@ -580,7 +475,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line116">line 116</a>
+        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line150">line 150</a>
     </li></ul></dd>
     
 
@@ -762,10 +657,209 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="API.html#sendPost">API#sendPost</a>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line112">line 112</a>
     </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sendPostCancelable"><span class="type-signature"></span>sendPostCancelable<span class="signature">(url, args, opts, data)</span><span class="type-signature"> &rarr; {<a href="global.html#CancelableRequest">CancelableRequest</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Make a post request to the Textile node that is cancelable
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The relative URL of the API endpoint</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of arguments to pass as Textile args headers</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object of options to pass as Textile options headers</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object of data to post</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
     
 
     
@@ -789,7 +883,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line78">line 78</a>
+        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -812,6 +906,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    request
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#CancelableRequest">CancelableRequest</a></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -971,10 +1087,209 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="API.html#sendPostMultiPart">API#sendPostMultiPart</a>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line129">line 129</a>
     </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sendPut"><span class="type-signature">(async) </span>sendPut<span class="signature">(url, args, opts, data)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Make a put request to the Textile node
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The relative URL of the API endpoint</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of arguments to pass as Textile args headers</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object of options to pass as Textile options headers</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object of data to put</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
     
 
     
@@ -998,7 +1313,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line95">line 95</a>
+        <a href="core_api.js.html">core/api.js</a>, <a href="core_api.js.html#line181">line 181</a>
     </li></ul></dd>
     
 
@@ -1042,13 +1357,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="API.html">API</a></li><li><a href="Blocks.html">Blocks</a></li><li><a href="Connection.html">Connection</a></li><li><a href="Files.html">Files</a></li><li><a href="Mills.html">Mills</a></li><li><a href="Peer.html">Peer</a></li><li><a href="Schemas.html">Schemas</a></li><li><a href="Textile.html">Textile</a></li><li><a href="Threads.html">Threads</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Account.html">Account</a></li><li><a href="API.html">API</a></li><li><a href="Cafes.html">Cafes</a></li><li><a href="Comments.html">Comments</a></li><li><a href="Config.html">Config</a></li><li><a href="Connection.html">Connection</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="Feed.html">Feed</a></li><li><a href="Files.html">Files</a></li><li><a href="Invites.html">Invites</a></li><li><a href="IPFS.html">IPFS</a></li><li><a href="Likes.html">Likes</a></li><li><a href="Logs.html">Logs</a></li><li><a href="Messages.html">Messages</a></li><li><a href="Mills.html">Mills</a></li><li><a href="Notifications.html">Notifications</a></li><li><a href="Profile.html">Profile</a></li><li><a href="Textile.html">Textile</a></li><li><a href="Threads.html">Threads</a></li><li><a href="Tokens.html">Tokens</a></li><li><a href="Utils.html">Utils</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Mar 04 2019 16:48:22 GMT-0800 (PST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Mar 05 2019 22:54:11 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

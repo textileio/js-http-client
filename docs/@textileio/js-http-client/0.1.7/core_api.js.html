@@ -26,15 +26,18 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const Connection = require("../core/connection");
+            <pre class="prettyprint source linenums"><code>const axios = require("axios");
+const { Connection } = require("../core/connection");
+
+const { CancelToken } = axios;
 
 // **** Private module methods ****
-function encodeValue(val) {
+const encodeValue = val => {
   if (!val) {
     return "";
   }
   return encodeURIComponent(val.toString());
-}
+};
 
 /**
  * Create 'args' like a CLI command would take
@@ -42,12 +45,12 @@ function encodeValue(val) {
  * @param {string[]} argsAr An array of arguments
  * @private
  */
-function getArgs(argsAr) {
+const getArgs = argsAr => {
   if (!argsAr || !argsAr.length) {
     return "";
   }
   return argsAr.map(ar => encodeValue(ar)).join(",");
-}
+};
 
 /**
  * Create 'options' like a CLI command would take.
@@ -55,23 +58,30 @@ function getArgs(argsAr) {
  * @param {Object.&lt;string, string>} opts A map of option keys and values
  * @private
  */
-function getOpts(opts) {
+const getOpts = opts => {
   if (!opts) {
     return "";
   }
   return Object.keys(opts)
     .map(key => `${key}=${encodeValue(opts[key])}`)
     .join(",");
-}
+};
 
-function createHeaders(args, opts, headers) {
+const createHeaders = (args, opts, headers) => {
   const h = headers || {};
   return {
     ...h,
     "X-Textile-Args": getArgs(args),
     "X-Textile-Opts": getOpts(opts)
   };
-}
+};
+
+/**
+ * A request and associated cancel function
+ * @typedef {object} CancelableRequest
+ * @property {object} conn A Connection object
+ * @property {function(string):void} cancel A cancel function
+ */
 
 // **** Private variables
 const con = new WeakMap();
@@ -93,6 +103,30 @@ class API {
       con.set(this, thisCon);
     }
     return thisCon;
+  }
+
+  /**
+   * Make a post request to the Textile node that is cancelable
+   *
+   * @param {string} url The relative URL of the API endpoint
+   * @param {string[]} args An array of arguments to pass as Textile args headers
+   * @param {Object} opts An object of options to pass as Textile options headers
+   * @param {Object} data An object of data to post
+   * @returns {CancelableRequest} request
+   */
+  sendPostCancelable(url, args, opts, data, headers) {
+    let cancel;
+    const conn = this.con()({
+      method: "post",
+      url,
+      headers: createHeaders(args, opts, headers),
+      data,
+      cancelToken: new CancelToken(function executor(c) {
+        // An executor function receives a cancel function as a parameter
+        cancel = c;
+      })
+    });
+    return { conn, cancel };
   }
 
   /**
@@ -148,9 +182,41 @@ class API {
       headers: createHeaders(args, opts, headers)
     });
   }
+
+  /**
+   * Make a delete request to the Textile node
+   *
+   * @param {string} url The relative URL of the API endpoint
+   * @param {string[]} args An array of arguments to pass as Textile args headers
+   * @param {Object} opts An object of options to pass as Textile options headers
+   */
+  async sendDelete(url, args, opts, headers) {
+    return this.con()({
+      method: "delete",
+      url,
+      headers: createHeaders(args, opts, headers)
+    });
+  }
+
+  /**
+   * Make a put request to the Textile node
+   *
+   * @param {string} url The relative URL of the API endpoint
+   * @param {string[]} args An array of arguments to pass as Textile args headers
+   * @param {Object} opts An object of options to pass as Textile options headers
+   * @param {Object} data An object of data to put
+   */
+  async sendPut(url, args, opts, data, headers) {
+    return this.con()({
+      method: "put",
+      url,
+      headers: createHeaders(args, opts, headers),
+      data
+    });
+  }
 }
 
-module.exports = API;
+module.exports = { API };
 </code></pre>
         </article>
     </section>
@@ -161,13 +227,13 @@ module.exports = API;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="API.html">API</a></li><li><a href="Blocks.html">Blocks</a></li><li><a href="Connection.html">Connection</a></li><li><a href="Files.html">Files</a></li><li><a href="Mills.html">Mills</a></li><li><a href="Peer.html">Peer</a></li><li><a href="Schemas.html">Schemas</a></li><li><a href="Textile.html">Textile</a></li><li><a href="Threads.html">Threads</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Account.html">Account</a></li><li><a href="API.html">API</a></li><li><a href="Cafes.html">Cafes</a></li><li><a href="Comments.html">Comments</a></li><li><a href="Config.html">Config</a></li><li><a href="Connection.html">Connection</a></li><li><a href="Contacts.html">Contacts</a></li><li><a href="Feed.html">Feed</a></li><li><a href="Files.html">Files</a></li><li><a href="Invites.html">Invites</a></li><li><a href="IPFS.html">IPFS</a></li><li><a href="Likes.html">Likes</a></li><li><a href="Logs.html">Logs</a></li><li><a href="Messages.html">Messages</a></li><li><a href="Mills.html">Mills</a></li><li><a href="Notifications.html">Notifications</a></li><li><a href="Profile.html">Profile</a></li><li><a href="Textile.html">Textile</a></li><li><a href="Threads.html">Threads</a></li><li><a href="Tokens.html">Tokens</a></li><li><a href="Utils.html">Utils</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Mar 04 2019 16:48:22 GMT-0800 (PST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Mar 05 2019 22:54:11 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
