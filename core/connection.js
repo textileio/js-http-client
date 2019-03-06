@@ -1,5 +1,4 @@
 const axios = require("axios");
-const { URL } = require("url");
 
 /**
  * The connection module contains utilities for creating connections to a Textile node
@@ -29,4 +28,4 @@ class Connection {
   }
 }
 
-module.exports = Connection;
+module.exports = { Connection };

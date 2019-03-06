@@ -1,8 +1,8 @@
 const { describe, it } = require("mocha");
 const { expect } = require("chai");
 const nock = require("nock");
-const Peer = require("../../modules/peer");
-const responses = require("./responses/peer.json");
+const { Account } = require("../../modules/account");
+const responses = require("./responses/account.json");
 
 const opts = {
   url: "http://127.0.0.1",
@@ -12,28 +12,26 @@ const opts = {
 
 const ROOT = `${opts.url}:${opts.port}`;
 
-const peer = new Peer(opts);
+const account = new Account(opts);
 
-describe("peer api get", () => {
-  it("should respond with plain text peer id", async () => {
+describe("account api peers", () => {
+  it("should respond with object of peer items", async () => {
     nock(ROOT)
-      .get("/api/v0/peer")
-      .reply(200, responses.peer);
+      .get("/api/v0/account/peers")
+      .reply(200, responses.account.peers);
 
-    const rsp = await peer.get();
-    expect(rsp).to.equal(
-      "12D3KooWNWU8RkgSacfSnrQMlq9RsdciRx7W1wFAJeVNyhUMdSdP"
-    );
+    const rsp = await account.peers();
+    expect(rsp).to.deep.equal({ items: [] });
   });
 });
 
-describe("peer api address", () => {
+describe("account api address", () => {
   it("should respond with plain text address", async () => {
     nock(ROOT)
-      .get("/api/v0/address")
-      .reply(200, responses.address);
+      .get("/api/v0/account/address")
+      .reply(200, responses.account.address);
 
-    const rsp = await peer.address();
+    const rsp = await account.address();
     expect(rsp).to.equal("P9UcFifmikQr591RhgUShlAJd5Sxfcj3W8hrhwYG9oDTButN");
   });
 });

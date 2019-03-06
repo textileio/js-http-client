@@ -3,7 +3,7 @@ version: 2
 defaults: &defaults
     working_directory: ~/js-http-client
     docker:
-        - image: circleci/node:9.10.0
+        - image: node:10.0.0
 
 jobs:
     lint:

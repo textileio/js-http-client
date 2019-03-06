@@ -1,7 +1,4 @@
-const { EventEmitter2 } = require("eventemitter2");
-const API = require("../core/api.js");
-const Mill = require("./mills");
-const SchemaMiller = require("../helpers/schema-miller");
+const { API } = require("../core/api.js");
 
 /**
  * Threads is an API module for managing Textile threads
@@ -14,54 +11,22 @@ class Threads extends API {
   constructor(opts) {
     super(opts);
     this.opts = opts;
-    this.events = new EventEmitter2();
-    this.mill = new Mill(opts);
-  }
-
-  /** Retrieves a list of threads */
-  async get() {
-    const threads = await this.sendGet("/api/v0/threads");
-    return threads.data;
   }
 
   /**
-   * Retrieves a thread by its name
-   *
-   * @param {string} name Name of the thread to find
-   */
-  async getByName(name) {
-    const threads = await this.get();
-    for (let i = 0; i < threads.length; i += 1) {
-      const thrd = threads[i];
-      if (thrd.name.toUpperCase() === name.toUpperCase()) {
-        return thrd;
-      }
-    }
-    return null;
-  }
-
-  /**
-   * Retrieve a thread by ID
-   *
-   * @param {string} threadId ID of the thread
-   */
-  async getById(threadId) {
-    const thread = await this.sendGet(`/api/v0/threads/${threadId}`);
-    return thread.data;
-  }
-  //
-  //   /**
-  //    * Retrieve a threads peers TODO
-  //    */
-  //   async getPeers(threadId) {}
-
-  /**
-   * Add a new thread to your Textile node
+   * Adds and joins a new thread
    *
    * @param {string} name The name of the new thread
-   * @param {Object} options Additional options to send as headers
-   * @param {string} options.schema Schema ID for the new thread
-   * @param {string} options.sharing Sharing type for the new thread
+   * @param {Object} [options] Additional options to send as headers
+   * @param {string} [options.key] A locally unique key used by an app to identify this thread on
+   * recovery
+   * @param {string} [options.type] The type of thread, must be one of 'private' (default),
+   * 'readonly', 'public', or 'open'
+   * @param {string} [options.sharing] The sharing style of thread, must be one of 'notshared'
+   * (default), 'inviteonly', or 'shared'
+   * @param {string[]} [options.members] An array of contact addresses. When supplied, the thread
+   * will not allow additional peers, useful for 1-1 chat/file sharing or private groups.
+   * @param {string} [options.schema] Schema ID for the new thread
    * @example
    * await textile.thread.add("MyMedia", {
    *   schema: mediaSchema.id,
@@ -70,66 +35,62 @@ class Threads extends API {
    * })
    */
   async add(name, options) {
-    const added = await this.sendPost("/api/v0/threads", [name], options);
-    return added.data;
+    const response = await this.sendPost("/api/v0/threads", [name], options);
+    return response.data;
   }
 
-  //   /**
-  //    * Add or update a thread in your Textile node TODO
-  //    */
-  //   async addOrUpdate(threadId, options) {}
-  //
-  //   /**
-  //    * Add messages to a thread in your Textile node TODO
-  //    */
-  //   async addMessages(threadId, msgs) {}
+  /**
+   * Adds or updates a thread directly, usually from a backup
+   *
+   * @param {string} thread ID of the thread
+   * @param {object} info Thread object
+   */
+  async addOrUpdate(thread, info) {
+    this.sendPut(`/api/v0/threads/${thread}`, null, null, info);
+  }
 
   /**
-   * Add a file to a thread in your Textile node
+   * Retrieve a thread by ID
    *
-   * @param {string} threadId Id of the thread
-   * @param {File} file A FormData object or a function for creating a FormData object
-   * @param {object} options Options object
-   * @param {string} options.schema Schema object to use for the mill
-   * @param {string} options.caption Caption to add to the image
+   * @param {string} thread ID of the thread
    */
-  async addFile(threadId, file, options) {
-    if (!threadId) {
-      throw new Error(
-        "'threadId' must be provided when adding files to a thread"
-      );
-    }
+  async get(thread) {
+    const response = await this.sendGet(`/api/v0/threads/${thread}`);
+    return response.data;
+  }
 
-    // Make sure we have a schema
-    const opts = options || {};
-    if (!opts.schema) {
-      opts.schema = (await this.getById(threadId)).schema;
-    }
+  /** Retrieves a list of threads */
+  async list() {
+    const response = await this.sendGet("/api/v0/threads");
+    return response.data;
+  }
 
-    // Mill the file before adding it
-    const milled = await SchemaMiller.mill(
-      file,
-      opts.schema.links,
-      async (link, form, headers) => {
-        const { data: res } = await this.mill.run(
-          link.mill,
-          link.opts,
-          form,
-          headers
-        );
-        res.name = link.name;
-        return res;
-      }
+  /**
+   * Remove a thread by ID
+   *
+   * @param {string} thread ID of the thread
+   */
+  async remove(thread) {
+    this.sendDelete(`/api/v0/threads/${thread}`);
+  }
+
+  /** Gets information about the default thread (if selected) */
+  async default() {
+    const response = await this.sendGet("/api/v0/threads/default");
+    return response.data;
+  }
+
+  /**
+   * List all peers in a thread
+   *
+   * @param {string} thread ID of the thread. Omit for default.
+   */
+  async peers(thread) {
+    const response = await this.sendGet(
+      `/api/v0/threads/${thread || "default"}/peers`
     );
-
-    const resp = await this.sendPost(
-      `api/v0/threads/${threadId}/files`,
-      [],
-      opts,
-      [milled]
-    );
-    return resp.data;
+    return response.data;
   }
 }
 
-module.exports = Threads;
+module.exports = { Threads };

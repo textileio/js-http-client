@@ -89,4 +89,4 @@ class SchemaMiller {
   }
 }
 
-module.exports = SchemaMiller;
+module.exports = { SchemaMiller };

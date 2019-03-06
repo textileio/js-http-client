@@ -1,6 +1,6 @@
 const { describe, it } = require("mocha");
 const { expect } = require("chai");
-const SchemaMiller = require("../../helpers/schema-miller.js");
+const { SchemaMiller } = require("../../helpers/schema-miller.js");
 const simpleSchema = require("./schemas/simple.json");
 
 describe("simple schema", () => {

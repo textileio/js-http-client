@@ -1,0 +1,12 @@
+{
+  "name": "strings",
+  "pin": true,
+  "mill": "/json",
+  "json_schema": {
+    "$id": "https://textile.io/string.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Strings",
+    "description": "This is a schema that is restricted to raw strings.",
+    "type": "strings"
+  }
+}
