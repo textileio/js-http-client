@@ -1,6 +1,6 @@
 {
   "name": "@textileio/js-http-client",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Official Textile JS HTTP Wrapper Client",
   "main": "index.js",
   "scripts": {
