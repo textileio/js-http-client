@@ -1,7 +1,6 @@
-# Contributing to Textile JS HTTP Client
+# Contributing
 
-The following is a set of guidelines for contributing to `js-textile-http-client` and its
-related projects, which are hosted in the [Textile organization](https://github.com/textileio). These are just guidelines, not rules. Use your best judgment, and
+The following is a set of guidelines for contributing to Textile-related projects, which are hosted in the [Textile organization](https://github.com/textileio). These are just guidelines, not rules. Use your best judgment, and
 feel free to propose changes to this document in a pull request.
 
 Note that Textile is an evolving project, so expect things to change over time as the team learns, listens and refines how we work with the community.
@@ -16,13 +15,12 @@ Note that Textile is an evolving project, so expect things to change over time a
   * [Suggesting Enhancements](#suggesting-enhancements)
 
 [Additional Notes](#additional-notes)
-  * [Issue Labels](#issue-labels)
 
 ## What should I know before I get started?
 
 ### Code of Conduct
 
-This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
+This project adheres to the Contributor Covenant [code of conduct](./CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code.
 Please report unacceptable behavior to [contact@textile.io](mailto:contact@textile.io).
 
@@ -32,28 +30,32 @@ Please report unacceptable behavior to [contact@textile.io](mailto:contact@texti
 
 #### How to Setup
 
+Generally, Textile projects can be initialized with something like:
+
 **Step 1:** git clone this repo:
 
 **Step 2:** cd to the cloned repo:
 
 **Step 3:** Install the Application with `yarn` or `npm i`
 
+See each indiviual project's `README` for details.
+
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for `js-textile-http-client`.
+This section guides you through submitting a bug report for any Textile repo.
 Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
 
-Before creating bug reports, please check [this list](https://github.com/textileio/js-textile-http-client/labels/bug) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report).
+Before creating bug reports, please check [this list](../../labels/bug) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report).
 
 #### Before Submitting A Bug Report
 
-**Perform a [cursory search](https://github.com/textileio/js-textile-http-client/labels/bug)** to see if the problem has already been reported. If it does exist, add a :thumbsup: to the issue to indicate this is also an issue for you, and add a comment to the existing issue if there is extra information you can contribute.
+**Perform a [cursory search](../../labels/bug)** to see if the problem has already been reported. If it does exist, add a :thumbsup: to the issue to indicate this is also an issue for you, and add a comment to the existing issue if there is extra information you can contribute.
 
 #### How Do I Submit A (Good) Bug Report?
 
 Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/).
 
-Simply create an issue on the [Textile issue tracker](https://github.com/textileio/js-textile-http-client/issues).
+Simply create an issue on the [Textile issue tracker](../../issues).
 
 The information we are interested in includes:
 
@@ -64,16 +66,16 @@ The information we are interested in includes:
 
 ### Suggesting Enhancements
 
-This section guides you through submitting an enhancement suggestion for `js-textile-http-client`, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
+This section guides you through submitting an enhancement suggestion for this project, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
 
-Before creating enhancement suggestions, please check [this list](https://github.com/textileio/js-textile-http-client/labels/bug)
+Before creating enhancement suggestions, please check [this list](../..//labels/bug)
 as you might find out that you don't need to create one. When you are creating
 an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Include the steps
 that you imagine you would take if the feature you're requesting existed.
 
 #### Before Submitting An Enhancement Suggestion
 
-**Perform a [cursory search](https://github.com/textileio/js-textile-http-client/labels/enhancement)**
+**Perform a [cursory search](../../labels/enhancement)**
 to see if the enhancement has already been suggested. If it has, add a
 :thumbsup: to indicate your interest in it, or comment if there is additional
 information you would like to add.
@@ -82,7 +84,7 @@ information you would like to add.
 
 Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/).
 
-Simply create an issue on the [Textile issue tracker](https://github.com/textileio/js-textile-http-client/issues)
+Simply create an issue on the [Textile issue tracker](../..//issues)
 and provide the following information:
 
 * **Use a clear and descriptive title** for the issue to identify the
@@ -97,15 +99,5 @@ and provide the following information:
 * **List some other applications where this enhancement exists, if applicable.**
 
 ## Additional Notes
-
-### Issue Labels
-
-This section lists the labels we use to help us track and manage issues and
-pull requests.
-
-| Label name | :mag_right: | Description |
-| --- | --- | --- |
-| `enhancement` | [search](https://github.com/textileio/js-textile-http-client/labels/enhancement) | Feature requests. |
-| `bug` | [search](https://github.com/textileio/js-textile-http-client/labels/bug)  | Confirmed bugs or reports that are very likely to be bugs. |
 
 More to be added
