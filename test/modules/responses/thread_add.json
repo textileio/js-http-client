@@ -2,7 +2,7 @@
   "id": "12D3KooWBMqnwpck3whr1rRNVnBBXE6MgNxLkRJeyz3e3vMLTzZF",
   "key": "1HAUnuC4vf4bNJWLPlIGQ4NX3gA",
   "name": "myphotothread",
-  "schema": {
+  "schema_node": {
     "name": "media",
     "pin": true,
     "plaintext": false,

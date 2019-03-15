@@ -32,7 +32,7 @@ describe("simple schema", () => {
     const resolvedOne = SchemaMiller.resolveDependency(large, payloadsByName);
     const resolvedTwo = SchemaMiller.resolveDependency(thumb, payloadsByName);
 
-    expect(resolvedOne.opts.use).to.equal(undefined);
+    expect(resolvedOne.opts.use).to.equal("");
     expect(resolvedTwo.opts.use).to.equal("abcd");
   });
 });

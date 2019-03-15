@@ -1,6 +1,5 @@
 {
   "name": "blob",
   "pin": true,
-  "mill": "/blob",
-  "use": ":file"
+  "mill": "/blob"
 }

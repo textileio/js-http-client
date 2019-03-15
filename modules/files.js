@@ -73,21 +73,19 @@ class Files extends API {
    * @param {string} caption Caption to add
    */
   async addFile(thread, file, caption) {
+    // TODO: Make thread optional and default to 'default'
     if (!thread) {
       throw new Error(
         "'thread' must be provided when adding files to a thread"
       );
     }
-
-    // Make sure we have a schema
     const opts = { caption };
+    // Fetch schema (will throw if it doesn't have a schema node)
     opts.schema_node = (await this.threads.get(thread)).schema_node;
-
     // Mill the file(s) before adding it
     const files = await SchemaMiller.mill(
       file,
-      // TODO: This won't always have links
-      opts.schema_node.links,
+      opts.schema_node,
       async (link, form, headers) => {
         const { data: res } = await this.mills.run(
           link.mill,
