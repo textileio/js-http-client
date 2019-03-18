@@ -116,45 +116,12 @@ yarn build-docs
 
 ## Roadmap
 
-Note: This is based on the existing structure of [`textile-go`](https://github.com/textileio/textile-go). As such, it may contain inconsistencies until further editing. These checkboxes laid out in the most likely order of difficulty, with each new subgroup depending on the previous ones to some degree. This should provide a useful 'checklist' for community members looking to get involved.
+This should provide a useful 'checklist' for community members looking to get involved.
 
-- [x] [wallet](https://github.com/textileio/textile-go/tree/master/wallet) - difficulty level: ~~easy~~, could be separate module, nearly direct port
-- [x] [account](https://github.com/textileio/textile-go/blob/master/cmd/account.go) (address, peers, backup)
-  - [] Methods available on mobile (seed, encrypt, decrypt)
-- [x] [profile](https://github.com/textileio/textile-go/blob/master/cmd/profile.go) (get, set {username, avatar})
-- [x] [threads](https://github.com/textileio/textile-go/blob/master/cmd/threads.go)
-  - [x] list, get, remove, peers
-  - [x] add, default
-- [x] [comments](https://github.com/textileio/textile-go/blob/master/cmd/comments.go)
-  - list, get, remove, add
-- [x] [likes](https://github.com/textileio/textile-go/blob/master/cmd/likes.go)
-  - list, get, remove, add
-- [x] [messages](https://github.com/textileio/textile-go/blob/master/cmd/messages.go)
-  - list, get, remove, add
-- [x] [invites](https://github.com/textileio/textile-go/blob/master/cmd/invites.go)
-  - accept, create, ignore, list
-- [x] [files](https://github.com/textileio/textile-go/blob/master/cmd/files.go)
-  - [x] list, get
-  - [x] list keys
-- [x] schemas + mills
-  - [x] [mill schema](https://github.com/textileio/textile-go/blob/master/core/api_mill.go)
-  - [x] [create thread w/ custom schema](https://github.com/textileio/textile-go/blob/master/cmd/threads.go#L105)
-  - [x] [local schema fulfillment](https://github.com/textileio/minimal-client-demo)
-  - [x] [add thread files](https://github.com/textileio/textile-go/blob/master/cmd/files.go#L112)
-- [x] [contacts](https://github.com/textileio/textile-go/blob/master/cmd/contacts.go)
-  - [x] list, get, remove
-  - [x] search, add
-- [x] [feed](https://github.com/textileio/textile-go/blob/master/cmd/feed.go)
-- [x] [notifications api](https://github.com/textileio/textile-go/blob/master/cmd/notifications.go)
-- [x] [cafes](https://github.com/textileio/textile-go/blob/master/cmd/cafe.go) (keep simple to start, minimal cafe hosting utilities)
-  - [x] [add, get, list tokens](https://github.com/textileio/textile-go/blob/master/cmd/tokens.go)
-  - [x] add/register
-  - [x] list, get, remove, messages
-- [x] others
-  - [x] [config](https://github.com/textileio/textile-go/blob/master/cmd/config.go)
-  - [x] [logs](https://github.com/textileio/textile-go/blob/master/cmd/logs.go)
-  - [x] ipfs (id, connect, ping, peers)
-- [ ] [sub api](https://github.com/textileio/textile-go/blob/master/cmd/sub.go)
+- [ ] Implement [sub api](https://github.com/textileio/textile-go/blob/master/cmd/sub.go)
+- [ ] Switch to TypeScript
+- [ ] Full test suite
+- [ ] More to come...
 
 ## Maintainer
 
