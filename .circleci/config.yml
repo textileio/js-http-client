@@ -6,7 +6,7 @@ defaults: &defaults
         - image: node:10.0.0
 
 jobs:
-    lint:
+    lint-test:
         <<: *defaults    
         steps:
             - checkout
@@ -27,29 +27,17 @@ jobs:
                 key: node-v1-{{ checksum "package.json" }}-{{ arch }}
                 paths:
                     - node_modules
-
-    test:
-        <<: *defaults    
-        steps:
-            - checkout
-            - restore_cache:
-                key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
-            - restore_cache:
-                key: node-v1-{{ checksum "package.json" }}-{{ arch }}
-            - run: yarn install
-            - run: mkdir ~/junit
             - run:
                 name: test
                 command: |
-                    yarn test --reporter mocha-junit-reporter
+                    mkdir -p test-results/jest
+                    yarn test
                 environment:
-                    MOCHA_FILE: ~/junit/test-results.xml
-                when: always
+                    JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
             - store_test_results:
-                path: ~/junit
+                path: test-results
             - store_artifacts:
-                path: ~/junit
-
+                path: test-results
     deploy:
         <<: *defaults
         steps:
@@ -67,18 +55,13 @@ workflows:
     version: 2
     js-http-client:
         jobs:
-            - lint:
-                filters:
-                    tags:
-                        only: /^v.*/
-            - test:
+            - lint-test:
                 filters:
                     tags:
                         only: /^v.*/
             - deploy:
                 requires:
-                    - lint
-                    - test
+                    - lint-test
                 filters:
                     tags:
                         only: /^v.*/

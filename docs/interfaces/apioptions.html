@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@textileio/js-http-client</title>
+	<title>ApiOptions | @textileio/js-http-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">@textileio/js-http-client</a>
+					<a href="../index.html" class="title">@textileio/js-http-client</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -51,143 +51,176 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="apioptions.html">ApiOptions</a>
 				</li>
 			</ul>
-			<h1> @textileio/js-http-client</h1>
+			<h1>Interface ApiOptions</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<h1 id="textile-js-http-client-js-http-client-">Textile JS HTTP Client <em>(js-http-client)</em></h1>
-				<p><a href="https://www.textile.io">Textile</a> provides encrypted, recoverable, schema-based, and cross-application data storage built on <a href="https://github.com/ipfs">IPFS</a> and <a href="https://github.com/libp2p">libp2p</a>. We like to think of it as a decentralized data wallet with built-in protocols for sharing and recovery, or more simply, <strong>an open and programmable iCloud</strong>.</p>
-				<p>The reference implementation of Textile is <a href="https://github.com/textileio/textile-go">written in Go</a>, and can be compiled to various platforms, including mobile (Android/iOS) and desktop/server (OSX, Windows, Linux, etc). The library in this repo is designed to help support things like browser-based Textile apps, Node.js apps, and other use-cases.</p>
-				<p>This library provides access to an underlying <code>textile-go</code> node&#39;s REST API, adding various simplified APIs to support in-browser and programmatic desktop access. For the most part, the API would mimic the command-line and/or mobile APIs of <code>textile-go</code>, with some browser-specific enhancements.</p>
-				<h3 id="organization">Organization</h3>
-				<p>The main entry point is at <code>index.js</code>. This class contains the main <code>Textile</code> export which in turn contains each of the sub-modules as properties of the class. Each sub-module is found in the <code>modules</code> folder.</p>
-				<p>Sub-modules are organized generally by endpoint, so the <code>textile.thread</code> module would contain all of the functionality under <code>/api/v0/threads</code>.</p>
-				<p>All unit tests can be found in the <code>test</code> folder.</p>
-				<h2 id="install">Install</h2>
-				<p><code>js-http-client</code> is available on <a href="https://www.npmjs.com/package/@textileio/js-http-client"><code>npmjs.com</code></a> under the <code>@textile</code> scope. Install it using your favorite package manager:</p>
-				<pre><code class="language-sh">yarn add @textileio/js-http-client
-<span class="hljs-comment"># npm i @textileio/js-http-client</span></code></pre>
-				<h2 id="usage">Usage</h2>
-				<pre><code class="language-javascript"><span class="hljs-comment">// Import the main Textile client</span>
-<span class="hljs-keyword">const</span> Textile = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@textileio/js-http-client"</span>);
-
-<span class="hljs-comment">// Create an instance of the client using the default options</span>
-<span class="hljs-keyword">const</span> textile = <span class="hljs-keyword">new</span> Textile();
-
-<span class="hljs-comment">// Or, create an instance specifying your custom Textile node API connection</span>
-<span class="hljs-keyword">const</span> textile = <span class="hljs-keyword">new</span> Textile({
-  <span class="hljs-attr">url</span>: <span class="hljs-string">"http://127.0.0.1"</span>, <span class="hljs-comment">// e.g., "http://api.textile.io"</span>
-  port: <span class="hljs-number">40602</span>, <span class="hljs-comment">// null</span>
-});
-
-<span class="hljs-comment">// Get your Textile node's peer ID</span>
-<span class="hljs-keyword">const</span> peerID = <span class="hljs-keyword">await</span> textile.ipfs.peerId();
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`My Peer ID is '<span class="hljs-subst">${peerID}</span>'.\n`</span>);
-<span class="hljs-comment">// &gt; My Peer ID is '12324234xx2343232...'</span>
-
-<span class="hljs-comment">// Get your Textile node's address</span>
-<span class="hljs-keyword">const</span> address = <span class="hljs-keyword">await</span> textile.profile.address();
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`My node's address is '<span class="hljs-subst">${address}</span>'.\n`</span>);
-<span class="hljs-comment">// &gt; My node's address is '9232834kswjlwklj2...'</span>
-
-<span class="hljs-comment">// Get a paginated list of files</span>
-<span class="hljs-keyword">const</span> files = <span class="hljs-keyword">await</span> textile.files.list({
-  <span class="hljs-attr">thread</span>: <span class="hljs-string">"12D3Kblah..."</span>,
-  <span class="hljs-attr">limit</span>: <span class="hljs-number">1</span>,
-  <span class="hljs-attr">offset</span>: <span class="hljs-string">"QmYblah..."</span>
-});
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Files"</span>, files);</code></pre>
-				<p>For more detailed examples of usage, peruse the <code>examples</code> folder.</p>
-			</div>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The options object for the client object</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>typedef</dt>
+						<dd><p>{Object} ApiOptions</p>
+						</dd>
+						<dt>property</dt>
+						<dd><p>{string} [url=&#39;<a href="http://127.0.0.1&#39;%5D">http://127.0.0.1&#39;]</a> - The base URL of the Textile node API</p>
+						</dd>
+						<dt>property</dt>
+						<dd><p>{number} [port=&#39;40600&#39;] - The port of the Textile node API</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ApiOptions</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="apioptions.html#port" class="tsd-kind-icon">port</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="apioptions.html#url" class="tsd-kind-icon">url</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="port" class="tsd-anchor"></a>
+					<h3>port</h3>
+					<div class="tsd-signature tsd-kind-icon">port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/563e2a3/src/models/index.ts#L13">models/index.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="url" class="tsd-anchor"></a>
+					<h3>url</h3>
+					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/563e2a3/src/models/index.ts#L12">models/index.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="classes/account.html" class="tsd-kind-icon">Account</a>
+						<a href="../classes/account.html" class="tsd-kind-icon">Account</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/cafes.html" class="tsd-kind-icon">Cafes</a>
+						<a href="../classes/cafes.html" class="tsd-kind-icon">Cafes</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/comments.html" class="tsd-kind-icon">Comments</a>
+						<a href="../classes/comments.html" class="tsd-kind-icon">Comments</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/config.html" class="tsd-kind-icon">Config</a>
+						<a href="../classes/config.html" class="tsd-kind-icon">Config</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/connection.html" class="tsd-kind-icon">Connection</a>
+						<a href="../classes/connection.html" class="tsd-kind-icon">Connection</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/contacts.html" class="tsd-kind-icon">Contacts</a>
+						<a href="../classes/contacts.html" class="tsd-kind-icon">Contacts</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/feed.html" class="tsd-kind-icon">Feed</a>
+						<a href="../classes/feed.html" class="tsd-kind-icon">Feed</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/files.html" class="tsd-kind-icon">Files</a>
+						<a href="../classes/files.html" class="tsd-kind-icon">Files</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/ipfs.html" class="tsd-kind-icon">IPFS</a>
+						<a href="../classes/ipfs.html" class="tsd-kind-icon">IPFS</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/invites.html" class="tsd-kind-icon">Invites</a>
+						<a href="../classes/invites.html" class="tsd-kind-icon">Invites</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/likes.html" class="tsd-kind-icon">Likes</a>
+						<a href="../classes/likes.html" class="tsd-kind-icon">Likes</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/logs.html" class="tsd-kind-icon">Logs</a>
+						<a href="../classes/logs.html" class="tsd-kind-icon">Logs</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/messages.html" class="tsd-kind-icon">Messages</a>
+						<a href="../classes/messages.html" class="tsd-kind-icon">Messages</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/mills.html" class="tsd-kind-icon">Mills</a>
+						<a href="../classes/mills.html" class="tsd-kind-icon">Mills</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/notifications.html" class="tsd-kind-icon">Notifications</a>
+						<a href="../classes/notifications.html" class="tsd-kind-icon">Notifications</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/profile.html" class="tsd-kind-icon">Profile</a>
+						<a href="../classes/profile.html" class="tsd-kind-icon">Profile</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/schemas.html" class="tsd-kind-icon">Schemas</a>
+						<a href="../classes/schemas.html" class="tsd-kind-icon">Schemas</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/threads.html" class="tsd-kind-icon">Threads</a>
+						<a href="../classes/threads.html" class="tsd-kind-icon">Threads</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/tokens.html" class="tsd-kind-icon">Tokens</a>
+						<a href="../classes/tokens.html" class="tsd-kind-icon">Tokens</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/utils.html" class="tsd-kind-icon">Utils</a>
+						<a href="../classes/utils.html" class="tsd-kind-icon">Utils</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/wallet.html" class="tsd-kind-icon">Wallet</a>
+						<a href="../classes/wallet.html" class="tsd-kind-icon">Wallet</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="apioptions.html" class="tsd-kind-icon">Api<wbr>Options</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="apioptions.html#port" class="tsd-kind-icon">port</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="apioptions.html#url" class="tsd-kind-icon">url</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="keyvalue.html" class="tsd-kind-icon">Key<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/apioptions.html" class="tsd-kind-icon">Api<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/keyvalue.html" class="tsd-kind-icon">Key<wbr>Value</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/runningevent.html" class="tsd-kind-icon">Running<wbr>Event</a>
+						<a href="runningevent.html" class="tsd-kind-icon">Running<wbr>Event</a>
 					</li>
 				</ul>
 			</nav>
@@ -254,7 +287,7 @@
 	</div>
 </footer>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

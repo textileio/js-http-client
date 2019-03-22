@@ -1,5 +1,5 @@
 const FileReceiver = require("../browser/file-receiver");
-const Textile = require("../../index");
+const Textile = require("../../dist/index.js");
 
 const THREAD_NAME = "test-media";
 
