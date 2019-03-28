@@ -47,7 +47,8 @@ export default class Cafes extends API {
     return response.data
   }
 
-  /** Checkes for messages at all cafes.
+  /**
+   * Checkes for messages at all cafes.
    *
    * New messages are downloaded and processed opportunistically.
    */
