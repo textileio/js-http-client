@@ -1,6 +1,7 @@
 import { API } from '../core/api'
-import { ApiOptions } from '../models/index'
-import pb from '@textile/go-mobile'
+import { ApiOptions, FeedItemList } from '../models'
+
+export type FeedModes = 'chrono' | 'annotated' | 'stacks'
 
 /**
  * Feed is an API module for paginating post and annotation block types
@@ -33,19 +34,22 @@ export default class Feed extends API {
    * the stack. Additional annotations are nested under the target.
    *   * Newer annotations may have already been listed in the case as well.
    *
-   * @param {Object} options Additional options to send as headers
-   * @param {string} options.thread Thread ID (can also use ‘default’)
-   * @param {string} options.offset Offset ID to start listing from (omit for latest)
-   * @param {string} options.limit List page size (default: 5)
-   * @param {string} options.mode Feed mode (one of 'chrono’, 'annotated’, or ‘stacks’)
+   * @param thread Thread ID (can also use ‘default’)
+   * @param offset Offset ID to start listing from (omit for latest)
+   * @param limit List page size (default: 5)
+   * @param mode Feed mode (one of 'chrono’, 'annotated’, or ‘stacks’)
    */
-  async get(options: pb.IFeedRequest) {
-    const response = await this.sendPost(
+  async get(thread?: string, offset?: string, limit?: number, mode?: FeedModes) {
+    const response = await this.sendGet(
       '/api/v0/feed',
       undefined,
-      undefined,
-      options
+      {
+        thread: thread || '',
+        offset: offset || '',
+        limit: limit || 5,
+        mode: mode || 'chrono'
+      }
     )
-    return response.data
+    return response.data as FeedItemList
   }
 }

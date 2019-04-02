@@ -1,7 +1,8 @@
 import nock from 'nock'
 import Account from '../account'
+import { Readable } from 'stream'
 import { ApiOptions } from '../../models'
-import responses from './__static__/account.json'
+import { account as response } from './__static__/responses'
 
 const opts: ApiOptions = {
   url: 'http://127.0.0.1',
@@ -9,25 +10,34 @@ const opts: ApiOptions = {
 }
 
 const ROOT = `${opts.url}:${opts.port}`
-
 const account = new Account(opts)
 
-describe('account api peers', () => {
-  it('should respond with object of peer items', async () => {
+describe('account address', () => {
+  it('should resolve to account address as string', async () => {
     nock(ROOT)
-      .get('/api/v0/account/peers')
-      .reply(200, responses.account.peers)
+      .get('/api/v0/account/address')
+      .reply(200, response.address)
 
-    expect(account.peers()).resolves.toEqual({ items: []})
+    expect(await account.address()).toEqual(response.address)
   })
 })
 
-describe('account api address', () => {
-  it('should respond with plain text address', async () => {
+describe('account seed', () => {
+  it('should resolve to account seed as string', async () => {
     nock(ROOT)
-      .get('/api/v0/account/address')
-      .reply(200, responses.account.address)
+      .get('/api/v0/account/seed')
+      .reply(200, response.seed)
 
-    expect(account.address()).resolves.toEqual('P9UcFifmikQr591RhgUShlAJd5Sxfcj3W8hrhwYG9oDTButN')
+    expect(await account.seed()).toEqual(response.seed)
+  })
+})
+
+describe('account contact', () => {
+  it('should resolve with local node contact info', async () => {
+    nock(ROOT)
+      .get('/api/v0/account/contact')
+      .reply(200, response.contact)
+
+    expect(await account.contact()).toEqual(response.contact)
   })
 })

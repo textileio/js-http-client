@@ -14,10 +14,13 @@ export default class IPFS extends API {
     this.opts = opts
   }
 
-  /** Retrieves underlying IPFS peer ID */
+  /**
+   * Retrieves underlying IPFS peer ID
+   * @returns The underlying IPFS peer ID
+   */
   async peerId() {
     const response = await this.sendGet(`/api/v0/ipfs/id`)
-    return response.data
+    return response.data as string
   }
 
   /**
@@ -35,29 +38,30 @@ export default class IPFS extends API {
       undefined,
       options
     )
+    // TODO: Get proper types for this return object ipfs.ConnInfos
     return data
   }
 
   /**
    * Retrieves the data behind an IPFS CID (hash)
    *
-   * @param {string} cid IPFS/IPNS content ID
-   * @param {string} [key] Key to decrypt the underlying data on-the-fly
+   * @param cid IPFS/IPNS content ID
+   * @param key Key to decrypt the underlying data on-the-fly
+   * @returns The underlying data behind the given IPFS hash
    */
-  async cat(cid: string, key: string) {
-    const response = await this.sendGet(`/api/v0/ipfs/cat/${cid}`, undefined, {
-      key
-    })
+  async cat(cid: string, key?: string) {
+    const response = await this.sendGet(`/api/v0/ipfs/cat/${cid}`, undefined, { key: key || '' })
     return response.data
   }
 
   /**
    * Opens a new direct connection to a peer using an IPFS multiaddr
    *
-   * @param {string} addr Peer IPFS multiaddr
+   * @param addr Peer IPFS multiaddr
+   * @returns Whether the peer swarm connect was successfull
    */
   async swarmConnect(addr: string) {
     const response = await this.sendGet(`/api/v0/ipfs/swarm/connect`, [addr])
-    return response.data
+    return response.status === 200
   }
 }

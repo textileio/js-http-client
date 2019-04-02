@@ -1,4 +1,4 @@
-import axios, { Canceler, CancelTokenSource } from 'axios'
+import axios, { CancelTokenSource, AxiosInstance } from 'axios'
 import Connection from './connection'
 import { KeyValue, ApiOptions } from '../models'
 
@@ -58,7 +58,7 @@ const createHeaders = (args?: string[], opts?: KeyValue, headers?: KeyValue): Ke
  */
 
 // **** Private variables
-const con = new WeakMap()
+const con = new WeakMap<object, AxiosInstance | undefined>()
 
 /**
  * API is the base class for all SDK modules.
@@ -83,17 +83,18 @@ class API {
   /**
    * Make a post request to the Textile node that is cancelable
    *
-   * @param {string} url The relative URL of the API endpoint
-   * @param {string[]} args An array of arguments to pass as Textile args headers
-   * @param {Object} opts An object of options to pass as Textile options headers
-   * @param {Object} data An object of data to post
-   * @returns {CancelableRequest} request
+   * @param url The relative URL of the API endpoint
+   * @param args An array of arguments to pass as Textile args headers
+   * @param opts An object of options to pass as Textile options headers
+   * @param data An object of data to post
+   * @returns A cancelable request
    */
   sendPostCancelable(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
     const source: CancelTokenSource = axios.CancelToken.source()
     const conn = this.con()({
       method: 'post',
       url,
+      responseType: 'stream',
       headers: createHeaders(args, opts, headers),
       data,
       cancelToken: source.token
@@ -107,10 +108,10 @@ class API {
   /**
    * Make a post request to the Textile node
    *
-   * @param {string} url The relative URL of the API endpoint
-   * @param {string[]} args An array of arguments to pass as Textile args headers
-   * @param {Object} opts An object of options to pass as Textile options headers
-   * @param {Object} data An object of data to post
+   * @param url The relative URL of the API endpoint
+   * @param args An array of arguments to pass as Textile args headers
+   * @param opts An object of options to pass as Textile options headers
+   * @param data An object of data to post
    */
   public async sendPost(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
     return this.con()({
@@ -124,10 +125,10 @@ class API {
   /**
    * Make a post request to the Textile node using a multi-part form
    *
-   * @param {string} url The relative URL of the API endpoint
-   * @param {string[]} args An array of arguments to pass as Textile args headers
-   * @param {Object} opts An object of options to pass as Textile options headers
-   * @param {Object} data An object of data to post
+   * @param url The relative URL of the API endpoint
+   * @param args An array of arguments to pass as Textile args headers
+   * @param opts An object of options to pass as Textile options headers
+   * @param data An object of data to post
    */
   async sendPostMultiPart(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
     const h = createHeaders(args, opts, headers)
@@ -146,9 +147,9 @@ class API {
   /**
    * Make a get request to the Textile node
    *
-   * @param {string} url The relative URL of the API endpoint
-   * @param {string[]} args An array of arguments to pass as Textile args headers
-   * @param {Object} opts An object of options to pass as Textile options headers
+   * @param url The relative URL of the API endpoint
+   * @param args An array of arguments to pass as Textile args headers
+   * @param opts An object of options to pass as Textile options headers
    */
   async sendGet(url: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
     return this.con()({
@@ -161,9 +162,9 @@ class API {
   /**
    * Make a delete request to the Textile node
    *
-   * @param {string} url The relative URL of the API endpoint
-   * @param {string[]} args An array of arguments to pass as Textile args headers
-   * @param {Object} opts An object of options to pass as Textile options headers
+   * @param url The relative URL of the API endpoint
+   * @param args An array of arguments to pass as Textile args headers
+   * @param opts An object of options to pass as Textile options headers
    */
   async sendDelete(url: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
     return this.con()({
@@ -176,14 +177,31 @@ class API {
   /**
    * Make a put request to the Textile node
    *
-   * @param {string} url The relative URL of the API endpoint
-   * @param {string[]} args An array of arguments to pass as Textile args headers
-   * @param {Object} opts An object of options to pass as Textile options headers
-   * @param {Object} data An object of data to put
+   * @param url The relative URL of the API endpoint
+   * @param args An array of arguments to pass as Textile args headers
+   * @param opts An object of options to pass as Textile options headers
+   * @param data An object of data to put
    */
   async sendPut(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
     return this.con()({
       method: 'put',
+      url,
+      headers: createHeaders(args, opts, headers),
+      data
+    })
+  }
+
+  /**
+   * Make a patch request to the Textile node
+   *
+   * @param url The relative URL of the API endpoint
+   * @param args An array of arguments to pass as Textile args headers
+   * @param opts An object of options to pass as Textile options headers
+   * @param data An object of data to put
+   */
+  async sendPatch(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
+    return this.con()({
+      method: 'patch',
       url,
       headers: createHeaders(args, opts, headers),
       data

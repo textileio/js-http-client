@@ -17,17 +17,15 @@ import Schemas from './modules/schemas'
 import Threads from './modules/threads'
 import Tokens from './modules/tokens'
 import Utils from './modules/utils'
-import Wallet from './modules/wallet'
 import { ApiOptions } from './models'
-
-export { Wallet }
+export { default as Wallet } from './modules/wallet'
 
 /**
  * Textile is the main client class
  *
  * @param {ApiOptions} options The API options object
  */
-export default class Textile {
+export class Textile {
   opts: ApiOptions
   /** @property {Account} account - Manage Textile wallet account */
   account: Account
@@ -87,3 +85,5 @@ export default class Textile {
     this.utils = new Utils(this.opts)
   }
 }
+
+export default Textile

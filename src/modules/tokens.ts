@@ -25,38 +25,49 @@ export default class Tokens extends API {
    * ‘store’ option is set to false, the token is generated, but not stored in the local Cafe
    * db. Alternatively, an existing token can be added using by specifying the ‘token’ option.
    *
-   * @param {object} [options] Options for creating tokens
-   * @param {string} [options.token] Use an existing token, rather than creating a new one
-   * @param {boolean} [options.store] Whether to store the added/generated token to the local db
+   * @param token Use an existing token, rather than creating a new one
+   * @param store Whether to store the added/generated token to the local db (defaults to true)
    * @see Cafes#add
+   * @returns New token as string
    */
-  async create(options: KeyValue) {
-    const response = await this.sendPost(`/api/v0/tokens/`, undefined, options)
-    return response.data
+  async create(token?: string, store?: boolean) {
+    const response = await this.sendPost(`/api/v0/tokens`, undefined, {
+      token: token || '',
+      store: store || false
+    })
+    return response.data as string
   }
 
   /**
    * Check validity of existing cafe access token
    *
-   * @param {string} token Access token
+   * @param token Access token
+   * @returns Whether token is valid
    */
   async validate(token: string) {
     const response = await this.sendGet(`/api/v0/tokens/${token}`)
-    return response.data
+    return response.status === 200
   }
 
-  /** Retrieves information about all stored cafe tokens */
+  /**
+   * Retrieves information about all stored cafe tokens
+   *
+   * Only really useful for debugging. These are hashed tokens, so are not valid.
+   * @returns Array of bcrypt hashed tokens
+   */
   async list() {
     const response = await this.sendGet('/api/v0/tokens')
-    return response.data
+    return response.data as string[]
   }
 
   /**
    * Removes an existing cafe token
    *
-   * @param {string} token Access token
+   * @param token Access token
+   * @returns Whether remove was successful
    */
   async remove(token: string) {
-    this.sendDelete(`/api/v0/tokens/${token}`)
+    const response = await this.sendDelete(`/api/v0/tokens/${token}`)
+    return response.status === 204
   }
 }

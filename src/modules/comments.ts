@@ -1,5 +1,5 @@
-import { API } from '../core/api.js'
-import { ApiOptions } from '../models/index'
+import { API } from '../core/api'
+import { ApiOptions, Comment, CommentList, Block } from '../models'
 
 /**
  * Comments is an API module for managing thread/block comments
@@ -19,34 +19,37 @@ export default class Comments extends API {
   /**
    * Adds a comment to a block
    *
-   * @param {string} block Target block ID. Usually a file(s) block.
-   * @param {string} body Comment body
+   * @param block Target block ID. Usually a file(s) block.
+   * @param body Comment body
+   * @returns The generated comment block
    */
   async add(block: string, body: string) {
-    const response = await this.sendPost(`/api/v0/blocks/${block}/comments`, [
-      encodeURIComponent(body)
-    ])
-    return response.data
+    const response = await this.sendPost(
+      `/api/v0/blocks/${block}/comments`, [encodeURI(body)]
+    )
+    return response.data as Comment
   }
 
   /**
    * Retrieves a comment by ID
    *
-   * @param {string} id ID of the target comment
+   * @param id ID of the target comment
+   * @returns The target comment block
    */
   async get(id: string) {
     const response = await this.sendGet(`/api/v0/blocks/${id}/comment`)
-    return response.data
+    return response.data as Comment
   }
 
   /**
    * Retrieves a list of comments on a target block
    *
-   * @param {string} block ID of the target block
+   * @param block ID of the target block
+   * @returns An array of comment blocks
    */
   async list(block: string) {
     const response = await this.sendGet(`/api/v0/blocks/${block}/comments`)
-    return response.data
+    return response.data as CommentList
   }
 
   /**
@@ -55,9 +58,11 @@ export default class Comments extends API {
    * This adds an 'ignore' thread block targeted at the comment.
    * Ignored blocks are by default not returned when listing.
    *
-   * @param {string} id ID of the comment
+   * @param id ID of the comment
+   * @returns The ignored block
    */
   async ignore(id: string) {
-    this.sendDelete(`/api/v0/blocks/${id}`)
+    const response = await this.sendDelete(`/api/v0/blocks/${id}`)
+    return response.data as Block
   }
 }

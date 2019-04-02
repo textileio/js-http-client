@@ -19,30 +19,32 @@ export default class Logs extends API {
   /**
    * List the verbosity of one or all subsystems logs
    *
-   * @param {string} [subsystem] Subsystem logging identifier (omit for all)
-   * @param {boolean} [tex] Whether to list only Textile subsystems, or all available subsystems
+   * @param subsystem Subsystem logging identifier (omit for all)
+   * @param tex Whether to list only Textile subsystems, or all available subsystems
+   * @returns An object of (current) key- (subsystem) value (level) pairs
    */
-  async get(subsystem: string, tex: boolean) {
+  async get(subsystem?: string, tex?: boolean) {
     const response = await this.sendGet(
       `api/v0/logs${subsystem ? `/${subsystem}` : ''}`,
       undefined,
-      { 'tex-only': tex }
+      { 'tex-only': tex || false }
     )
-    return response.data
+    return response.data as { [k: string]: string }
   }
 
   /**
    * Set the verbosity of one or all subsystems logs
    *
-   * @param {string} subsystem Log level, must be one of: debug, info, warning, error, or critical.
-   * @param {string} [subsystem] Subsystem logging identifier (omit for all)
-   * @param {boolean} [tex] Whether to change only Textile subsystems, or all available subsystems
+   * @param level Log level, must be one of: debug, info, warning, error, or critical.
+   * @param subsystem Subsystem logging identifier (omit for all)
+   * @param tex Whether to change only Textile subsystems, or all available subsystems
+   * @returns An object of (updated) key- (subsystem) value (level) pairs
    */
-  async set(level: string, subsystem: string, tex: boolean) {
+  async set(level: string, subsystem?: string, tex?: boolean) {
     const response = await this.sendPost(
       `api/v0/logs${subsystem ? `/${subsystem}` : ''}`,
       undefined,
-      { level, 'tex-only': tex }
+      { level, 'tex-only': tex || false }
     )
     return response.data
   }

@@ -1,5 +1,5 @@
 import { API } from '../core/api'
-import { ApiOptions } from '../models'
+import { ApiOptions, Versions, Summary } from '../models'
 
 /**
  * Utils is an API module for various Textile node utilities
@@ -14,19 +14,28 @@ export default class Utils extends API {
     this.opts = opts
   }
 
-  /** Get the current node's API, and application versions */
+  /**
+   * Get the current node's API, and application versions
+   * @returns Version of Cafe API and node binary release
+   */
   async version() {
     const response = await this.sendGet('/')
-    return response.data
+    return response.data as Versions
   }
 
-  /** Get a summary of all local node data */
+  /**
+   * Get a summary of all local node data
+   * @returns Summary of node activity
+   */
   async nodeSummary() {
     const response = await this.sendGet('api/v0/summary')
-    return response.data
+    return response.data as Summary
   }
 
-  /** Get a summary of all local node data */
+  /**
+   * Check whether the underlying node's API is online
+   * @returns Whether the API is online
+   */
   async online() {
     const response = await this.sendGet('/health')
     return response.status === 204

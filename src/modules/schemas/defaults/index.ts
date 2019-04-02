@@ -1,0 +1,6 @@
+export { default as avatar } from './avatar.json'
+export { default as blob } from './blob.json'
+export { default as cameraRoll } from './cameraRoll.json'
+export { default as json } from './json.json'
+export { default as media } from './media.json'
+export { default as  strings } from './strings.json'
