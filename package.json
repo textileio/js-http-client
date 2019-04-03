@@ -1,6 +1,6 @@
 {
   "name": "@textile/js-http-client",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Official Textile JS HTTP Wrapper Client",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -51,7 +51,6 @@
     "url-parse": "^1.4.4"
   },
   "devDependencies": {
-    "@types/url-parse": "^1.4.3",
     "@textile/tslint-rules": "1.0.3",
     "@types/bip39": "^2.4.2",
     "@types/bs58": "^4.0.0",
@@ -62,6 +61,7 @@
     "@types/nock": "^9.3.1",
     "@types/tiny-secp256k1": "^1.0.0",
     "@types/toposort": "^2.0.1",
+    "@types/url-parse": "^1.4.3",
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.0.0",
