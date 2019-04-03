@@ -1,6 +1,17 @@
-export { default as avatar } from './avatar.json'
-export { default as blob } from './blob.json'
-export { default as cameraRoll } from './cameraRoll.json'
-export { default as json } from './json.json'
-export { default as media } from './media.json'
-export { default as  strings } from './strings.json'
+import avatar from './avatar.json'
+import blob from './blob.json'
+import cameraRoll from './cameraRoll.json'
+import json from './json.json'
+import media from './media.json'
+import strings from './strings.json'
+
+const defaults: {[key: string]: object} = {
+  avatar,
+  blob,
+  cameraRoll,
+  json,
+  media,
+  strings
+}
+
+export default defaults

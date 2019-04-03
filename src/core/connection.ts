@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { URL } from 'url'
+import URL from 'url-parse'
 import { ApiOptions } from '../models'
 
 /**
@@ -14,7 +14,7 @@ export default class Connection {
 
     const url = new URL(opts.url)
     if (opts.port) {
-      url.port = opts.port
+      url.set('port', opts.port)
     }
 
     return axios.create({

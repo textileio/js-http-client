@@ -1,5 +1,5 @@
 import { API } from '../core/api'
-import { ApiOptions, Node, FilesList, Files as File, Keys } from '../models'
+import { ApiOptions, Node, FilesList, Files as File, Keys, DirectoryList } from '../models'
 import SchemaMiller, { MillOpts } from '../helpers/schema-miller'
 import Mills from './mills'
 import Threads from './threads'
@@ -85,13 +85,15 @@ export default class Files extends API {
    * @param caption Caption to associated with the added file object
    * @returns An array of created File objects
    */
-  async addFile(thread: string, file: any, caption: string) {
-    // TODO: Make thread optional and default to 'default'
+  async addFile(file: any, caption: string, thread?: string) {
     if (!thread) {
-      throw new Error('threadId must be provided when adding files to a thread')
+      thread = 'default'
     }
     // Fetch schema (will throw if it doesn't have a schema node)
     const schemaNode: Node = (await this.threads.get(thread)).schema_node
+    if (!schemaNode) {
+      throw new Error('A thread schema is required before adding files to a thread.')
+    }
     // Mill the file(s) before adding it
     const dir = await SchemaMiller.mill(
       file,
@@ -101,8 +103,12 @@ export default class Files extends API {
         return file
       }
     )
+    // TODO: Do more than just wrap dirs in list
+    const dirs: DirectoryList = {
+      items: [dir]
+    }
     const resp = await this.sendPost(
-      `api/v0/threads/${thread}/files`, undefined, { caption }, dir
+      `api/v0/threads/${thread}/files`, undefined, { caption }, dirs
     )
     return resp.data as File
   }

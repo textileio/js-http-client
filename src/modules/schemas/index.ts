@@ -1,5 +1,5 @@
 import { API } from '../../core/api.js'
-import * as defaults from './defaults'
+import defaults from './defaults'
 import { ApiOptions, Node, FileIndex } from '../../models'
 
 /**

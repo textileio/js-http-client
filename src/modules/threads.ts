@@ -54,13 +54,12 @@ export default class Threads extends API {
     const response = await this.sendPost(
       '/api/v0/threads',
       [name],
-      undefined,
       {
         schema: schema || '',
         key: key || '',
         type: type || 'private',
         sharing: sharing || 'not_shared',
-        members: members || []
+        members: (members || []).join(',')
       }
     )
     return response.data as Thread

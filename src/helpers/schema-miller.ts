@@ -88,8 +88,7 @@ export default class SchemaMiller {
         let headers = {}
 
         if (resolved.opts.use) {
-          // It's a file. The hash will pass as the payload.
-          // Don't send the file again
+          // It's a file, the hash will pass as the payload, don't send file again
           form = undefined
         } else if (typeof body === 'function') {
           form = body()
@@ -102,7 +101,6 @@ export default class SchemaMiller {
         }
 
         // Must be synchronous for dependencies
-        // eslint-disable-next-line no-await-in-loop
         const file = await remoteMill(step.link.mill, resolved, form, headers)
         dir.files[step.name] = file
       }
