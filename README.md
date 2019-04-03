@@ -5,8 +5,8 @@
 [![Keywords](https://img.shields.io/github/package-json/keywords/textileio/js-http-client.svg?style=popout-square)](./package.json)
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/textileio/js-http-client.svg?style=popout-square)](./package.json)
-[![npm (scoped)](https://img.shields.io/npm/v/@textileio/js-http-client.svg?style=popout-square)](https://www.npmjs.com/package/@textileio/js-http-client)
-[![node (scoped)](https://img.shields.io/node/v/@textileio/js-http-client.svg?style=popout-square)](https://www.npmjs.com/package/@textileio/js-http-client)
+[![npm (scoped)](https://img.shields.io/npm/v/@textile/js-http-client.svg?style=popout-square)](https://www.npmjs.com/package/@textile/js-http-client)
+[![node (scoped)](https://img.shields.io/node/v/@textile/js-http-client.svg?style=popout-square)](https://www.npmjs.com/package/@textile/js-http-client)
 [![GitHub license](https://img.shields.io/github/license/textileio/js-http-client.svg?style=popout-square)](./LICENSE)
 [![David](https://img.shields.io/david/dev/textileio/js-http-client.svg)](https://david-dm.org/textileio/js-http-client)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/textileio/js-http-client/master.svg?style=popout-square)](https://circleci.com/gh/textileio/js-http-client)
