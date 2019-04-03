@@ -6,10 +6,10 @@ import createHmac from 'create-hmac'
  *
  * API is the same as hashes in node
  *
- * @param {string} key Secret key
- * @param {string} data Input data
+ * @param key Secret key
+ * @param data Input data
  */
-export function hash160 (buffer: string) {
+export function hash160(buffer: string | Buffer) {
   return createHash('rmd160')
     .update(
       createHash('sha256')
@@ -24,10 +24,10 @@ export function hash160 (buffer: string) {
  *
  * API is the same as HMACs in node
  *
- * @param {string} key Secret key
- * @param {string} data Input data
+ * @param key Secret key
+ * @param data Input data
  */
-export function hmacSHA512 (key: string, data: string) {
+export function hmacSHA512(key: string | Buffer, data: string | Buffer) {
   return createHmac('sha512', key)
     .update(data)
     .digest()

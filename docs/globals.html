@@ -109,6 +109,7 @@
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-class"><a href="classes/account.html" class="tsd-kind-icon">Account</a></li>
+								<li class="tsd-kind-class"><a href="classes/bip32.html" class="tsd-kind-icon">BIP32</a></li>
 								<li class="tsd-kind-class"><a href="classes/cafes.html" class="tsd-kind-icon">Cafes</a></li>
 								<li class="tsd-kind-class"><a href="classes/comments.html" class="tsd-kind-icon">Comments</a></li>
 								<li class="tsd-kind-class"><a href="classes/config.html" class="tsd-kind-icon">Config</a></li>
@@ -118,6 +119,7 @@
 								<li class="tsd-kind-class"><a href="classes/files.html" class="tsd-kind-icon">Files</a></li>
 								<li class="tsd-kind-class"><a href="classes/ipfs.html" class="tsd-kind-icon">IPFS</a></li>
 								<li class="tsd-kind-class"><a href="classes/invites.html" class="tsd-kind-icon">Invites</a></li>
+								<li class="tsd-kind-class"><a href="classes/keypair.html" class="tsd-kind-icon">Keypair</a></li>
 								<li class="tsd-kind-class"><a href="classes/likes.html" class="tsd-kind-icon">Likes</a></li>
 								<li class="tsd-kind-class"><a href="classes/logs.html" class="tsd-kind-icon">Logs</a></li>
 								<li class="tsd-kind-class"><a href="classes/messages.html" class="tsd-kind-icon">Messages</a></li>
@@ -127,6 +129,7 @@
 								<li class="tsd-kind-class"><a href="classes/schemamiller.html" class="tsd-kind-icon">Schema<wbr>Miller</a></li>
 								<li class="tsd-kind-class"><a href="classes/schemas.html" class="tsd-kind-icon">Schemas</a></li>
 								<li class="tsd-kind-class"><a href="classes/snapshots.html" class="tsd-kind-icon">Snapshots</a></li>
+								<li class="tsd-kind-class"><a href="classes/strkey.html" class="tsd-kind-icon">Str<wbr>Key</a></li>
 								<li class="tsd-kind-class"><a href="classes/textile.html" class="tsd-kind-icon">Textile</a></li>
 								<li class="tsd-kind-class"><a href="classes/threads.html" class="tsd-kind-icon">Threads</a></li>
 								<li class="tsd-kind-class"><a href="classes/tokens.html" class="tsd-kind-icon">Tokens</a></li>
@@ -245,6 +248,8 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function"><a href="globals.html#hash160" class="tsd-kind-icon">hash160</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#hmacsha512" class="tsd-kind-icon">hmacSHA512</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#sign" class="tsd-kind-icon">sign</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#verify" class="tsd-kind-icon">verify</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#verifychecksum" class="tsd-kind-icon">verify<wbr>Checksum</a></li>
 							</ul>
 						</section>
@@ -271,7 +276,7 @@
 					<div class="tsd-signature tsd-kind-icon">Feed<wbr>Modes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"chrono"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"annotated"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"stacks"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/feed.ts#L4">modules/feed.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/feed.ts#L4">modules/feed.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -281,7 +286,7 @@
 					<div class="tsd-signature tsd-kind-icon">Mill<wbr>Function<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/helpers/schema-miller.ts#L9">helpers/schema-miller.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/helpers/schema-miller.ts#L9">helpers/schema-miller.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -326,7 +331,7 @@
 					<div class="tsd-signature tsd-kind-icon">Thread<wbr>Sharing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"not_shared"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"invite_only"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"shared"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/threads.ts#L6">modules/threads.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/threads.ts#L6">modules/threads.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -336,7 +341,7 @@
 					<div class="tsd-signature tsd-kind-icon">Thread<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"private"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"read_only"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"public"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"open"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/threads.ts#L5">modules/threads.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/threads.ts#L5">modules/threads.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -347,13 +352,13 @@
 					<a name="hash160" class="tsd-anchor"></a>
 					<h3>hash160</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">hash160<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+						<li class="tsd-signature tsd-kind-icon">hash160<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/helpers/crypto.ts#L12">helpers/crypto.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/helpers/crypto.ts#L12">helpers/crypto.ts:12</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -365,7 +370,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>buffer: <span class="tsd-signature-type">string</span></h5>
+									<h5>buffer: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
@@ -376,13 +381,13 @@
 					<a name="hmacsha512" class="tsd-anchor"></a>
 					<h3>hmacSHA512</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">hmacSHA512<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
+						<li class="tsd-signature tsd-kind-icon">hmacSHA512<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/helpers/crypto.ts#L30">helpers/crypto.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/helpers/crypto.ts#L30">helpers/crypto.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -394,13 +399,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<h5>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Secret key</p>
 									</div>
 								</li>
 								<li>
-									<h5>data: <span class="tsd-signature-type">string</span></h5>
+									<h5>data: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Input data</p>
 									</div>
@@ -411,16 +416,96 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="verifychecksum" class="tsd-anchor"></a>
-					<h3>verify<wbr>Checksum</h3>
+					<a name="sign" class="tsd-anchor"></a>
+					<h3>sign</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">verify<wbr>Checksum<span class="tsd-signature-symbol">(</span>expected<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, actual<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">sign<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, secretKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/helpers/checksum.ts#L8">helpers/checksum.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/wallet/signing.ts#L8">modules/wallet/signing.ts:8</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Signs the message using the secret key and returns a signed message</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">Buffer</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the message to sign</p>
+									</div>
+								</li>
+								<li>
+									<h5>secretKey: <span class="tsd-signature-type">Buffer</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the secret key to use for signing</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="verify" class="tsd-anchor"></a>
+					<h3>verify</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">verify<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, signature<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, publicKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/wallet/signing.ts#L21">modules/wallet/signing.ts:21</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Verifies the signature for the message.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">Buffer</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the message for which to verify the signature</p>
+									</div>
+								</li>
+								<li>
+									<h5>signature: <span class="tsd-signature-type">Buffer</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the signature applied ot the message</p>
+									</div>
+								</li>
+								<li>
+									<h5>publicKey: <span class="tsd-signature-type">Buffer</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the public key of the signer</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="verifychecksum" class="tsd-anchor"></a>
+					<h3>verify<wbr>Checksum</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">verify<wbr>Checksum<span class="tsd-signature-symbol">(</span>expected<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, actual<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/helpers/checksum.ts#L8">helpers/checksum.ts:8</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -431,20 +516,20 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>expected: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>expected: <span class="tsd-signature-type">Buffer</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Expected checksum value</p>
 									</div>
 								</li>
 								<li>
-									<h5>actual: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>actual: <span class="tsd-signature-type">Buffer</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Actual observed checksum value</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>boolean</p>
+							<p>Whether the two checksums are equal</p>
 						</li>
 					</ul>
 				</section>
@@ -457,7 +542,7 @@
 					<div class="tsd-signature tsd-kind-icon">chrono<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/feed.ts#L111">modules/__test__/__static__/feed.ts:111</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/feed.ts#L111">modules/__test__/__static__/feed.ts:111</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -466,7 +551,7 @@
 						<div class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;3</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/feed.ts#L215">modules/__test__/__static__/feed.ts:215</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/feed.ts#L215">modules/__test__/__static__/feed.ts:215</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -476,7 +561,7 @@
 						<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[{block: &#x27;QmRRYCEQMuSefa6ZtCLQ89QsqZaEBfsXikj2UzKRvcCkvY&#x27;,thread: &#x27;thread&#x27;,payload: {&#x27;@type&#x27;: &#x27;/Like&#x27;,&#x27;id&#x27;: &#x27;like-id&#x27;,&#x27;date&#x27;: &#x27;2019-04-01T21:43:37.116893Z&#x27;,&#x27;user&#x27;: {address: &#x27;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&#x27;,name: &#x27;username&#x27;,avatar: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;},&#x27;target&#x27;: {block: &#x27;QmbU3JkMqnYHm9uv9VmBJLCgdB4gZeb6ZgUEW9G4RnmQxQ&#x27;,thread: &#x27;thread&#x27;,payload: {&#x27;@type&#x27;: &#x27;/Text&#x27;,&#x27;block&#x27;: &#x27;QmbU3JkMqnYHm9uv9VmBJLCgdB4gZeb6ZgUEW9G4RnmQxQ&#x27;,&#x27;date&#x27;: &#x27;2019-03-28T17:24:25.796298Z&#x27;,&#x27;user&#x27;: {address: &#x27;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&#x27;,name: &#x27;username&#x27;,avatar: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;},&#x27;body&#x27;: &#x27;message&#x27;}}}},{block: &#x27;QmeU7xSPq6Bewh6PdwHqGHhoErFH1UBQV5Aqb7VYP9ugey&#x27;,thread: &#x27;12D3KooWRW4Ewc1tYCLA2xj6crywHoCxxBngenJNUsPyzHGm3meL&#x27;,payload: {&#x27;@type&#x27;: &#x27;/Files&#x27;,&#x27;block&#x27;: &#x27;QmeU7xSPq6Bewh6PdwHqGHhoErFH1UBQV5Aqb7VYP9ugey&#x27;,&#x27;target&#x27;: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;,&#x27;date&#x27;: &#x27;2019-04-01T21:27:37.422127Z&#x27;,&#x27;user&#x27;: {address: &#x27;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&#x27;,name: &#x27;username&#x27;,avatar: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;},&#x27;files&#x27;: [{links: {large: {mill: &#x27;/image/resize&#x27;,checksum: &#x27;B9RebNwLPTXQJymnjEJsYsFuS1dAuJBpBnHT1sB2LLVQ&#x27;,source: &#x27;B9RebNwLPTXQJymnjEJsYsFuS1dAuJBpBnHT1sB2LLVQ&#x27;,opts: &#x27;Atk8eCEgX98dPBCieRvUUBkH1nA7YiX6AxK1ZjbA6mY&#x27;,hash: &#x27;QmVhJPrbb6iD9BYkUcqyDepuAw1wGsudhZLKapfZGCuhKG&#x27;,media: &#x27;image/png&#x27;,size: &#x27;7270&#x27;,added: &#x27;2019-04-01T21:27:37.378108Z&#x27;,meta: {height: 128,width: 128},targets: [&#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;]},small: {mill: &#x27;/image/resize&#x27;,checksum: &#x27;5i7tM447RozmhG1zbYvWGb8UXRRa57DSKJAJSLiUsSYJ&#x27;,source: &#x27;B9RebNwLPTXQJymnjEJsYsFuS1dAuJBpBnHT1sB2LLVQ&#x27;,opts: &#x27;Av7wdZtZ5P8rWQtuTkUPQ8iBmRK1PyfxPcVeDtAjb2uR&#x27;,hash: &#x27;QmY2cqoiCNwNcf6Sf6tEUbA76V64zkcRbkdB8JRAWYafH2&#x27;,media: &#x27;image/png&#x27;,size: &#x27;8125&#x27;,added: &#x27;2019-04-01T21:27:37.387214Z&#x27;,meta: {height: 100,width: 100},targets: [&#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;]}}}],&#x27;threads&#x27;: [&#x27;12D3KooWRW4Ewc1tYCLA2xj6crywHoCxxBngenJNUsPyzHGm3meL&#x27;]}},{block: &#x27;QmU8GrBr3zNmqcHCP3UhMEueiZSEg1wypQ5E61t84t7TsV&#x27;,thread: &#x27;12D3KooWRW4Ewc1tYCLA2xj6crywHoCxxBngenJNUsPyzHGm3meL&#x27;,payload: {&#x27;@type&#x27;: &#x27;/Join&#x27;,&#x27;block&#x27;: &#x27;QmU8GrBr3zNmqcHCP3UhMEueiZSEg1wypQ5E61t84t7TsV&#x27;,&#x27;date&#x27;: &#x27;2019-04-01T21:27:37.363373Z&#x27;,&#x27;user&#x27;: {address: &#x27;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&#x27;,name: &#x27;username&#x27;,avatar: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;}}}]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/feed.ts#L112">modules/__test__/__static__/feed.ts:112</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/feed.ts#L112">modules/__test__/__static__/feed.ts:112</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -486,7 +571,7 @@
 						<div class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;next&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/feed.ts#L216">modules/__test__/__static__/feed.ts:216</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/feed.ts#L216">modules/__test__/__static__/feed.ts:216</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -497,7 +582,7 @@
 					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L1">modules/__test__/__static__/config.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L1">modules/__test__/__static__/config.ts:1</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -506,7 +591,7 @@
 						<div class="tsd-signature tsd-kind-icon">Is<wbr>Mobile<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L50">modules/__test__/__static__/config.ts:50</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L50">modules/__test__/__static__/config.ts:50</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -516,7 +601,7 @@
 						<div class="tsd-signature tsd-kind-icon">Is<wbr>Server<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L51">modules/__test__/__static__/config.ts:51</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L51">modules/__test__/__static__/config.ts:51</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -526,7 +611,7 @@
 						<div class="tsd-signature tsd-kind-icon">API<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L2">modules/__test__/__static__/config.ts:2</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L2">modules/__test__/__static__/config.ts:2</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -535,7 +620,7 @@
 							<div class="tsd-signature tsd-kind-icon">Size<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L25">modules/__test__/__static__/config.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L25">modules/__test__/__static__/config.ts:25</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -545,7 +630,7 @@
 							<div class="tsd-signature tsd-kind-icon">HTTPHeaders<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L3">modules/__test__/__static__/config.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L3">modules/__test__/__static__/config.ts:3</a></li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -554,7 +639,7 @@
 								<div class="tsd-signature tsd-kind-icon">Access-<wbr><wbr>Control-<wbr><wbr>Allow-<wbr><wbr>Headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;Content-Type&#x27;,&#x27;Method&#x27;,&#x27;X-Textile-Args&#x27;,&#x27;X-Textile-Opts&#x27;,&#x27;X-Requested-With&#x27;]</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L4">modules/__test__/__static__/config.ts:4</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L4">modules/__test__/__static__/config.ts:4</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -564,7 +649,7 @@
 								<div class="tsd-signature tsd-kind-icon">Access-<wbr><wbr>Control-<wbr><wbr>Allow-<wbr><wbr>Methods<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;GET&#x27;,&#x27;POST&#x27;,&#x27;DELETE&#x27;,&#x27;OPTIONS&#x27;]</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L11">modules/__test__/__static__/config.ts:11</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L11">modules/__test__/__static__/config.ts:11</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -574,7 +659,7 @@
 								<div class="tsd-signature tsd-kind-icon">Access-<wbr><wbr>Control-<wbr><wbr>Allow-<wbr><wbr>Origin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;http://localhost:*&#x27;,&#x27;http://127.0.0.1:*&#x27;]</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L17">modules/__test__/__static__/config.ts:17</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L17">modules/__test__/__static__/config.ts:17</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -584,7 +669,7 @@
 								<div class="tsd-signature tsd-kind-icon">Server<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;go-textile/0.0.0&#x27;]</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L21">modules/__test__/__static__/config.ts:21</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L21">modules/__test__/__static__/config.ts:21</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -596,7 +681,7 @@
 						<div class="tsd-signature tsd-kind-icon">Account<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L27">modules/__test__/__static__/config.ts:27</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L27">modules/__test__/__static__/config.ts:27</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -605,7 +690,7 @@
 							<div class="tsd-signature tsd-kind-icon">Address<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L28">modules/__test__/__static__/config.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L28">modules/__test__/__static__/config.ts:28</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -615,7 +700,7 @@
 							<div class="tsd-signature tsd-kind-icon">Thread<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;thread&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L29">modules/__test__/__static__/config.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L29">modules/__test__/__static__/config.ts:29</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -626,7 +711,7 @@
 						<div class="tsd-signature tsd-kind-icon">Addresses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L31">modules/__test__/__static__/config.ts:31</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L31">modules/__test__/__static__/config.ts:31</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -635,7 +720,7 @@
 							<div class="tsd-signature tsd-kind-icon">API<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;127.0.0.1:40600&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L32">modules/__test__/__static__/config.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L32">modules/__test__/__static__/config.ts:32</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -645,7 +730,7 @@
 							<div class="tsd-signature tsd-kind-icon">CafeAPI<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;127.0.0.1:40601&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L33">modules/__test__/__static__/config.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L33">modules/__test__/__static__/config.ts:33</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -655,7 +740,7 @@
 							<div class="tsd-signature tsd-kind-icon">Gateway<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;127.0.0.1:5050&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L34">modules/__test__/__static__/config.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L34">modules/__test__/__static__/config.ts:34</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -666,7 +751,7 @@
 						<div class="tsd-signature tsd-kind-icon">Cafe<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L36">modules/__test__/__static__/config.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L36">modules/__test__/__static__/config.ts:36</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
@@ -675,7 +760,7 @@
 							<div class="tsd-signature tsd-kind-icon">Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L37">modules/__test__/__static__/config.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L37">modules/__test__/__static__/config.ts:37</a></li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
@@ -684,7 +769,7 @@
 								<div class="tsd-signature tsd-kind-icon">Mobile<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L38">modules/__test__/__static__/config.ts:38</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L38">modules/__test__/__static__/config.ts:38</a></li>
 									</ul>
 								</aside>
 								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -693,7 +778,7 @@
 									<div class="tsd-signature tsd-kind-icon">P2PWire<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L39">modules/__test__/__static__/config.ts:39</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L39">modules/__test__/__static__/config.ts:39</a></li>
 										</ul>
 									</aside>
 								</section>
@@ -705,7 +790,7 @@
 							<div class="tsd-signature tsd-kind-icon">Host<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L42">modules/__test__/__static__/config.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L42">modules/__test__/__static__/config.ts:42</a></li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -714,7 +799,7 @@
 								<div class="tsd-signature tsd-kind-icon">NeighborURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L43">modules/__test__/__static__/config.ts:43</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L43">modules/__test__/__static__/config.ts:43</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -724,7 +809,7 @@
 								<div class="tsd-signature tsd-kind-icon">Open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L44">modules/__test__/__static__/config.ts:44</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L44">modules/__test__/__static__/config.ts:44</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -734,7 +819,7 @@
 								<div class="tsd-signature tsd-kind-icon">PublicIP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L45">modules/__test__/__static__/config.ts:45</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L45">modules/__test__/__static__/config.ts:45</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -744,7 +829,7 @@
 								<div class="tsd-signature tsd-kind-icon">Size<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L46">modules/__test__/__static__/config.ts:46</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L46">modules/__test__/__static__/config.ts:46</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -754,7 +839,7 @@
 								<div class="tsd-signature tsd-kind-icon">URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L47">modules/__test__/__static__/config.ts:47</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L47">modules/__test__/__static__/config.ts:47</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -766,7 +851,7 @@
 						<div class="tsd-signature tsd-kind-icon">Logs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L52">modules/__test__/__static__/config.ts:52</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L52">modules/__test__/__static__/config.ts:52</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -775,7 +860,7 @@
 							<div class="tsd-signature tsd-kind-icon">Log<wbr>ToDisk<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L53">modules/__test__/__static__/config.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L53">modules/__test__/__static__/config.ts:53</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -786,7 +871,7 @@
 						<div class="tsd-signature tsd-kind-icon">Threads<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L55">modules/__test__/__static__/config.ts:55</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L55">modules/__test__/__static__/config.ts:55</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
@@ -795,7 +880,7 @@
 							<div class="tsd-signature tsd-kind-icon">Defaults<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L56">modules/__test__/__static__/config.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L56">modules/__test__/__static__/config.ts:56</a></li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -804,7 +889,7 @@
 								<div class="tsd-signature tsd-kind-icon">ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/config.ts#L57">modules/__test__/__static__/config.ts:57</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/config.ts#L57">modules/__test__/__static__/config.ts:57</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -817,7 +902,7 @@
 					<div class="tsd-signature tsd-kind-icon">ignore<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L9">modules/__test__/__static__/responses.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L9">modules/__test__/__static__/responses.ts:9</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -826,7 +911,7 @@
 						<div class="tsd-signature tsd-kind-icon">author<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;12D3KooWJKPeAzZ6Sig3p1BwMdz5aMmnKhhgEdgJqn4wd1dsTMZB&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L10">modules/__test__/__static__/responses.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L10">modules/__test__/__static__/responses.ts:10</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -836,7 +921,7 @@
 						<div class="tsd-signature tsd-kind-icon">body<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L13">modules/__test__/__static__/responses.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L13">modules/__test__/__static__/responses.ts:13</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -846,7 +931,7 @@
 						<div class="tsd-signature tsd-kind-icon">date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;2019-04-01T20:54:46.359206Z&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L11">modules/__test__/__static__/responses.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L11">modules/__test__/__static__/responses.ts:11</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -856,7 +941,7 @@
 						<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;id&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L12">modules/__test__/__static__/responses.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L12">modules/__test__/__static__/responses.ts:12</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -866,7 +951,7 @@
 						<div class="tsd-signature tsd-kind-icon">parents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;id&#x27;]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L14">modules/__test__/__static__/responses.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L14">modules/__test__/__static__/responses.ts:14</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -876,7 +961,7 @@
 						<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;ignore-target&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L17">modules/__test__/__static__/responses.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L17">modules/__test__/__static__/responses.ts:17</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -886,7 +971,7 @@
 						<div class="tsd-signature tsd-kind-icon">thread<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;thread&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L18">modules/__test__/__static__/responses.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L18">modules/__test__/__static__/responses.ts:18</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -896,7 +981,7 @@
 						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="enums/block.blocktype.html#ignore" class="tsd-signature-type">IGNORE</a><span class="tsd-signature-symbol"> =&nbsp;Block.BlockType.IGNORE</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L19">modules/__test__/__static__/responses.ts:19</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L19">modules/__test__/__static__/responses.ts:19</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -906,7 +991,7 @@
 						<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <a href="interfaces/user.html" class="tsd-signature-type">User</a></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L20">modules/__test__/__static__/responses.ts:20</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L20">modules/__test__/__static__/responses.ts:20</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -917,7 +1002,7 @@
 					<div class="tsd-signature tsd-kind-icon">schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L1">modules/__test__/__static__/simple.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L1">modules/__test__/__static__/simple.ts:1</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -926,7 +1011,7 @@
 						<div class="tsd-signature tsd-kind-icon">json_<wbr>schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L7">modules/__test__/__static__/simple.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L7">modules/__test__/__static__/simple.ts:7</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -941,7 +1026,7 @@
 						<div class="tsd-signature tsd-kind-icon">mill<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;skip&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L5">modules/__test__/__static__/simple.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L5">modules/__test__/__static__/simple.ts:5</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -951,7 +1036,7 @@
 						<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;media&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L2">modules/__test__/__static__/simple.ts:2</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L2">modules/__test__/__static__/simple.ts:2</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -961,7 +1046,7 @@
 						<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L6">modules/__test__/__static__/simple.ts:6</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L6">modules/__test__/__static__/simple.ts:6</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -976,7 +1061,7 @@
 						<div class="tsd-signature tsd-kind-icon">pin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L3">modules/__test__/__static__/simple.ts:3</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L3">modules/__test__/__static__/simple.ts:3</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -986,7 +1071,7 @@
 						<div class="tsd-signature tsd-kind-icon">plaintext<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L4">modules/__test__/__static__/simple.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L4">modules/__test__/__static__/simple.ts:4</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -996,7 +1081,7 @@
 						<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L8">modules/__test__/__static__/simple.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L8">modules/__test__/__static__/simple.ts:8</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
@@ -1005,7 +1090,7 @@
 							<div class="tsd-signature tsd-kind-icon">large<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L20">modules/__test__/__static__/simple.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L20">modules/__test__/__static__/simple.ts:20</a></li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1014,7 +1099,7 @@
 								<div class="tsd-signature tsd-kind-icon">json_<wbr>schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L29">modules/__test__/__static__/simple.ts:29</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L29">modules/__test__/__static__/simple.ts:29</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-type-declaration">
@@ -1029,7 +1114,7 @@
 								<div class="tsd-signature tsd-kind-icon">mill<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;/image/resize&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L24">modules/__test__/__static__/simple.ts:24</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L24">modules/__test__/__static__/simple.ts:24</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1039,7 +1124,7 @@
 								<div class="tsd-signature tsd-kind-icon">pin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L22">modules/__test__/__static__/simple.ts:22</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L22">modules/__test__/__static__/simple.ts:22</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1049,7 +1134,7 @@
 								<div class="tsd-signature tsd-kind-icon">plaintext<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L23">modules/__test__/__static__/simple.ts:23</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L23">modules/__test__/__static__/simple.ts:23</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1059,7 +1144,7 @@
 								<div class="tsd-signature tsd-kind-icon">use<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;:file&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L21">modules/__test__/__static__/simple.ts:21</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L21">modules/__test__/__static__/simple.ts:21</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1069,7 +1154,7 @@
 								<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L25">modules/__test__/__static__/simple.ts:25</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L25">modules/__test__/__static__/simple.ts:25</a></li>
 									</ul>
 								</aside>
 								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1078,7 +1163,7 @@
 									<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;80&quot;</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L26">modules/__test__/__static__/simple.ts:26</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L26">modules/__test__/__static__/simple.ts:26</a></li>
 										</ul>
 									</aside>
 								</section>
@@ -1088,7 +1173,7 @@
 									<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;800&quot;</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L27">modules/__test__/__static__/simple.ts:27</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L27">modules/__test__/__static__/simple.ts:27</a></li>
 										</ul>
 									</aside>
 								</section>
@@ -1100,7 +1185,7 @@
 							<div class="tsd-signature tsd-kind-icon">small<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L31">modules/__test__/__static__/simple.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L31">modules/__test__/__static__/simple.ts:31</a></li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1109,7 +1194,7 @@
 								<div class="tsd-signature tsd-kind-icon">json_<wbr>schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L40">modules/__test__/__static__/simple.ts:40</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L40">modules/__test__/__static__/simple.ts:40</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-type-declaration">
@@ -1124,7 +1209,7 @@
 								<div class="tsd-signature tsd-kind-icon">mill<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;/image/resize&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L35">modules/__test__/__static__/simple.ts:35</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L35">modules/__test__/__static__/simple.ts:35</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1134,7 +1219,7 @@
 								<div class="tsd-signature tsd-kind-icon">pin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L33">modules/__test__/__static__/simple.ts:33</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L33">modules/__test__/__static__/simple.ts:33</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1144,7 +1229,7 @@
 								<div class="tsd-signature tsd-kind-icon">plaintext<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L34">modules/__test__/__static__/simple.ts:34</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L34">modules/__test__/__static__/simple.ts:34</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1154,7 +1239,7 @@
 								<div class="tsd-signature tsd-kind-icon">use<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;:file&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L32">modules/__test__/__static__/simple.ts:32</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L32">modules/__test__/__static__/simple.ts:32</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1164,7 +1249,7 @@
 								<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L36">modules/__test__/__static__/simple.ts:36</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L36">modules/__test__/__static__/simple.ts:36</a></li>
 									</ul>
 								</aside>
 								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1173,7 +1258,7 @@
 									<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;80&quot;</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L37">modules/__test__/__static__/simple.ts:37</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L37">modules/__test__/__static__/simple.ts:37</a></li>
 										</ul>
 									</aside>
 								</section>
@@ -1183,7 +1268,7 @@
 									<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;320&quot;</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L38">modules/__test__/__static__/simple.ts:38</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L38">modules/__test__/__static__/simple.ts:38</a></li>
 										</ul>
 									</aside>
 								</section>
@@ -1195,7 +1280,7 @@
 							<div class="tsd-signature tsd-kind-icon">thumb<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L9">modules/__test__/__static__/simple.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L9">modules/__test__/__static__/simple.ts:9</a></li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1204,7 +1289,7 @@
 								<div class="tsd-signature tsd-kind-icon">json_<wbr>schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L18">modules/__test__/__static__/simple.ts:18</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L18">modules/__test__/__static__/simple.ts:18</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-type-declaration">
@@ -1219,7 +1304,7 @@
 								<div class="tsd-signature tsd-kind-icon">mill<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;/image/resize&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L13">modules/__test__/__static__/simple.ts:13</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L13">modules/__test__/__static__/simple.ts:13</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1229,7 +1314,7 @@
 								<div class="tsd-signature tsd-kind-icon">pin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L11">modules/__test__/__static__/simple.ts:11</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L11">modules/__test__/__static__/simple.ts:11</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1239,7 +1324,7 @@
 								<div class="tsd-signature tsd-kind-icon">plaintext<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L12">modules/__test__/__static__/simple.ts:12</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L12">modules/__test__/__static__/simple.ts:12</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1249,7 +1334,7 @@
 								<div class="tsd-signature tsd-kind-icon">use<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;large&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L10">modules/__test__/__static__/simple.ts:10</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L10">modules/__test__/__static__/simple.ts:10</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1259,7 +1344,7 @@
 								<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L14">modules/__test__/__static__/simple.ts:14</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L14">modules/__test__/__static__/simple.ts:14</a></li>
 									</ul>
 								</aside>
 								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1268,7 +1353,7 @@
 									<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;80&quot;</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L15">modules/__test__/__static__/simple.ts:15</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L15">modules/__test__/__static__/simple.ts:15</a></li>
 										</ul>
 									</aside>
 								</section>
@@ -1278,7 +1363,7 @@
 									<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;100&quot;</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/simple.ts#L16">modules/__test__/__static__/simple.ts:16</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/simple.ts#L16">modules/__test__/__static__/simple.ts:16</a></li>
 										</ul>
 									</aside>
 								</section>
@@ -1292,7 +1377,7 @@
 					<div class="tsd-signature tsd-kind-icon">stacks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/feed.ts#L3">modules/__test__/__static__/feed.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/feed.ts#L3">modules/__test__/__static__/feed.ts:3</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1301,7 +1386,7 @@
 						<div class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;3</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/feed.ts#L107">modules/__test__/__static__/feed.ts:107</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/feed.ts#L107">modules/__test__/__static__/feed.ts:107</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1311,7 +1396,7 @@
 						<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[{block: &#x27;QmRRYCEQMuSefa6ZtCLQ89QsqZaEBfsXikj2UzKRvcCkvY&#x27;,thread: &#x27;12D3KooWGdz1WeHJPRv8fowwPWrqWPdUfwWUQyEp4NeRu4nyHXLH&#x27;,payload: {&#x27;@type&#x27;: &#x27;/Like&#x27;,&#x27;id&#x27;: &#x27;QmRRYCEQMuSefa6ZtCLQ89QsqZaEBfsXikj2UzKRvcCkvY&#x27;,&#x27;date&#x27;: &#x27;2019-04-01T21:43:37.116893Z&#x27;,&#x27;user&#x27;: {address: &#x27;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&#x27;,name: &#x27;username&#x27;,avatar: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;},&#x27;target&#x27;: {block: &#x27;QmbU3JkMqnYHm9uv9VmBJLCgdB4gZeb6ZgUEW9G4RnmQxQ&#x27;,thread: &#x27;12D3KooWGdz1WeHJPRv8fowwPWrqWPdUfwWUQyEp4NeRu4nyHXLH&#x27;,payload: {&#x27;@type&#x27;: &#x27;/Text&#x27;,&#x27;block&#x27;: &#x27;QmbU3JkMqnYHm9uv9VmBJLCgdB4gZeb6ZgUEW9G4RnmQxQ&#x27;,&#x27;date&#x27;: &#x27;2019-03-28T17:24:25.796298Z&#x27;,&#x27;user&#x27;: {address: &#x27;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&#x27;,name: &#x27;username&#x27;,avatar: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;},&#x27;body&#x27;: &#x27;message&#x27;}}}},{block: &#x27;QmeU7xSPq6Bewh6PdwHqGHhoErFH1UBQV5Aqb7VYP9ugey&#x27;,thread: &#x27;12D3KooWRW4Ewc1tYCLA2xj6crywHoCxxBngenJNUsPyzHGm3meL&#x27;,payload: {&#x27;@type&#x27;: &#x27;/Files&#x27;,&#x27;block&#x27;: &#x27;QmeU7xSPq6Bewh6PdwHqGHhoErFH1UBQV5Aqb7VYP9ugey&#x27;,&#x27;target&#x27;: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;,&#x27;date&#x27;: &#x27;2019-04-01T21:27:37.422127Z&#x27;,&#x27;user&#x27;: {address: &#x27;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&#x27;,name: &#x27;username&#x27;,avatar: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;},&#x27;files&#x27;: [{links: {large: {mill: &#x27;/image/resize&#x27;,checksum: &#x27;B9RebNwLPTXQJymnjEJsYsFuS1dAuJBpBnHT1sB2LLVQ&#x27;,source: &#x27;B9RebNwLPTXQJymnjEJsYsFuS1dAuJBpBnHT1sB2LLVQ&#x27;,opts: &#x27;Atk8eCEgX98dPBCieRvUUBkH1nA7YiX6AxK1ZjbA6mY&#x27;,hash: &#x27;QmVhJPrbb6iD9BYkUcqyDepuAw1wGsudhZLKapfZGCuhKG&#x27;,media: &#x27;image/png&#x27;,size: &#x27;7270&#x27;,added: &#x27;2019-04-01T21:27:37.378108Z&#x27;,meta: {height: 128,width: 128},targets: [&#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;]},small: {mill: &#x27;/image/resize&#x27;,checksum: &#x27;5i7tM447RozmhG1zbYvWGb8UXRRa57DSKJAJSLiUsSYJ&#x27;,source: &#x27;B9RebNwLPTXQJymnjEJsYsFuS1dAuJBpBnHT1sB2LLVQ&#x27;,opts: &#x27;Av7wdZtZ5P8rWQtuTkUPQ8iBmRK1PyfxPcVeDtAjb2uR&#x27;,hash: &#x27;QmY2cqoiCNwNcf6Sf6tEUbA76V64zkcRbkdB8JRAWYafH2&#x27;,media: &#x27;image/png&#x27;,size: &#x27;8125&#x27;,added: &#x27;2019-04-01T21:27:37.387214Z&#x27;,meta: {height: 100,width: 100},targets: [&#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;]}}}],&#x27;threads&#x27;: [&#x27;12D3KooWRW4Ewc1tYCLA2xj6crywHoCxxBngenJNUsPyzHGm3meL&#x27;]}},{block: &#x27;QmU8GrBr3zNmqcHCP3UhMEueiZSEg1wypQ5E61t84t7TsV&#x27;,thread: &#x27;12D3KooWRW4Ewc1tYCLA2xj6crywHoCxxBngenJNUsPyzHGm3meL&#x27;,payload: {&#x27;@type&#x27;: &#x27;/Join&#x27;,&#x27;block&#x27;: &#x27;QmU8GrBr3zNmqcHCP3UhMEueiZSEg1wypQ5E61t84t7TsV&#x27;,&#x27;date&#x27;: &#x27;2019-04-01T21:27:37.363373Z&#x27;,&#x27;user&#x27;: {address: &#x27;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&#x27;,name: &#x27;username&#x27;,avatar: &#x27;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&#x27;}}}]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/feed.ts#L4">modules/__test__/__static__/feed.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/feed.ts#L4">modules/__test__/__static__/feed.ts:4</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1321,7 +1406,7 @@
 						<div class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;next&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/feed.ts#L108">modules/__test__/__static__/feed.ts:108</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/feed.ts#L108">modules/__test__/__static__/feed.ts:108</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1332,7 +1417,7 @@
 					<div class="tsd-signature tsd-kind-icon">threads<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L1">modules/__test__/__static__/threads.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L1">modules/__test__/__static__/threads.ts:1</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
@@ -1341,7 +1426,7 @@
 						<div class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L2">modules/__test__/__static__/threads.ts:2</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L2">modules/__test__/__static__/threads.ts:2</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1350,7 +1435,7 @@
 							<div class="tsd-signature tsd-kind-icon">block_<wbr>count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L3">modules/__test__/__static__/threads.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L3">modules/__test__/__static__/threads.ts:3</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1360,7 +1445,7 @@
 							<div class="tsd-signature tsd-kind-icon">head<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;head&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L4">modules/__test__/__static__/threads.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L4">modules/__test__/__static__/threads.ts:4</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1370,7 +1455,7 @@
 							<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;thread&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L17">modules/__test__/__static__/threads.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L17">modules/__test__/__static__/threads.ts:17</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1380,7 +1465,7 @@
 							<div class="tsd-signature tsd-kind-icon">initiator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L18">modules/__test__/__static__/threads.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L18">modules/__test__/__static__/threads.ts:18</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1390,7 +1475,7 @@
 							<div class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;1234&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L19">modules/__test__/__static__/threads.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L19">modules/__test__/__static__/threads.ts:19</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1400,7 +1485,7 @@
 							<div class="tsd-signature tsd-kind-icon">members<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&#x27;]</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L20">modules/__test__/__static__/threads.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L20">modules/__test__/__static__/threads.ts:20</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1410,7 +1495,7 @@
 							<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;test&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L23">modules/__test__/__static__/threads.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L23">modules/__test__/__static__/threads.ts:23</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1420,7 +1505,7 @@
 							<div class="tsd-signature tsd-kind-icon">peer_<wbr>count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L24">modules/__test__/__static__/threads.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L24">modules/__test__/__static__/threads.ts:24</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1430,7 +1515,7 @@
 							<div class="tsd-signature tsd-kind-icon">schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;QmeVa8vUbyjHaYaeki8RZRshsn3JeYGi8QCnLCWXh6euEh&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L25">modules/__test__/__static__/threads.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L25">modules/__test__/__static__/threads.ts:25</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1440,7 +1525,7 @@
 							<div class="tsd-signature tsd-kind-icon">sharing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;SHARED&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L57">modules/__test__/__static__/threads.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L57">modules/__test__/__static__/threads.ts:57</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1450,7 +1535,7 @@
 							<div class="tsd-signature tsd-kind-icon">sk<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;secret_key&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L58">modules/__test__/__static__/threads.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L58">modules/__test__/__static__/threads.ts:58</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1460,7 +1545,7 @@
 							<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;LOADED&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L59">modules/__test__/__static__/threads.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L59">modules/__test__/__static__/threads.ts:59</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1470,7 +1555,7 @@
 							<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;OPEN&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L60">modules/__test__/__static__/threads.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L60">modules/__test__/__static__/threads.ts:60</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -1480,7 +1565,7 @@
 							<div class="tsd-signature tsd-kind-icon">head_<wbr>block<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L5">modules/__test__/__static__/threads.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L5">modules/__test__/__static__/threads.ts:5</a></li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1489,7 +1574,7 @@
 								<div class="tsd-signature tsd-kind-icon">author<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;12D3KooWJKPeAzZ6Sig3p1BwMdz5aMmnKhhgEdgJqn4wd1dsTMZB&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L6">modules/__test__/__static__/threads.ts:6</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L6">modules/__test__/__static__/threads.ts:6</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1499,7 +1584,7 @@
 								<div class="tsd-signature tsd-kind-icon">date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;2019-03-28T17:21:44.405854Z&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L7">modules/__test__/__static__/threads.ts:7</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L7">modules/__test__/__static__/threads.ts:7</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1509,7 +1594,7 @@
 								<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;id&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L8">modules/__test__/__static__/threads.ts:8</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L8">modules/__test__/__static__/threads.ts:8</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1519,7 +1604,7 @@
 								<div class="tsd-signature tsd-kind-icon">parents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L9">modules/__test__/__static__/threads.ts:9</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L9">modules/__test__/__static__/threads.ts:9</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1529,7 +1614,7 @@
 								<div class="tsd-signature tsd-kind-icon">thread<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;thread&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L10">modules/__test__/__static__/threads.ts:10</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L10">modules/__test__/__static__/threads.ts:10</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1539,7 +1624,7 @@
 								<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;JOIN&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L11">modules/__test__/__static__/threads.ts:11</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L11">modules/__test__/__static__/threads.ts:11</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1549,7 +1634,7 @@
 								<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L12">modules/__test__/__static__/threads.ts:12</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L12">modules/__test__/__static__/threads.ts:12</a></li>
 									</ul>
 								</aside>
 								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1558,7 +1643,7 @@
 									<div class="tsd-signature tsd-kind-icon">address<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&quot;</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L13">modules/__test__/__static__/threads.ts:13</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L13">modules/__test__/__static__/threads.ts:13</a></li>
 										</ul>
 									</aside>
 								</section>
@@ -1568,7 +1653,7 @@
 									<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;P4RaCnW&quot;</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L14">modules/__test__/__static__/threads.ts:14</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L14">modules/__test__/__static__/threads.ts:14</a></li>
 										</ul>
 									</aside>
 								</section>
@@ -1580,7 +1665,7 @@
 							<div class="tsd-signature tsd-kind-icon">schema_<wbr>node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L26">modules/__test__/__static__/threads.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L26">modules/__test__/__static__/threads.ts:26</a></li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1589,7 +1674,7 @@
 								<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;media&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L54">modules/__test__/__static__/threads.ts:54</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L54">modules/__test__/__static__/threads.ts:54</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1599,7 +1684,7 @@
 								<div class="tsd-signature tsd-kind-icon">pin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L55">modules/__test__/__static__/threads.ts:55</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L55">modules/__test__/__static__/threads.ts:55</a></li>
 									</ul>
 								</aside>
 							</section>
@@ -1609,7 +1694,7 @@
 								<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L27">modules/__test__/__static__/threads.ts:27</a></li>
+										<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L27">modules/__test__/__static__/threads.ts:27</a></li>
 									</ul>
 								</aside>
 								<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
@@ -1618,7 +1703,7 @@
 									<div class="tsd-signature tsd-kind-icon">large<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L28">modules/__test__/__static__/threads.ts:28</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L28">modules/__test__/__static__/threads.ts:28</a></li>
 										</ul>
 									</aside>
 									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1627,7 +1712,7 @@
 										<div class="tsd-signature tsd-kind-icon">mill<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;/image/resize&quot;</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L29">modules/__test__/__static__/threads.ts:29</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L29">modules/__test__/__static__/threads.ts:29</a></li>
 											</ul>
 										</aside>
 									</section>
@@ -1637,7 +1722,7 @@
 										<div class="tsd-signature tsd-kind-icon">use<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;:file&quot;</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L34">modules/__test__/__static__/threads.ts:34</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L34">modules/__test__/__static__/threads.ts:34</a></li>
 											</ul>
 										</aside>
 									</section>
@@ -1647,7 +1732,7 @@
 										<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L30">modules/__test__/__static__/threads.ts:30</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L30">modules/__test__/__static__/threads.ts:30</a></li>
 											</ul>
 										</aside>
 										<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1656,7 +1741,7 @@
 											<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;80&quot;</span></div>
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L31">modules/__test__/__static__/threads.ts:31</a></li>
+													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L31">modules/__test__/__static__/threads.ts:31</a></li>
 												</ul>
 											</aside>
 										</section>
@@ -1666,7 +1751,7 @@
 											<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;800&quot;</span></div>
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L32">modules/__test__/__static__/threads.ts:32</a></li>
+													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L32">modules/__test__/__static__/threads.ts:32</a></li>
 												</ul>
 											</aside>
 										</section>
@@ -1678,7 +1763,7 @@
 									<div class="tsd-signature tsd-kind-icon">small<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L36">modules/__test__/__static__/threads.ts:36</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L36">modules/__test__/__static__/threads.ts:36</a></li>
 										</ul>
 									</aside>
 									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1687,7 +1772,7 @@
 										<div class="tsd-signature tsd-kind-icon">mill<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;/image/resize&quot;</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L37">modules/__test__/__static__/threads.ts:37</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L37">modules/__test__/__static__/threads.ts:37</a></li>
 											</ul>
 										</aside>
 									</section>
@@ -1697,7 +1782,7 @@
 										<div class="tsd-signature tsd-kind-icon">use<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;:file&quot;</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L42">modules/__test__/__static__/threads.ts:42</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L42">modules/__test__/__static__/threads.ts:42</a></li>
 											</ul>
 										</aside>
 									</section>
@@ -1707,7 +1792,7 @@
 										<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L38">modules/__test__/__static__/threads.ts:38</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L38">modules/__test__/__static__/threads.ts:38</a></li>
 											</ul>
 										</aside>
 										<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1716,7 +1801,7 @@
 											<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;80&quot;</span></div>
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L39">modules/__test__/__static__/threads.ts:39</a></li>
+													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L39">modules/__test__/__static__/threads.ts:39</a></li>
 												</ul>
 											</aside>
 										</section>
@@ -1726,7 +1811,7 @@
 											<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;320&quot;</span></div>
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L40">modules/__test__/__static__/threads.ts:40</a></li>
+													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L40">modules/__test__/__static__/threads.ts:40</a></li>
 												</ul>
 											</aside>
 										</section>
@@ -1738,7 +1823,7 @@
 									<div class="tsd-signature tsd-kind-icon">thumb<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L44">modules/__test__/__static__/threads.ts:44</a></li>
+											<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L44">modules/__test__/__static__/threads.ts:44</a></li>
 										</ul>
 									</aside>
 									<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1747,7 +1832,7 @@
 										<div class="tsd-signature tsd-kind-icon">mill<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;/image/resize&quot;</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L45">modules/__test__/__static__/threads.ts:45</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L45">modules/__test__/__static__/threads.ts:45</a></li>
 											</ul>
 										</aside>
 									</section>
@@ -1757,7 +1842,7 @@
 										<div class="tsd-signature tsd-kind-icon">pin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L50">modules/__test__/__static__/threads.ts:50</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L50">modules/__test__/__static__/threads.ts:50</a></li>
 											</ul>
 										</aside>
 									</section>
@@ -1767,7 +1852,7 @@
 										<div class="tsd-signature tsd-kind-icon">use<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;large&quot;</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L51">modules/__test__/__static__/threads.ts:51</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L51">modules/__test__/__static__/threads.ts:51</a></li>
 											</ul>
 										</aside>
 									</section>
@@ -1777,7 +1862,7 @@
 										<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 										<aside class="tsd-sources">
 											<ul>
-												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L46">modules/__test__/__static__/threads.ts:46</a></li>
+												<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L46">modules/__test__/__static__/threads.ts:46</a></li>
 											</ul>
 										</aside>
 										<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1786,7 +1871,7 @@
 											<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;80&quot;</span></div>
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L47">modules/__test__/__static__/threads.ts:47</a></li>
+													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L47">modules/__test__/__static__/threads.ts:47</a></li>
 												</ul>
 											</aside>
 										</section>
@@ -1796,7 +1881,7 @@
 											<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;100&quot;</span></div>
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/threads.ts#L48">modules/__test__/__static__/threads.ts:48</a></li>
+													<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/threads.ts#L48">modules/__test__/__static__/threads.ts:48</a></li>
 												</ul>
 											</aside>
 										</section>
@@ -1812,7 +1897,7 @@
 					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L3">modules/__test__/__static__/responses.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L3">modules/__test__/__static__/responses.ts:3</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1821,7 +1906,7 @@
 						<div class="tsd-signature tsd-kind-icon">address<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L4">modules/__test__/__static__/responses.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L4">modules/__test__/__static__/responses.ts:4</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1831,7 +1916,7 @@
 						<div class="tsd-signature tsd-kind-icon">avatar<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L6">modules/__test__/__static__/responses.ts:6</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L6">modules/__test__/__static__/responses.ts:6</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1841,7 +1926,7 @@
 						<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;username&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/6a40fc7/src/modules/__test__/__static__/responses.ts#L5">modules/__test__/__static__/responses.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/93dc04f/src/modules/__test__/__static__/responses.ts#L5">modules/__test__/__static__/responses.ts:5</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1952,6 +2037,9 @@
 						<a href="classes/account.html" class="tsd-kind-icon">Account</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/bip32.html" class="tsd-kind-icon">BIP32</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/cafes.html" class="tsd-kind-icon">Cafes</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -1979,6 +2067,9 @@
 						<a href="classes/invites.html" class="tsd-kind-icon">Invites</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/keypair.html" class="tsd-kind-icon">Keypair</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/likes.html" class="tsd-kind-icon">Likes</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -2004,6 +2095,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/snapshots.html" class="tsd-kind-icon">Snapshots</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/strkey.html" class="tsd-kind-icon">Str<wbr>Key</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/textile.html" class="tsd-kind-icon">Textile</a>
@@ -2313,6 +2407,12 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#hmacsha512" class="tsd-kind-icon">hmacSHA512</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#sign" class="tsd-kind-icon">sign</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#verify" class="tsd-kind-icon">verify</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#verifychecksum" class="tsd-kind-icon">verify<wbr>Checksum</a>

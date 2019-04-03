@@ -47,17 +47,36 @@ export interface KeyValue {
   [key: string]: string | number | boolean
 }
 
+/**
+ * Event emitter with found, done, and error events.
+ * The Event emitter has an additional cancel property that can be used to cancel the search.
+ *
+ * @property emitter The event emitter
+ * @property source The cancel source (`source.cancel()` cancels the request)
+ */
 export interface RunningEvent {
   emitter: EventEmitter2
   source: CancelTokenSource
 }
 
 /**
- * The options object for the client object
- * @property { string } cafe_version The API version of the Cafe
- * @property { string } node_version The release version of the running node
+ * Version information for Textile nodes
+ * @property cafe_version The API version of the Cafe
+ * @property node_version The release version of the running node
  */
 export interface Versions {
   cafe_version: string
   node_version: string
+}
+
+/**
+ * A derived Wallet account
+ * @property index The index for the given account
+ * @property seed The Ed25519 private seed/key
+ * @property address The Ed25519 public key
+ */
+export interface Account {
+  index: number
+  seed: string
+  address: string
 }

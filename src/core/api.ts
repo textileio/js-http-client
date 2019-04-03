@@ -2,8 +2,6 @@ import axios, { CancelTokenSource, AxiosInstance } from 'axios'
 import Connection from './connection'
 import { KeyValue, ApiOptions } from '../models'
 
-const { CancelToken } = axios
-
 // **** Private module methods ****
 const encodeValue = (val?: string | number | boolean) => {
   // TODO: is this what you really want when 'false'?

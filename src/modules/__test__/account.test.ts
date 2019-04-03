@@ -1,6 +1,5 @@
 import nock from 'nock'
 import Account from '../account'
-import { Readable } from 'stream'
 import { ApiOptions } from '../../models'
 import { account as response } from './__static__/responses'
 

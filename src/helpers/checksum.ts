@@ -1,11 +1,11 @@
 /**
  * Verify two checksums against each other
  *
- * @param {string[]} expected Expected checksum value
- * @param {string[]} actual Actual observed checksum value
- * @returns {boolean} boolean
+ * @param expected Expected checksum value
+ * @param actual Actual observed checksum value
+ * @returns Whether the two checksums are equal
  */
-export function verifyChecksum (expected: string[], actual: string[]): boolean {
+export function verifyChecksum(expected: Buffer, actual: Buffer) {
   if (expected.length !== actual.length) {
     return false
   }
