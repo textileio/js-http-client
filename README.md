@@ -97,7 +97,8 @@ Textile's JS HTTP Client is a work in progress. As such, there's a few things yo
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
 | **Commits** | **Contributor** |  
 | --- | --- |  
-| 40 | [carsonfarmer](https://github.com/carsonfarmer) |  
+| 46 | [carsonfarmer](https://github.com/carsonfarmer) |  
+| 2  | [andrewxhill](https://github.com/andrewxhill) |  
 | 2  | [robbynshaw](https://github.com/robbynshaw) |  
 | 1  | [flyskywhy](https://github.com/flyskywhy) |  
 
