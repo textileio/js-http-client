@@ -17,6 +17,11 @@
 
 Join us on our [public Slack channel](https://slack.textile.io/) for news, discussions, and status updates. For current status, and where you can help, please see [issue #1](https://github.com/textileio/js-http-client/issues/1).
 
+**Important**: With the move to Typescript and our 0.2.x release, `js-http-client` is now
+published under the `@textile` namespace, rather than `@textileio`. Previous
+releases will remain available under `@textileio`, however, all
+code should be updated to reflect this change.
+
 ## Table of Contents
 
 - [Textile JS HTTP Client _(js-http-client)_](#textile-js-http-client-js-http-client)
