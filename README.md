@@ -11,7 +11,7 @@
 [![David](https://img.shields.io/david/dev/textileio/js-http-client.svg)](https://david-dm.org/textileio/js-http-client)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/textileio/js-http-client/master.svg?style=popout-square)](https://circleci.com/gh/textileio/js-http-client)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=popout-square)](https://github.com/RichardLitt/standard-readme)
-[![docs](https://img.shields.io/badge/docs-master-success.svg)](https://textileio.github.io/js-http-client/)
+[![docs](https://img.shields.io/badge/docs-master-success.svg?style=popout-square)](https://textileio.github.io/js-http-client/)
 
 > Official Textile JS HTTP Wrapper Client
 
