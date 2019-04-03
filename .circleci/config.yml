@@ -42,6 +42,11 @@ jobs:
         <<: *defaults
         steps:
             - checkout
+            - restore_cache:
+                key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+            - restore_cache:
+                key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+            - run: yarn install
             - attach_workspace:
                 at: ~/js-http-client
             - run:
@@ -49,7 +54,7 @@ jobs:
                 command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/js-http-client/.npmrc
             - run:
                 name: Publish package
-                command: npm publish --access=public
+                command: npm publish --access=public --dry-run --unsafe-perm
                         
 workflows:
     version: 2

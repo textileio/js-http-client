@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
     "credit": "node ./scripts/contributors.js",
     "test": "jest --no-watchman",
     "lint": "./node_modules/tslint/bin/tslint  -c tslint.json --project .",
