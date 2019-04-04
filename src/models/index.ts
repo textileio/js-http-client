@@ -14,13 +14,12 @@ export * from './view_pb'
 
 /**
  * The options object for the client object
- * @typedef {Object} ApiOptions
- * @property {string} [url='http://127.0.0.1'] - The base URL of the Textile node API
- * @property {number} [port='40600'] - The port of the Textile node API
+ * @property url The base URL of the Textile node API (default 'http://127.0.0.1')
+ * @property port The port of the Textile node API (default 40600)
  */
 export interface ApiOptions {
   url: string
-  port: string
+  port: number
 }
 
 /**

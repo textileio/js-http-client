@@ -25,7 +25,7 @@ export default class Connection {
   static cleanOpts(options: ApiOptions) {
     const opts = options || {}
     opts.url = opts.url || 'http://127.0.0.1'
-    opts.port = opts.port || '40600'
+    opts.port = opts.port || 40600
     return opts
   }
 }
