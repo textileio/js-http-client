@@ -5,7 +5,7 @@ import { messages as response, ignore } from './__static__/responses'
 
 const opts: ApiOptions = {
   url: 'http://127.0.0.1',
-  port: '40600'
+  port: 40600
 }
 
 const ROOT = `${opts.url}:${opts.port}`
