@@ -10,7 +10,7 @@
     "credit": "node ./scripts/contributors.js",
     "test": "jest --no-watchman",
     "lint": "./node_modules/tslint/bin/tslint  -c tslint.json --project .",
-    "docs": "./node_modules/typedoc/bin/typedoc --gitRevision master --exclude \"**/__test__/**\"",
+    "docs": "./node_modules/typedoc/bin/typedoc",
     "precommit": "yarn lint && yarn test",
     "preversion": "yarn credit; yarn docs; yarn precommit",
     "release": "yarn version --patch",
