@@ -31,8 +31,8 @@ export default class Notifications extends API {
    * @param id ID of the target notification
    * @returns Whether the operation was successful
    */
-  async markRead(id: string) {
-    const response = await this.sendGet(`/api/v0/notifications/${id}/read`)
+  async read(id: string) {
+    const response = await this.sendPost(`/api/v0/notifications/${id}/read`)
     return response.status === 200
   }
 
@@ -40,7 +40,7 @@ export default class Notifications extends API {
    * Marks all notifictions as read
    * @returns Whether the operation was successful
    */
-  async markAllRead() {
-    return this.markRead('all')
+  async readAll() {
+    return this.read('all')
   }
 }
