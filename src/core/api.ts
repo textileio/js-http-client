@@ -3,11 +3,7 @@ import Connection from './connection'
 import { KeyValue, ApiOptions } from '../models'
 
 // **** Private module methods ****
-const encodeValue = (val?: string | number | boolean) => {
-  // TODO: is this what you really want when 'false'?
-  if (!val) {
-    return ''
-  }
+const encodeValue = (val: string | number | boolean) => {
   return encodeURIComponent(val.toString())
 }
 

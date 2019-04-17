@@ -1,5 +1,5 @@
 import { API } from '../core/api'
-import { ApiOptions, Contact } from '../models/index'
+import { ApiOptions, Peer } from '../models/index'
 
 /**
  * Profile is an API module for accessing public profile information
@@ -15,12 +15,12 @@ export default class Profile extends API {
   }
 
   /**
-   * Retrieve the local node's public profile contact information
-   * @returns The local node's contact information
+   * Retrieve the local node's public profile peer information
+   * @returns The local node's peer information
    */
   async get() {
     const response = await this.sendGet('/api/v0/profile')
-    return response.data as Contact
+    return response.data as Peer
   }
 
   /**

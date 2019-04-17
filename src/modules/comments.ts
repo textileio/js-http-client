@@ -25,7 +25,7 @@ export default class Comments extends API {
    */
   async add(block: string, body: string) {
     const response = await this.sendPost(
-      `/api/v0/blocks/${block}/comments`, [encodeURI(body)]
+      `/api/v0/blocks/${block}/comments`, [body]
     )
     return response.data as Comment
   }

@@ -75,13 +75,10 @@ export default class Snapshots extends API {
    */
   apply(id?: string, wait?: number): RunningEvent {
     const { emitter, source } = this.search(wait)
-    const other = new EventEmitter2({
-      wildcard: true
-    })
     emitter.on('textile.snapshots.found', (snapshot: QueryResult) => {
       if (id === undefined || snapshot.id === id) {
         this.applySnapshot(snapshot).then((success: boolean) => {
-          other.emit('textile.snapshots.applied', success)
+          emitter.emit('textile.snapshots.applied', success)
         })
       }
     })

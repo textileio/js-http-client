@@ -24,9 +24,7 @@ export default class Messages extends API {
    * @returns The generated message block
    */
   async add(thread: string, body: string) {
-    const response = await this.sendPost(`/api/v0/threads/${thread}/messages`, [
-      encodeURI(body)
-    ])
+    const response = await this.sendPost(`/api/v0/threads/${thread}/messages`, [body])
     return response.data as Text
   }
 

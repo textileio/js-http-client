@@ -19,6 +19,7 @@ import Tokens from './modules/tokens'
 import Utils from './modules/utils'
 import { ApiOptions } from './models'
 export { default as Wallet } from './modules/wallet'
+export * from './models'
 
 /**
  * Textile is the main client class
