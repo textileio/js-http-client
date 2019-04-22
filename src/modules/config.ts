@@ -28,8 +28,8 @@ export default class Config extends API {
    */
   async get(path?: string) {
     const cleanPath = path ? `/${path.replace(/\./g, '/')}` : ''
-    const response = await this.sendGet(`api/v0/config${cleanPath}`)
-    return response.data as object
+    const response = await this.sendGet(`config${cleanPath}`)
+    return response.json() as Promise<object>
   }
 
   /**
@@ -45,7 +45,7 @@ export default class Config extends API {
   async set(path: string, value: any) {
     const cleanPath = `/${path.replace(/\./g, '/')}`
     const patch = [{ op: 'replace', path: cleanPath, value }]
-    const response = await this.sendPatch(`api/v0/config`, undefined, undefined, patch)
+    const response = await this.sendPatch(`config`, undefined, undefined, patch)
     return response.status === 204
   }
 }

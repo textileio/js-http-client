@@ -25,11 +25,11 @@ export default class Logs extends API {
    */
   async get(subsystem?: string, tex?: boolean) {
     const response = await this.sendGet(
-      `api/v0/logs${subsystem ? `/${subsystem}` : ''}`,
+      `logs${subsystem ? `/${subsystem}` : ''}`,
       undefined,
       { 'tex-only': tex || false }
     )
-    return response.data as { [k: string]: string }
+    return response.json() as Promise<Record<string, string>>
   }
 
   /**
@@ -42,10 +42,10 @@ export default class Logs extends API {
    */
   async set(level: string, subsystem?: string, tex?: boolean) {
     const response = await this.sendPost(
-      `api/v0/logs${subsystem ? `/${subsystem}` : ''}`,
+      `logs${subsystem ? `/${subsystem}` : ''}`,
       undefined,
       { level, 'tex-only': tex || false }
     )
-    return response.data
+    return response.json() as Promise<Record<string, string>>
   }
 }

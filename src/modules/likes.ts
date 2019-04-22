@@ -23,8 +23,8 @@ export default class Likes extends API {
    * @returns The generated like block
    */
   async add(block: string) {
-    const response = await this.sendPost(`/api/v0/blocks/${block}/likes`)
-    return response.data as Like
+    const response = await this.sendPost(`blocks/${block}/likes`)
+    return response.json() as Promise<Like>
   }
 
   /**
@@ -34,8 +34,8 @@ export default class Likes extends API {
    * @returns The target like block
    */
   async get(id: string) {
-    const response = await this.sendGet(`/api/v0/blocks/${id}/like`)
-    return response.data as Like
+    const response = await this.sendGet(`blocks/${id}/like`)
+    return response.json() as Promise<Like>
   }
 
   /**
@@ -45,8 +45,8 @@ export default class Likes extends API {
    * @returns An array of likes associated with the target block
    */
   async list(block: string) {
-    const response = await this.sendGet(`/api/v0/blocks/${block}/likes`)
-    return response.data as LikeList
+    const response = await this.sendGet(`blocks/${block}/likes`)
+    return response.json() as Promise<LikeList>
   }
 
   /**
@@ -59,7 +59,7 @@ export default class Likes extends API {
    * @returns The added ignore block
    */
   async ignore(id: string) {
-    const response = await this.sendDelete(`/api/v0/blocks/${id}`)
-    return response.data as Block
+    const response = await this.sendDelete(`blocks/${id}`)
+    return response.json() as Promise<Block>
   }
 }

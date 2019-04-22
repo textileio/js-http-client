@@ -1,11 +1,7 @@
-import axios, { CancelTokenSource, AxiosInstance } from 'axios'
-import Connection from './connection'
+import fetch from 'isomorphic-fetch'
+import URL from 'url-parse'
+import { buildAbsoluteURL } from 'url-toolkit'
 import { KeyValue, ApiOptions } from '../models'
-
-// **** Private module methods ****
-const encodeValue = (val: string | number | boolean) => {
-  return encodeURIComponent(val.toString())
-}
 
 /**
  * Create 'args' like a CLI command would take
@@ -13,7 +9,7 @@ const encodeValue = (val: string | number | boolean) => {
  * @param {string[]} argsAr An array of arguments
  * @private
  */
-const getArgs = (argsAr?: string[]) => {
+export const getArgs = (argsAr?: string[]) => {
   if (!argsAr || !argsAr.length) {
     return ''
   }
@@ -26,7 +22,7 @@ const getArgs = (argsAr?: string[]) => {
  * @param {Object.<string, string>} opts A map of option keys and values
  * @private
  */
-const getOpts = (opts?: KeyValue) => {
+export const getOpts = (opts?: KeyValue) => {
   if (!opts) {
     return ''
   }
@@ -35,7 +31,11 @@ const getOpts = (opts?: KeyValue) => {
     .join(',')
 }
 
-const createHeaders = (args?: string[], opts?: KeyValue, headers?: KeyValue): KeyValue => {
+const encodeValue = (val: string | number | boolean) => {
+  return encodeURIComponent(val.toString())
+}
+
+export const createHeaders = (args?: string[], opts?: KeyValue, headers?: KeyValue): Record<string, string> => {
   const h = headers || {}
   return {
     ...h,
@@ -45,58 +45,21 @@ const createHeaders = (args?: string[], opts?: KeyValue, headers?: KeyValue): Ke
 }
 
 /**
- * A request and associated cancel function
- * @typedef {object} CancelableRequest
- * @property {object} conn A Connection object
- * @property {function(string):void} cancel A cancel function
- */
-
-// **** Private variables
-const con = new WeakMap<object, AxiosInstance | undefined>()
-
-/**
  * API is the base class for all SDK modules.
  *
  * @params {ApiOptions] opts API options object
  */
 class API {
   opts: ApiOptions
-  constructor(opts: ApiOptions) {
+  private baseURL: string
+  constructor(opts: ApiOptions = { url: 'http://127.0.0.1', port: 40600, version: 0 }) {
     this.opts = opts
-  }
-
-  con() {
-    let thisCon = con.get(this)
-    if (!thisCon) {
-      thisCon = Connection.get(this.opts)
-      con.set(this, thisCon)
+    const url = new URL(opts.url)
+    if (opts.port) {
+      url.set('port', opts.port)
     }
-    return thisCon
-  }
-
-  /**
-   * Make a post request to the Textile node that is cancelable
-   *
-   * @param url The relative URL of the API endpoint
-   * @param args An array of arguments to pass as Textile args headers
-   * @param opts An object of options to pass as Textile options headers
-   * @param data An object of data to post
-   * @returns A cancelable request
-   */
-  sendPostCancelable(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
-    const source: CancelTokenSource = axios.CancelToken.source()
-    const conn = this.con()({
-      method: 'post',
-      url,
-      responseType: 'stream',
-      headers: createHeaders(args, opts, headers),
-      data,
-      cancelToken: source.token
-    })
-    // TODO: fix cancel method return
-    // ISSUE: Cancel method above isn't set by time of return
-    // RETURN: { conn, cancel }
-    return { conn, source }
+    url.set('pathname', `/api/v${opts.version || 0}/`)
+    this.baseURL = url.toString()
   }
 
   /**
@@ -107,12 +70,11 @@ class API {
    * @param opts An object of options to pass as Textile options headers
    * @param data An object of data to post
    */
-  public async sendPost(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
-    return this.con()({
-      method: 'post',
-      url,
+  protected async sendPost(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
+    return fetch(buildAbsoluteURL(this.baseURL, url), {
+      method: 'POST',
       headers: createHeaders(args, opts, headers),
-      data
+      body: JSON.stringify(data)
     })
   }
 
@@ -124,17 +86,15 @@ class API {
    * @param opts An object of options to pass as Textile options headers
    * @param data An object of data to post
    */
-  async sendPostMultiPart(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
+  protected async sendPostMultiPart(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
     const h = createHeaders(args, opts, headers)
     if (!h['content-type']) {
       h['content-type'] = 'multipart/form-data'
     }
-
-    return this.con()({
-      method: 'post',
-      url,
+    return fetch(buildAbsoluteURL(this.baseURL, url), {
+      method: 'POST',
       headers: h,
-      data
+      body: data
     })
   }
 
@@ -145,10 +105,9 @@ class API {
    * @param args An array of arguments to pass as Textile args headers
    * @param opts An object of options to pass as Textile options headers
    */
-  async sendGet(url: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
-    return this.con()({
-      method: 'get',
-      url,
+  protected async sendGet(url: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
+    return fetch(buildAbsoluteURL(this.baseURL, url), {
+      method: 'GET',
       headers: createHeaders(args, opts, headers)
     })
   }
@@ -160,10 +119,9 @@ class API {
    * @param args An array of arguments to pass as Textile args headers
    * @param opts An object of options to pass as Textile options headers
    */
-  async sendDelete(url: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
-    return this.con()({
-      method: 'delete',
-      url,
+  protected async sendDelete(url: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
+    return fetch(buildAbsoluteURL(this.baseURL, url), {
+      method: 'DELETE',
       headers: createHeaders(args, opts, headers)
     })
   }
@@ -176,12 +134,11 @@ class API {
    * @param opts An object of options to pass as Textile options headers
    * @param data An object of data to put
    */
-  async sendPut(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
-    return this.con()({
-      method: 'put',
-      url,
+  protected async sendPut(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
+    return fetch(buildAbsoluteURL(this.baseURL, url), {
+      method: 'PUT',
       headers: createHeaders(args, opts, headers),
-      data
+      body: JSON.stringify(data)
     })
   }
 
@@ -193,12 +150,11 @@ class API {
    * @param opts An object of options to pass as Textile options headers
    * @param data An object of data to put
    */
-  async sendPatch(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
-    return this.con()({
+  protected async sendPatch(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
+    return fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'patch',
-      url,
       headers: createHeaders(args, opts, headers),
-      data
+      body: JSON.stringify(data)
     })
   }
 }

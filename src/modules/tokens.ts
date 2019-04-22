@@ -31,11 +31,11 @@ export default class Tokens extends API {
    * @returns New token as string
    */
   async create(token?: string, store?: boolean) {
-    const response = await this.sendPost(`/api/v0/tokens`, undefined, {
+    const response = await this.sendPost(`tokens`, undefined, {
       token: token || '',
       store: store || false
     })
-    return response.data as string
+    return response.text() as Promise<string>
   }
 
   /**
@@ -45,7 +45,7 @@ export default class Tokens extends API {
    * @returns Whether token is valid
    */
   async validate(token: string) {
-    const response = await this.sendGet(`/api/v0/tokens/${token}`)
+    const response = await this.sendGet(`tokens/${token}`)
     return response.status === 200
   }
 
@@ -56,8 +56,8 @@ export default class Tokens extends API {
    * @returns Array of bcrypt hashed tokens
    */
   async list() {
-    const response = await this.sendGet('/api/v0/tokens')
-    return response.data as string[]
+    const response = await this.sendGet('tokens')
+    return response.json() as Promise<string[]>
   }
 
   /**
@@ -67,7 +67,7 @@ export default class Tokens extends API {
    * @returns Whether remove was successful
    */
   async remove(token: string) {
-    const response = await this.sendDelete(`/api/v0/tokens/${token}`)
+    const response = await this.sendDelete(`tokens/${token}`)
     return response.status === 204
   }
 }

@@ -38,7 +38,7 @@ export interface BlockViz {
 }
 
 export interface Step {
-  Name: string
+  name: string
   link: model.Link
 }
 

@@ -32,12 +32,12 @@ export default class Mills extends API {
    */
   async run(name: string, options: KeyValue, payload: any, headers: KeyValue) {
     const response = await this.sendPostMultiPart(
-      `api/v0/mills${name}`,
+      `mills${name}`,
       [],
       options,
       payload,
       headers
     )
-    return response.data as FileIndex
+    return response.json() as Promise<FileIndex>
   }
 }

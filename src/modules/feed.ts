@@ -41,7 +41,7 @@ export default class Feed extends API {
    */
   async get(thread?: string, offset?: string, limit?: number, mode?: FeedModes) {
     const response = await this.sendGet(
-      '/api/v0/feed',
+      'feed',
       undefined,
       {
         thread: thread || '',
@@ -50,6 +50,6 @@ export default class Feed extends API {
         mode: mode || 'chrono'
       }
     )
-    return response.data as FeedItemList
+    return response.json() as Promise<FeedItemList>
   }
 }

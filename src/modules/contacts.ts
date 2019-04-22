@@ -1,9 +1,7 @@
-import { EventEmitter2 } from 'eventemitter2'
 import { API } from '../core/api'
-import {
-  ApiOptions, Contact, ContactList, RunningEvent, KeyValue,
-  QueryOptions, QueryResult, Query, QueryResults
-} from '../models'
+import { queryResultStream } from '../helpers/handlers'
+import { ApiOptions, Contact, ContactList, QueryOptions } from '../models'
+import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
 /**
  * Contacts is an API module for managing local contacts and finding contacts on the network
@@ -26,7 +24,7 @@ export default class Contacts extends API {
    */
   async add(address: string, contact: Contact) {
     const response = await this.sendPut(
-      `/api/v0/contacts/${address}`,
+      `contacts/${address}`,
       undefined,
       undefined,
       contact
@@ -41,8 +39,8 @@ export default class Contacts extends API {
    * @returns The associated contact object
    */
   async get(address: string) {
-    const response = await this.sendGet(`/api/v0/contacts/${address}`)
-    return response.data as Contact
+    const response = await this.sendGet(`contacts/${address}`)
+    return response.json() as Promise<Contact>
   }
 
   /**
@@ -50,8 +48,8 @@ export default class Contacts extends API {
    * @returns An array of all known contacts
    */
   async list() {
-    const response = await this.sendGet('/api/v0/contacts')
-    return response.data as ContactList
+    const response = await this.sendGet('contacts')
+    return response.json() as Promise<ContactList>
   }
 
   /**
@@ -61,7 +59,7 @@ export default class Contacts extends API {
    * @returns Whether the operation was successfull
    */
   async remove(contactId: string) {
-    const response = await this.sendDelete(`/api/v0/contacts/${contactId}`)
+    const response = await this.sendDelete(`contacts/${contactId}`)
     return response.status === 204
   }
 
@@ -71,47 +69,24 @@ export default class Contacts extends API {
    * @param username Search by username string
    * @param address Search by account address string
    * @param options Additional options to control the query
-   * @returns Event emitter with found, done, error events on textile.contacts.
-   * @example
-   * const { emitter, source } = textile.contacts.search(undefined, undefined, {wait: 5})
-   * setTimeout(() => source.cancel(), 1000) // cancel after 1 second
-   * emitter.on('textile.contacts.found', console.log)
-   * emitter.on('textile.contacts.done', console.log)
+   * @returns A ReadableStream of QueryResult objects.
    * })
    */
-  search(username?: string, address?: string, options?: QueryOptions): RunningEvent {
+  async search(username?: string, address?: string, options?: QueryOptions) {
     const opts = options || {}
-    const allOpts: KeyValue = {
+    const cleanOpts = {
       username: username || '',
       address: address || '',
-      local: (opts.local || false).toString(),
-      remote: (opts.remote || false).toString(),
-      limit: (opts.limit || 5).toString(),
-      wait: (opts.wait || 2).toString()
+      local: opts.local || false,
+      remote: opts.remote || false,
+      limit: opts.limit || 5,
+      wait: opts.wait || 2
     }
-    const { conn, source } = this.sendPostCancelable('/api/v0/contacts/search', undefined, allOpts)
-    const emitter = new EventEmitter2({
-      wildcard: true
-    })
-    conn
-      .then((response) => {
-        const stream = response.data
-        const results: QueryResults = {
-          items: [],
-          type: Query.Type.CONTACTS
-        }
-        stream.on('data', (data: Buffer) => {
-          const result: QueryResult = JSON.parse(data.toString())
-          results.items.push(result)
-          emitter.emit('textile.contacts.found', result)
-        })
-        stream.on('end', () => {
-          emitter.emit('textile.contacts.done', results)
-        })
-      })
-      .catch((err: Error) => {
-        emitter.emit('textile.contacts.error', err)
-      })
-    return { emitter, source }
+
+    const response = await this.sendPost('contacts/search', undefined, cleanOpts)
+    if (!response.body) {
+      throw Error('Empty response stream')
+    }
+    return queryResultStream(response.body as ReadableStream)
   }
 }

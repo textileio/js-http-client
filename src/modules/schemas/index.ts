@@ -37,7 +37,7 @@ export default class Schemas extends API {
       schema,
       { 'Content-Type': 'application/json' }
     )
-    return response.data as FileIndex
+    return response.json() as Promise<FileIndex>
   }
 
   /**
@@ -48,6 +48,6 @@ export default class Schemas extends API {
    */
   async get(thread: string) {
     const response = await this.sendGet(`/api/v0/threads/${thread}`)
-    return response.data.schema_node as Node
+    return (await response.json()).schema_node as Node
   }
 }

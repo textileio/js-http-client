@@ -25,9 +25,9 @@ export default class Comments extends API {
    */
   async add(block: string, body: string) {
     const response = await this.sendPost(
-      `/api/v0/blocks/${block}/comments`, [body]
+      `blocks/${block}/comments`, [body]
     )
-    return response.data as Comment
+    return response.json() as Promise<Comment>
   }
 
   /**
@@ -37,8 +37,8 @@ export default class Comments extends API {
    * @returns The target comment block
    */
   async get(id: string) {
-    const response = await this.sendGet(`/api/v0/blocks/${id}/comment`)
-    return response.data as Comment
+    const response = await this.sendGet(`blocks/${id}/comment`)
+    return response.json() as Promise<Comment>
   }
 
   /**
@@ -48,8 +48,8 @@ export default class Comments extends API {
    * @returns An array of comment blocks
    */
   async list(block: string) {
-    const response = await this.sendGet(`/api/v0/blocks/${block}/comments`)
-    return response.data as CommentList
+    const response = await this.sendGet(`blocks/${block}/comments`)
+    return response.json() as Promise<CommentList>
   }
 
   /**
@@ -62,7 +62,7 @@ export default class Comments extends API {
    * @returns The ignored block
    */
   async ignore(id: string) {
-    const response = await this.sendDelete(`/api/v0/blocks/${id}`)
-    return response.data as Block
+    const response = await this.sendDelete(`blocks/${id}`)
+    return response.json() as Promise<Block>
   }
 }

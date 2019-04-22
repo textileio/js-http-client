@@ -1,6 +1,8 @@
-import { EventEmitter2 } from 'eventemitter2'
+// import { EventEmitter2 } from 'eventemitter2'
 import { API } from '../core/api'
-import { ApiOptions, RunningEvent, QueryResult, Thread, QueryResults, Query } from '../models'
+import { queryResultStream } from '../helpers/handlers'
+import { ApiOptions, QueryResult, Thread } from '../models'
+import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
 /**
  * Snapshots is an API module for managing thread snapshots
@@ -20,74 +22,78 @@ export default class Snapshots extends API {
    * @returns Whether the snapshot process was successfull
    */
   async create() {
-    const response = await this.sendPost('/api/v0/snapshots')
+    const response = await this.sendPost('snapshots')
     return response.status === 201
   }
 
   /**
    * Search the network for thread snapshots
    *
-   * Returns streaming connection and a cancel function to cancel the request.
-   *
    * @param wait Stops searching after 'wait' seconds have elapsed (max 30 default 2)
-   * @returns Event emitter with found, done, error events on textile.snapshots.
-   * The Event emitter has an additional cancel method that can be used to cancel the search.
+   * @returns A ReadableStream of QueryResult objects.
    */
-  search(wait?: number): RunningEvent {
-    const { conn, source } = this.sendPostCancelable(
-      '/api/v0/snapshots/search',
-      undefined,
-      { wait: (wait || 2).toString() }
-    )
-    const emitter = new EventEmitter2({
-      wildcard: true
-    })
-    conn
-      .then((response) => {
-        const stream = response.data
-        const results: QueryResults = {
-          items: [],
-          type: Query.Type.THREAD_SNAPSHOTS
-        }
-        stream.on('data', (data: Buffer) => {
-          const result: QueryResult = JSON.parse(data.toString())
-          results.items.push(result)
-          emitter.emit('textile.snapshots.found', result)
-        })
-        stream.on('end', () => {
-          emitter.emit('textile.snapshots.done', results)
-        })
-      })
-      .catch((err: Error) => {
-        emitter.emit('textile.snapshots.error', err)
-      })
-    return { emitter, source }
+  async search(wait?: number) {
+    const response = await this.sendPost('snapshots/search', undefined, { wait: wait || 2 })
+    if (!response.body) {
+      throw Error('Empty response stream')
+    }
+    return queryResultStream(response.body as ReadableStream)
   }
 
   /**
    * Apply a single thread snapshot
    * @param id The snapshot id (omit to find and apply all snapshots)
    * @param wait Stops searching after 'wait' seconds have elapsed (max 30 default 2)
-   * @returns Event emitter with found, applied, done, error events on textile.snapshots.
-   * The Event emitter has an additional cancel method that can be used to cancel the search.
-   * TODO: Better document the event emmitter, because its quite useful for collecting
-   * aggregate results as well.
+   * @returns A ReadableStream of QueryResult objects.
    */
-  apply(id?: string, wait?: number): RunningEvent {
-    const { emitter, source } = this.search(wait)
-    emitter.on('textile.snapshots.found', (snapshot: QueryResult) => {
-      if (id === undefined || snapshot.id === id) {
-        this.applySnapshot(snapshot).then((success: boolean) => {
-          emitter.emit('textile.snapshots.applied', success)
-        })
+  async apply(id?: string, wait?: number) {
+    const stream = await this.search(wait)
+    // For cancellation
+    let isReader: any
+    let cancellationRequest = false
+    const self = this
+    return new ReadableStream<QueryResult>({
+      start(controller) {
+        const reader = stream.getReader()
+        isReader = reader
+        const processResult = (result: ReadableStreamReadResult<QueryResult>) => {
+          if (result.done) {
+            if (cancellationRequest) {
+              return // Immediately exit
+            }
+            controller.close()
+            return
+          }
+          try {
+            if (id === undefined || result.value.id === id) {
+              self.applySnapshot(result.value).then((success) => {
+                if (success) {
+                  controller.enqueue(result.value)
+                } else {
+                  throw new Error('Unable to apply snapshot')
+                }
+              })
+            }
+          } catch (e) {
+            controller.error(e)
+            cancellationRequest = true
+            reader.cancel(undefined)
+            return
+          }
+          reader.read().then(processResult)
+        }
+        reader.read().then(processResult)
+      },
+      cancel(reason?: string) {
+        cancellationRequest = true
+        isReader.cancel(reason)
       }
     })
-    return { emitter, source }
   }
 
   async applySnapshot(snapshot: QueryResult) {
     const snap: Thread = snapshot.value
-    const response = await this.sendPut(`/api/v0/threads/${snap.id}`,
+    const response = await this.sendPut(`threads/${snap.id}`,
       undefined, undefined, snap)
     return response.status === 204
   }

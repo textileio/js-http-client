@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Connection | @textile/js-http-client</title>
+	<title>CafeRequestGroupStatus | @textile/js-http-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,28 +54,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="connection.html">Connection</a>
+					<a href="caferequestgroupstatus.html">CafeRequestGroupStatus</a>
 				</li>
 			</ul>
-			<h1>Class Connection</h1>
+			<h1>Interface CafeRequestGroupStatus</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>The connection module contains utilities for creating connections to a Textile node</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Connection</span>
+						<span class="target">CafeRequestGroupStatus</span>
 					</li>
 				</ul>
 			</section>
@@ -84,67 +77,80 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="connection.html#cleanopts" class="tsd-kind-icon">clean<wbr>Opts</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="connection.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="caferequestgroupstatus.html#num_complete" class="tsd-kind-icon">num_<wbr>complete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="caferequestgroupstatus.html#num_pending" class="tsd-kind-icon">num_<wbr>pending</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="caferequestgroupstatus.html#num_total" class="tsd-kind-icon">num_<wbr>total</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="caferequestgroupstatus.html#size_complete" class="tsd-kind-icon">size_<wbr>complete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="caferequestgroupstatus.html#size_pending" class="tsd-kind-icon">size_<wbr>pending</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="caferequestgroupstatus.html#size_total" class="tsd-kind-icon">size_<wbr>total</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="cleanopts" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> clean<wbr>Opts</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">clean<wbr>Opts<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/core/connection.ts#L25">core/connection.ts:25</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>options: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="num_complete" class="tsd-anchor"></a>
+					<h3>num_<wbr>complete</h3>
+					<div class="tsd-signature tsd-kind-icon">num_<wbr>complete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/model_pb.ts#L280">models/model_pb.ts:280</a></li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="get" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> get</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/core/connection.ts#L12">core/connection.ts:12</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>get() coerces the given options into a connection</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>options: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosInstance</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="num_pending" class="tsd-anchor"></a>
+					<h3>num_<wbr>pending</h3>
+					<div class="tsd-signature tsd-kind-icon">num_<wbr>pending<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/model_pb.ts#L279">models/model_pb.ts:279</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="num_total" class="tsd-anchor"></a>
+					<h3>num_<wbr>total</h3>
+					<div class="tsd-signature tsd-kind-icon">num_<wbr>total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/model_pb.ts#L278">models/model_pb.ts:278</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="size_complete" class="tsd-anchor"></a>
+					<h3>size_<wbr>complete</h3>
+					<div class="tsd-signature tsd-kind-icon">size_<wbr>complete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/model_pb.ts#L283">models/model_pb.ts:283</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="size_pending" class="tsd-anchor"></a>
+					<h3>size_<wbr>pending</h3>
+					<div class="tsd-signature tsd-kind-icon">size_<wbr>pending<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/model_pb.ts#L282">models/model_pb.ts:282</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="size_total" class="tsd-anchor"></a>
+					<h3>size_<wbr>total</h3>
+					<div class="tsd-signature tsd-kind-icon">size_<wbr>total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/model_pb.ts#L281">models/model_pb.ts:281</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -160,14 +166,26 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="connection.html" class="tsd-kind-icon">Connection</a>
+					<li class="current tsd-kind-interface">
+						<a href="caferequestgroupstatus.html" class="tsd-kind-icon">Cafe<wbr>Request<wbr>Group<wbr>Status</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="connection.html#cleanopts" class="tsd-kind-icon">clean<wbr>Opts</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="caferequestgroupstatus.html#num_complete" class="tsd-kind-icon">num_<wbr>complete</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="connection.html#get" class="tsd-kind-icon">get</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="caferequestgroupstatus.html#num_pending" class="tsd-kind-icon">num_<wbr>pending</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="caferequestgroupstatus.html#num_total" class="tsd-kind-icon">num_<wbr>total</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="caferequestgroupstatus.html#size_complete" class="tsd-kind-icon">size_<wbr>complete</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="caferequestgroupstatus.html#size_pending" class="tsd-kind-icon">size_<wbr>pending</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="caferequestgroupstatus.html#size_total" class="tsd-kind-icon">size_<wbr>total</a>
 							</li>
 						</ul>
 					</li>

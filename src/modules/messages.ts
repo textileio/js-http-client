@@ -24,8 +24,8 @@ export default class Messages extends API {
    * @returns The generated message block
    */
   async add(thread: string, body: string) {
-    const response = await this.sendPost(`/api/v0/threads/${thread}/messages`, [body])
-    return response.data as Text
+    const response = await this.sendPost(`threads/${thread}/messages`, [body])
+    return response.json() as Promise<Text>
   }
 
   /**
@@ -35,8 +35,8 @@ export default class Messages extends API {
    * @returns The target message block
    */
   async get(id: string) {
-    const response = await this.sendGet(`/api/v0/messages/${id}`)
-    return response.data as Text
+    const response = await this.sendGet(`messages/${id}`)
+    return response.json() as Promise<Text>
   }
 
   /**
@@ -48,12 +48,12 @@ export default class Messages extends API {
    * @returns An array of message blocks
    */
   async list(thread?: string, offset?: string, limit?: number) {
-    const response = await this.sendGet('/api/v0/messages', undefined, {
+    const response = await this.sendGet('messages', undefined, {
       thread: thread || '',
       offset: offset || '',
       limit: limit || 5
     })
-    return response.data as TextList
+    return response.json() as Promise<TextList>
   }
 
   /**
@@ -66,7 +66,7 @@ export default class Messages extends API {
    * @returns The added ignore block
    */
   async ignore(id: string) {
-    const response = await this.sendDelete(`/api/v0/blocks/${id}`)
-    return response.data as Block
+    const response = await this.sendDelete(`blocks/${id}`)
+    return response.json() as Promise<Block>
   }
 }

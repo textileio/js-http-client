@@ -18,40 +18,43 @@ export default class IPFS extends API {
    * Retrieves underlying IPFS peer ID
    * @returns The underlying IPFS peer ID
    */
-  async peerId() {
-    const response = await this.sendGet(`/api/v0/ipfs/id`)
-    return response.data as string
+  async id() {
+    const response = await this.sendGet(`ipfs/id`)
+    return response.json() as Promise<string>
   }
 
   /**
    * Lists the set of peers to which this node is connected
    *
-   * @param {object} [options] Options for listing swarm peers
-   * @param {boolean} [options.verbose=false] Display all extra information
-   * @param {boolean} [options.latency=false] Also list information about latency to each peer
-   * @param {boolean} [options.streams=false] Also list information about open streams for each peer
-   * @param {boolean} [options.direction=false] Also list information about the direction of connection
+   * @param verbose Display all extra information
+   * @param latency Also list information about latency to each peer
+   * @param streams Also list information about open streams for each peer
+   * @param direction Also list information about the direction of connection
    */
-  async swarmPeers(options: KeyValue) {
-    const { data } = await this.sendGet(
+  async swarm(verbose?: boolean, latency?: boolean, streams?: boolean, direction?: boolean) {
+    const response = await this.sendGet(
       'api/v0/ipfs/swarm/peers',
       undefined,
-      options
+      {
+        verbose: (!!verbose).toString(),
+        latency: (!!latency).toString(),
+        streams: (!!streams).toString(),
+        direction: (!!direction).toString()
+      }
     )
-    // TODO: Get proper types for this return object ipfs.ConnInfos
-    return data
+    return response.json()
   }
 
   /**
-   * Retrieves the data behind an IPFS CID (hash)
+   * Retrieves the data behind an IPFS CID path
    *
-   * @param cid IPFS/IPNS content ID
+   * @param path IPFS/IPNS CID path
    * @param key Key to decrypt the underlying data on-the-fly
-   * @returns The underlying data behind the given IPFS hash
+   * @returns The underlying data behind the given IPFS CID path
    */
-  async cat(cid: string, key?: string) {
-    const response = await this.sendGet(`/api/v0/ipfs/cat/${cid}`, undefined, { key: key || '' })
-    return response.data
+  async cat(path: string, key?: string) {
+    const response = await this.sendGet(`ipfs/cat/${path}`, undefined, { key: key || '' })
+    return response.blob()
   }
 
   /**
@@ -61,7 +64,7 @@ export default class IPFS extends API {
    * @returns Whether the peer swarm connect was successfull
    */
   async swarmConnect(addr: string) {
-    const response = await this.sendGet(`/api/v0/ipfs/swarm/connect`, [addr])
+    const response = await this.sendGet(`ipfs/swarm/connect`, [addr])
     return response.status === 200
   }
 }

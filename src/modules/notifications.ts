@@ -21,8 +21,8 @@ export default class Notifications extends API {
    * @returns An array of Notification objects
    */
   async list() {
-    const response = await this.sendGet('/api/v0/notifications')
-    return response.data as NotificationList
+    const response = await this.sendGet('notifications')
+    return response.json() as Promise<NotificationList>
   }
 
   /**
@@ -32,7 +32,7 @@ export default class Notifications extends API {
    * @returns Whether the operation was successful
    */
   async read(id: string) {
-    const response = await this.sendPost(`/api/v0/notifications/${id}/read`)
+    const response = await this.sendPost(`notifications/${id}/read`)
     return response.status === 200
   }
 

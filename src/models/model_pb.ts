@@ -248,7 +248,10 @@ export interface CafeRequest {
   target: string
   cafe: Cafe
   type: CafeRequest.Type
+  size: string
+  group: string
   date: string
+  status: CafeRequest.Status
 }
 
 export namespace CafeRequest {
@@ -258,6 +261,44 @@ export namespace CafeRequest {
     STORE_THREAD = 'STORE_THREAD',
     UNSTORE_THREAD = 'UNSTORE_THREAD',
     INBOX = 'INBOX'
+  }
+
+  export enum Status {
+    NEW = 'NEW',
+    PENDING = 'PENDING',
+    COMPLETE = 'COMPLETE'
+  }
+}
+
+export interface CafeRequestList {
+  items: CafeRequest[]
+}
+
+export interface CafeRequestGroupStatus {
+  num_total: number
+  num_pending: number
+  num_complete: number
+  size_total: string
+  size_pending: string
+  size_complete: string
+}
+
+export interface CafeHTTPRequest {
+  type: CafeHTTPRequest.Type
+  url: string
+  headers: CafeHTTPRequest.Headers
+  body: string
+}
+
+export namespace CafeHTTPRequest {
+  export interface Headers {
+    [k: string]: string
+  }
+
+  export enum Type {
+    PUT = 'PUT',
+    POST = 'POST',
+    DELETE = 'DELETE'
   }
 }
 

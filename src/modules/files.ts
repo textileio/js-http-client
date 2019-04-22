@@ -28,8 +28,8 @@ export default class Files extends API {
    * @returns The thread object
    */
   async get(id: string) {
-    const response = await this.sendGet(`/api/v0/files/${id}`)
-    return response.data as File
+    const response = await this.sendGet(`files/${id}`)
+    return response.json() as Promise<File>
   }
 
   /**
@@ -46,7 +46,7 @@ export default class Files extends API {
       offset: offset || '',
       limit: limit || 5
     })
-    return response.data as FilesList
+    return response.json() as Promise<FilesList>
   }
 
   /**
@@ -59,8 +59,8 @@ export default class Files extends API {
    * @returns An array of file keys
    */
   async keys(target: string) {
-    const response = await this.sendGet(`/api/v0/keys/${target}`)
-    return response.data as Keys
+    const response = await this.sendGet(`keys/${target}`)
+    return response.json() as Promise<Keys>
   }
 
   /**
@@ -73,7 +73,7 @@ export default class Files extends API {
    * @returns Whether or not the operation was successfull
    */
   async ignore(id: string) {
-    const response = await this.sendDelete(`/api/v0/blocks/${id}`)
+    const response = await this.sendDelete(`blocks/${id}`)
     return response.status === 204
   }
 
@@ -107,9 +107,9 @@ export default class Files extends API {
     const dirs: DirectoryList = {
       items: [dir]
     }
-    const resp = await this.sendPost(
+    const response = await this.sendPost(
       `api/v0/threads/${thread}/files`, undefined, { caption }, dirs
     )
-    return resp.data as File
+    return response.json() as Promise<File>
   }
 }

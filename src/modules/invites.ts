@@ -22,11 +22,11 @@ export default class Invites extends API {
    */
   async accept(invite: string, key?: string) {
     const response = await this.sendPost(
-      `/api/v0/invites/${invite}/accept`,
+      `invites/${invite}/accept`,
       undefined,
       { key: key || '' }
     )
-    return response.data as Block
+    return response.json() as Promise<Block>
   }
 
   /**
@@ -38,11 +38,11 @@ export default class Invites extends API {
    * @see Contacts#search for searching for contacts prior to an invite
    */
   async create(thread: string, address?: string) {
-    const response = await this.sendPost(`/api/v0/invites/`, undefined, {
+    const response = await this.sendPost(`invites/`, undefined, {
       thread,
       address: address || ''
     })
-    return response.data as ExternalInvite
+    return response.json() as Promise<ExternalInvite>
   }
 
   /**
@@ -50,8 +50,8 @@ export default class Invites extends API {
    * @returns An array of invite views
    */
   async list() {
-    const response = await this.sendGet('/api/v0/invites')
-    return response.data as InviteViewList
+    const response = await this.sendGet('invites')
+    return response.json() as Promise<InviteViewList>
   }
 
   /**
@@ -61,7 +61,7 @@ export default class Invites extends API {
    * @returns Whether the operation was successfull
    */
   async ignore(id: string) {
-    const response = await this.sendPost(`/api/v0/invites/${id}/ignore`)
+    const response = await this.sendPost(`invites/${id}/ignore`)
     return response.status === 200
   }
 }

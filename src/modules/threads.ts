@@ -52,7 +52,7 @@ export default class Threads extends API {
    */
   async add(name: string, schema?: string, key?: string, type?: ThreadType, sharing?: ThreadSharing, members?: string[]) {
     const response = await this.sendPost(
-      '/api/v0/threads',
+      'threads',
       [name],
       {
         schema: schema || '',
@@ -62,7 +62,7 @@ export default class Threads extends API {
         members: (members || []).join(',')
       }
     )
-    return response.data as Thread
+    return response.json() as Promise<Thread>
   }
 
   /**
@@ -72,7 +72,7 @@ export default class Threads extends API {
    * @param info Thread object
    */
   async addOrUpdate(thread: string, info: Thread) {
-    this.sendPut(`/api/v0/threads/${thread}`, undefined, undefined, info)
+    this.sendPut(`threads/${thread}`, undefined, undefined, info)
   }
 
   /**
@@ -82,8 +82,8 @@ export default class Threads extends API {
    * @returns A thread object
    */
   async get(thread: string) {
-    const response = await this.sendGet(`/api/v0/threads/${thread}`)
-    return response.data as Thread
+    const response = await this.sendGet(`threads/${thread}`)
+    return response.json() as Promise<Thread>
   }
 
   /**
@@ -92,8 +92,8 @@ export default class Threads extends API {
    * @returns An array of threads
    */
   async list() {
-    const response = await this.sendGet('/api/v0/threads')
-    return response.data as ThreadList
+    const response = await this.sendGet('threads')
+    return response.json() as Promise<ThreadList>
   }
 
   /**
@@ -103,7 +103,7 @@ export default class Threads extends API {
    * @returns Whether the thread removal was successfull
    */
   async remove(thread: string) {
-    const response = await this.sendDelete(`/api/v0/threads/${thread}`)
+    const response = await this.sendDelete(`threads/${thread}`)
     return response.status === 204
   }
 
@@ -113,8 +113,8 @@ export default class Threads extends API {
    * @returns Info about the default thread
    */
   async default() {
-    const response = await this.sendGet('/api/v0/threads/default')
-    return response.data as Thread
+    const response = await this.sendGet('threads/default')
+    return response.json() as Promise<Thread>
   }
 
   /**
@@ -126,7 +126,7 @@ export default class Threads extends API {
    * @returns Whether the rename was successfull
    */
   async rename(thread: string, name: string) {
-    const response = await this.sendPut(`/api/v0/threads/${thread}/name`)
+    const response = await this.sendPut(`threads/${thread}/name`)
     return response.status === 204
   }
 
@@ -137,7 +137,7 @@ export default class Threads extends API {
    * @returns An array of thread contacts
    */
   async peers(thread: string) {
-    const response = await this.sendGet(`/api/v0/threads/${thread || 'default'}/peers`)
-    return response.data as ContactList
+    const response = await this.sendGet(`threads/${thread || 'default'}/peers`)
+    return response.json() as Promise<ContactList>
   }
 }

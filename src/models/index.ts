@@ -1,10 +1,7 @@
-import { EventEmitter2 } from 'eventemitter2'
-import { CancelTokenSource } from 'axios'
-
 // Protobuf types created from go-textile using:
 // yarn add https://github.com/carsonfarmer/protoc-gen-jsonpb-ts
 // cd pb/protos
-// protoc --plugin=../../node_modules/.bin/protoc-gen-jsonpb-ts --jsonpb-ts_out=. *.proto
+// protoc --plugin=../../node_modules/protoc-gen-jsonpb-ts/bin/protoc-gen-jsonpb-ts --jsonpb-ts_out=. *.proto
 export * from './model_pb'
 export * from './cafe_service_pb'
 export * from './message_pb'
@@ -19,7 +16,8 @@ export * from './view_pb'
  */
 export interface ApiOptions {
   url: string
-  port: number
+  port?: number
+  version?: number
 }
 
 /**
@@ -37,26 +35,7 @@ export interface QueryOptions {
   wait?: number
 }
 
-/**
- * The options object for the client object
- * @property {key} [string]
- * @property {value} [string]
- */
-export interface KeyValue {
-  [key: string]: string | number | boolean
-}
-
-/**
- * Event emitter with found, done, and error events.
- * The Event emitter has an additional cancel property that can be used to cancel the search.
- *
- * @property emitter The event emitter
- * @property source The cancel source (`source.cancel()` cancels the request)
- */
-export interface RunningEvent {
-  emitter: EventEmitter2
-  source: CancelTokenSource
-}
+export type KeyValue = Record<string, string | number | boolean>
 
 /**
  * Version information for Textile nodes

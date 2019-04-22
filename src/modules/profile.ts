@@ -19,8 +19,8 @@ export default class Profile extends API {
    * @returns The local node's peer information
    */
   async get() {
-    const response = await this.sendGet('/api/v0/profile')
-    return response.data as Peer
+    const response = await this.sendGet('profile')
+    return response.json() as Promise<Peer>
   }
 
   /**
@@ -39,7 +39,7 @@ export default class Profile extends API {
    * @returns Whether the update was successful
    */
   async setUsername(username: string) {
-    const response = await this.sendPost('/api/v0/profile/username', [username])
+    const response = await this.sendPost('profile/username', [username])
     return response.status === 201
   }
 
@@ -59,7 +59,7 @@ export default class Profile extends API {
    * @returns Whether the update was successful
    */
   async setAvatar(hash: string) {
-    const response = await this.sendPost('/api/v0/profile/avatar', [hash])
+    const response = await this.sendPost('profile/avatar', [hash])
     return response.status === 201
   }
 }

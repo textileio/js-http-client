@@ -28,8 +28,8 @@ export default class Cafes extends API {
    * @returns A new Cafe session JWT
    */
   async add(cafe: string, token: string) {
-    const response = await this.sendPost(`/api/v0/cafes`, [cafe], { token })
-    return response.data as CafeSession
+    const response = await this.sendPost(`cafes`, [cafe], { token })
+    return response.json() as Promise<CafeSession>
   }
 
   /**
@@ -39,8 +39,8 @@ export default class Cafes extends API {
    * @returns A Cafe session JWT
    */
   async get(id: string) {
-    const response = await this.sendGet(`/api/v0/cafes/${id}`)
-    return response.data as CafeSession
+    const response = await this.sendGet(`cafes/${id}`)
+    return response.json() as Promise<CafeSession>
   }
 
   /**
@@ -48,8 +48,8 @@ export default class Cafes extends API {
    * @returns An array of Cafe session JWTs
    */
   async list() {
-    const response = await this.sendGet('/api/v0/cafes')
-    return response.data as CafeSessionList
+    const response = await this.sendGet('cafes')
+    return response.json() as Promise<CafeSessionList>
   }
 
   /**
@@ -59,7 +59,7 @@ export default class Cafes extends API {
    * @returns Whether the operation was successfull
    */
   async checkMessages() {
-    const response = await this.sendPost('/api/v0/cafes/messages')
+    const response = await this.sendPost('cafes/messages')
     return response.status === 200
   }
 
@@ -71,7 +71,7 @@ export default class Cafes extends API {
    * @returns Whether the deregistration was successfull
    */
   async remove(id: string) {
-    const response = await this.sendDelete(`/api/v0/cafes/${id}`)
+    const response = await this.sendDelete(`cafes/${id}`)
     return response.status === 204
   }
 }

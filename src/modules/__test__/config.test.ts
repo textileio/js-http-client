@@ -15,7 +15,7 @@ describe('config get', () => {
   it('should resolve to valid return value', async () => {
     nock(ROOT)
       .get('/api/v0/config/Addresses/API')
-      .reply(200, ROOT)
+      .reply(200, `"${ROOT}"`)
     nock(ROOT)
       .get('/api/v0/config/Not/Valid')
       .replyWithError({

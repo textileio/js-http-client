@@ -1,5 +1,6 @@
 import nock from 'nock'
 import Utils from '../utils'
+import URL from 'url-parse'
 import { ApiOptions } from '../../models'
 import { utils as response } from './__static__/responses'
 
@@ -13,12 +14,12 @@ const utils = new Utils(opts)
 
 describe('node version', () => {
   it('should resolve to latest go-textile version', async () => {
-    const versionString = 'go-textile version v0.0.0'
+    const versionString = '0.0.0'
     nock(ROOT)
       .get('/')
-      .reply(200, versionString)
+      .reply(200, { node_version: versionString })
 
-    expect(await utils.version()).toEqual(versionString)
+    expect((await utils.version()).node_version).toEqual(versionString)
   })
 })
 
@@ -28,7 +29,7 @@ describe('node summary', () => {
       .get('/api/v0/summary')
       .reply(200, response.summary)
 
-    expect(await utils.nodeSummary()).toEqual(response.summary)
+    expect(await utils.summary()).toEqual(response.summary)
   })
 })
 

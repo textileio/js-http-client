@@ -23,8 +23,8 @@ export default class Account extends API {
    * @returns The current wallet account's address
    */
   async address() {
-    const response = await this.sendGet('/api/v0/account/address')
-    return response.data as string
+    const response = await this.sendGet('account/address')
+    return response.text()
   }
 
   /**
@@ -33,8 +33,8 @@ export default class Account extends API {
    * @returns The current wallet account's seed
    */
   async seed() {
-    const response = await this.sendGet('/api/v0/account/seed')
-    return response.data as string
+    const response = await this.sendGet('account/seed')
+    return response.text()
   }
 
   /**
@@ -42,9 +42,9 @@ export default class Account extends API {
    *
    * @returns The current wallet account's contact info
    */
-  async contact() {
-    const response = await this.sendGet('/api/v0/account/contact')
-    return response.data as Contact
+  async contact(): Promise<Contact> {
+    const response = await this.sendGet('account/contact')
+    return response.json()
   }
 
   /**

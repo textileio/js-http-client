@@ -19,17 +19,27 @@ export default class Utils extends API {
    * @returns Version of Cafe API and node binary release
    */
   async version() {
-    const response = await this.sendGet('/')
-    return response.data as Versions
+    const response = await this.sendGet('../../')
+    return response.json() as Promise<Versions>
   }
 
   /**
    * Get a summary of all local node data
    * @returns Summary of node activity
    */
-  async nodeSummary() {
-    const response = await this.sendGet('api/v0/summary')
-    return response.data as Summary
+  async summary() {
+    const response = await this.sendGet('summary')
+    return response.json() as Promise<Summary>
+  }
+
+  /**
+   * Pings another peer on the network, returning wherther they are online or offline.
+   * @param id The peer id
+   * @returns Whether the peer is online
+   */
+  async ping(id: string) {
+    const response = await this.sendGet('ping')
+    return response.text()
   }
 
   /**
@@ -37,7 +47,7 @@ export default class Utils extends API {
    * @returns Whether the API is online
    */
   async online() {
-    const response = await this.sendGet('/health')
+    const response = await this.sendGet('../../health')
     return response.status === 204
   }
 }
