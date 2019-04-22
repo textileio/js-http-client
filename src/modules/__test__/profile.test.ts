@@ -11,23 +11,23 @@ const opts: ApiOptions = {
 const ROOT = `${opts.url}:${opts.port}`
 const profile = new Profile(opts)
 
-describe('profile set username', () => {
+describe('profile set name', () => {
   it('should resolve to boolean', async () => {
     nock(ROOT)
-      .post('/api/v0/profile/username')
+      .post('/api/v0/profile/name')
       .reply(201)
 
-    expect(await profile.setUsername('username')).toEqual(true)
+    expect(await profile.setName('displayname')).toEqual(true)
   })
 })
 
-describe('profile get username', () => {
-  it('should resolve to username string', async () => {
+describe('profile get name', () => {
+  it('should resolve to name string', async () => {
     nock(ROOT)
       .get('/api/v0/profile')
       .reply(200, response.get)
 
-    expect(await profile.username()).toEqual('username')
+    expect(await profile.name()).toEqual('displayname')
   })
 })
 

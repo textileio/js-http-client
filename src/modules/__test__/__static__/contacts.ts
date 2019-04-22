@@ -6,13 +6,13 @@ export namespace contacts {
     value: {
       '@type': '/Contact',
       'address': 'address',
-      'name': 'username',
+      'name': 'displayname',
       'avatar': 'avatar',
       'peers': [
         {
           id: 'id',
           address: 'address',
-          name: 'username',
+          name: 'displayname',
           avatar: 'avatar',
           inboxes: [
             {

@@ -43,7 +43,7 @@ export default class Account extends API {
    * @returns The current wallet account's contact info
    */
   async contact(): Promise<Contact> {
-    const response = await this.sendGet('account/contact')
+    const response = await this.sendGet('account')
     return response.json()
   }
 

@@ -24,22 +24,22 @@ export default class Profile extends API {
   }
 
   /**
-   * Get the local node's public profile username
-   * @returns Node's public profile username
+   * Get the local node's public profile display name
+   * @returns Node's public profile display name
    */
-  async username() {
+  async name() {
     const contact = await this.get()
     return contact.name
   }
 
   /**
-   * Set the local node's public profile username
+   * Set the local node's public profile display name
    *
-   * @param username Username string
+   * @param name Username string
    * @returns Whether the update was successful
    */
-  async setUsername(username: string) {
-    const response = await this.sendPost('profile/username', [username])
+  async setName(name: string) {
+    const response = await this.sendPost('profile/name', [name])
     return response.status === 201
   }
 

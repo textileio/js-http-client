@@ -34,7 +34,7 @@ describe('account seed', () => {
 describe('account contact', () => {
   it('should resolve with local node contact info', async () => {
     nock(ROOT)
-      .get('/api/v0/account/contact')
+      .get('/api/v0/account')
       .reply(200, response.contact)
 
     expect(await account.contact()).toEqual(response.contact)

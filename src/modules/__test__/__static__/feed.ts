@@ -11,7 +11,7 @@ export const stacks: FeedItemList = {
         'date': '2019-04-01T21:43:37.116893Z',
         'user': {
           address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-          name: 'username',
+          name: 'displayname',
           avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5'
         },
         'target': {
@@ -23,7 +23,7 @@ export const stacks: FeedItemList = {
             'date': '2019-03-28T17:24:25.796298Z',
             'user': {
               address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-              name: 'username',
+              name: 'displayname',
               avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5'
             },
             'body': 'message'
@@ -41,7 +41,7 @@ export const stacks: FeedItemList = {
         'date': '2019-04-01T21:27:37.422127Z',
         'user': {
           address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-          name: 'username',
+          name: 'displayname',
           avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5'
         },
         'files': [
@@ -98,7 +98,7 @@ export const stacks: FeedItemList = {
         'date': '2019-04-01T21:27:37.363373Z',
         'user': {
           address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-          name: 'username',
+          name: 'displayname',
           avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5'
         }
       }
@@ -119,7 +119,7 @@ export const chrono: FeedItemList = {
         'date': '2019-04-01T21:43:37.116893Z',
         'user': {
           address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-          name: 'username',
+          name: 'displayname',
           avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5'
         },
         'target': {
@@ -131,7 +131,7 @@ export const chrono: FeedItemList = {
             'date': '2019-03-28T17:24:25.796298Z',
             'user': {
               address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-              name: 'username',
+              name: 'displayname',
               avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5'
             },
             'body': 'message'
@@ -149,7 +149,7 @@ export const chrono: FeedItemList = {
         'date': '2019-04-01T21:27:37.422127Z',
         'user': {
           address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-          name: 'username',
+          name: 'displayname',
           avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5'
         },
         'files': [
@@ -206,7 +206,7 @@ export const chrono: FeedItemList = {
         'date': '2019-04-01T21:27:37.363373Z',
         'user': {
           address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-          name: 'username',
+          name: 'displayname',
           avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5'
         }
       }

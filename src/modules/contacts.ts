@@ -64,18 +64,18 @@ export default class Contacts extends API {
   }
 
   /**
-   * Searches locally and on the network for contacts by username, peer id, or address
+   * Searches locally and on the network for contacts by display name, peer id, or address
    *
-   * @param username Search by username string
+   * @param name Search by display name string
    * @param address Search by account address string
    * @param options Additional options to control the query
    * @returns A ReadableStream of QueryResult objects.
    * })
    */
-  async search(username?: string, address?: string, options?: QueryOptions) {
+  async search(name?: string, address?: string, options?: QueryOptions) {
     const opts = options || {}
     const cleanOpts = {
-      username: username || '',
+      name: name || '',
       address: address || '',
       local: opts.local || false,
       remote: opts.remote || false,

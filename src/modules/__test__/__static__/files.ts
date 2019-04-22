@@ -73,7 +73,7 @@ export namespace files {
     user: {
       address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
       avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5',
-      name: 'username'
+      name: 'displayname'
     }
   }
   export const list: FilesList = {

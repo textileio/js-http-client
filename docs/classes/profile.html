@@ -113,9 +113,9 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="profile.html#avatar" class="tsd-kind-icon">avatar</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="profile.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="profile.html#name" class="tsd-kind-icon">name</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="profile.html#setavatar" class="tsd-kind-icon">set<wbr>Avatar</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="profile.html#setusername" class="tsd-kind-icon">set<wbr>Username</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="profile.html#username" class="tsd-kind-icon">username</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="profile.html#setname" class="tsd-kind-icon">set<wbr>Name</a></li>
 							</ul>
 						</section>
 					</div>
@@ -211,6 +211,29 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/profile.ts#L30">modules/profile.ts:30</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the local node&#39;s public profile display name</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Node&#39;s public profile display name</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="setavatar" class="tsd-anchor"></a>
 					<h3>set<wbr>Avatar</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -243,10 +266,10 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="setusername" class="tsd-anchor"></a>
-					<h3>set<wbr>Username</h3>
+					<a name="setname" class="tsd-anchor"></a>
+					<h3>set<wbr>Name</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Username<span class="tsd-signature-symbol">(</span>username<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Name<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -257,13 +280,13 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Set the local node&#39;s public profile username</p>
+									<p>Set the local node&#39;s public profile display name</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>username: <span class="tsd-signature-type">string</span></h5>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Username string</p>
 									</div>
@@ -271,29 +294,6 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>Whether the update was successful</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="username" class="tsd-anchor"></a>
-					<h3>username</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">username<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/profile.ts#L30">modules/profile.ts:30</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the local node&#39;s public profile username</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>Node&#39;s public profile username</p>
 						</li>
 					</ul>
 				</section>
@@ -327,13 +327,13 @@
 								<a href="profile.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="profile.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="profile.html#setavatar" class="tsd-kind-icon">set<wbr>Avatar</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="profile.html#setusername" class="tsd-kind-icon">set<wbr>Username</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="profile.html#username" class="tsd-kind-icon">username</a>
+								<a href="profile.html#setname" class="tsd-kind-icon">set<wbr>Name</a>
 							</li>
 						</ul>
 					</li>

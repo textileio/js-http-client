@@ -69,7 +69,7 @@ export interface PubSubQueryResults {
 
 export interface ContactQuery {
   address: string
-  username: string
+  name: string
 }
 
 export interface ThreadSnapshotQuery {

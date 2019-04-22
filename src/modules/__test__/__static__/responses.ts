@@ -2,7 +2,7 @@ import { Peer, Summary, Block, Text, Like, Comment, User, Contact, CafeSession, 
 
 export const user: User = {
   address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-  name: 'username',
+  name: 'displayname',
   avatar: 'QmUMWopyRDwZYJznyyhp1TmbAJhLV3z2Xe9dSeqr6LNvV5'
 }
 
@@ -23,7 +23,7 @@ export const ignore: Block = {
 export namespace account {
   export const contact: Contact = {
     address: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
-    name: 'username',
+    name: 'displayname',
     avatar: 'avatar',
     peers: [],
     threads: []
