@@ -1,4 +1,3 @@
-import { QueryResult } from '../models'
 import { Readable } from 'stream'
 import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
@@ -66,11 +65,11 @@ export const readableWebToNode = <T>(webStream: ReadableStream<T>) => {
 }
 
 // https://github.com/canjs/can-ndjson-stream
-export const queryResultStream = (response: ReadableStream<ArrayBuffer>) => {
+export const streamHandler = <T>(response: ReadableStream<ArrayBuffer>) => {
   // For cancellation
   let isReader: any
   let cancellationRequest = false
-  return new ReadableStream<QueryResult>({
+  return new ReadableStream<T>({
     start(controller) {
       const reader = readableNodeToWeb(response).getReader()
       isReader = reader
@@ -85,7 +84,7 @@ export const queryResultStream = (response: ReadableStream<ArrayBuffer>) => {
           dataBuffer = dataBuffer.trim()
           if (dataBuffer.length !== 0) {
             try {
-              const dataLine: QueryResult = JSON.parse(dataBuffer)
+              const dataLine: T = JSON.parse(dataBuffer)
               controller.enqueue(dataLine)
             } catch (e) {
               controller.error(e)
@@ -111,7 +110,7 @@ export const queryResultStream = (response: ReadableStream<ArrayBuffer>) => {
             }
           }
         }
-        dataBuffer = lines[lines.length - 1]
+        dataBuffer = lines.length > 1 ? lines[lines.length - 1] : ''
         reader.read().then(processResult)
       }
       reader.read().then(processResult)

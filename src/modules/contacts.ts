@@ -1,6 +1,6 @@
 import { API } from '../core/api'
-import { queryResultStream } from '../helpers/handlers'
-import { ApiOptions, Contact, ContactList, QueryOptions } from '../models'
+import { streamHandler } from '../helpers/handlers'
+import { ApiOptions, Contact, ContactList, QueryOptions, QueryResult } from '../models'
 import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
 /**
@@ -87,6 +87,6 @@ export default class Contacts extends API {
     if (!response.body) {
       throw Error('Empty response stream')
     }
-    return queryResultStream(response.body as ReadableStream)
+    return streamHandler<QueryResult>(response.body as ReadableStream)
   }
 }

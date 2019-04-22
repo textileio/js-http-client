@@ -1,4 +1,3 @@
-// Main module
 import Account from './modules/account'
 import Cafes from './modules/cafes'
 import Config from './modules/config'
@@ -14,6 +13,7 @@ import Messages from './modules/messages'
 import Notifications from './modules/notifications'
 import Profile from './modules/profile'
 import Schemas from './modules/schemas'
+import Subscribe from './modules/subscribe'
 import Threads from './modules/threads'
 import Tokens from './modules/tokens'
 import Utils from './modules/utils'
@@ -58,6 +58,8 @@ export class Textile {
   profile: Profile
   /** @property {Schemas} schemas - Manage Textile Schemas */
   schemas: Schemas
+  /** @property {Subscribe} subscribe - Subscribe to thread updates */
+  subscribe: Subscribe
   /** @property {Threads} threads - Manage Textile Threads */
   threads: Threads
   /** @property {Tokens} tokens - Manage Textile Threads */
@@ -81,6 +83,7 @@ export class Textile {
     this.notifications = new Notifications(this.opts)
     this.profile = new Profile(this.opts)
     this.schemas = new Schemas(this.opts)
+    this.subscribe = new Subscribe(this.opts)
     this.threads = new Threads(this.opts)
     this.tokens = new Tokens(this.opts)
     this.utils = new Utils(this.opts)

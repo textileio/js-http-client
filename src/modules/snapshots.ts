@@ -1,6 +1,5 @@
-// import { EventEmitter2 } from 'eventemitter2'
 import { API } from '../core/api'
-import { queryResultStream } from '../helpers/handlers'
+import { streamHandler } from '../helpers/handlers'
 import { ApiOptions, QueryResult, Thread } from '../models'
 import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
@@ -37,7 +36,7 @@ export default class Snapshots extends API {
     if (!response.body) {
       throw Error('Empty response stream')
     }
-    return queryResultStream(response.body as ReadableStream)
+    return streamHandler<QueryResult>(response.body as ReadableStream)
   }
 
   /**
