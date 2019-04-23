@@ -1,6 +1,6 @@
 {
   "name": "@textile/js-http-client",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Official Textile JS HTTP Wrapper Client",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
