@@ -30,7 +30,8 @@ export default class Mills extends API {
    * @param {KeyValue} [headers] Extra headers to send in the request
    * @returns The generated FileIndex object
    */
-  async run(name: string, options: KeyValue, payload: any, headers: KeyValue) {
+  async run(name: string, options: KeyValue, payload: any, headers: KeyValue): Promise<FileIndex> {
+    // Perhaps this should use a new function dedicated to application/json
     const response = await this.sendPostMultiPart(
       `mills${name}`,
       [],
@@ -38,6 +39,6 @@ export default class Mills extends API {
       payload,
       headers
     )
-    return response.json() as Promise<FileIndex>
+    return response.json()
   }
 }

@@ -41,7 +41,7 @@ export default class Files extends API {
    * @returns An array of Thread objects
    */
   async list(thread?: string, offset?: string, limit?: number) {
-    const response = await this.sendGet('api/v0/files', undefined, {
+    const response = await this.sendGet('files', undefined, {
       thread: thread || '',
       offset: offset || '',
       limit: limit || 5
@@ -85,7 +85,7 @@ export default class Files extends API {
    * @param caption Caption to associated with the added file object
    * @returns An array of created File objects
    */
-  async addFile(file: any, caption: string, thread?: string) {
+  async addFile(file: any, caption: string, thread?: string): Promise<File> {
     if (!thread) {
       thread = 'default'
     }
@@ -94,6 +94,7 @@ export default class Files extends API {
     if (!schemaNode) {
       throw new Error('A thread schema is required before adding files to a thread.')
     }
+
     // Mill the file(s) before adding it
     const dir = await SchemaMiller.mill(
       file,
@@ -108,8 +109,8 @@ export default class Files extends API {
       items: [dir]
     }
     const response = await this.sendPost(
-      `api/v0/threads/${thread}/files`, undefined, { caption }, dirs
+      `threads/${thread}/files`, undefined, { caption }, dirs
     )
-    return response.json() as Promise<File>
+    return response.json()
   }
 }

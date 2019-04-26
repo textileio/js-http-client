@@ -72,6 +72,10 @@ export default class SchemaMiller {
       }
       if (form && form.getHeaders) {
         headers = form.getHeaders()
+      } else {
+        headers = {
+          'content-type': 'application/json'
+        }
       }
       const file = await remoteMill(node.mill, resolved, form, headers)
       dir.files[':single'] = file

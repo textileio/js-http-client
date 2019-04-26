@@ -93,7 +93,7 @@ class API {
     }
     return fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'POST',
-      headers: h,
+      headers: new Headers(h),
       body: data
     })
   }
