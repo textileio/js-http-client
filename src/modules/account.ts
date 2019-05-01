@@ -1,5 +1,5 @@
 import { API } from '../core/api'
-import { ApiOptions, Contact, QueryResult } from '../models'
+import { ApiOptions, Contact } from '../models'
 import Snapshots from './snapshots'
 
 /**

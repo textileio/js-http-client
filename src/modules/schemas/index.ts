@@ -1,4 +1,4 @@
-import { API } from '../../core/api.js'
+import { API } from '../../core/api'
 import defaults from './defaults'
 import { ApiOptions, Node, FileIndex } from '../../models'
 

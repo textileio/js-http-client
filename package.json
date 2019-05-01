@@ -14,7 +14,9 @@
     "precommit": "yarn lint && yarn test",
     "preversion": "yarn credit; yarn docs; yarn precommit",
     "release": "yarn version --patch",
-    "postversion": "git push --follow-tags"
+    "postversion": "git push --follow-tags",
+    "browser": "webpack --mode production",
+    "serve": "webpack-dev-server --mode development --progress --color"
   },
   "engines": {
     "node": ">= 10.0.0",
@@ -81,9 +83,13 @@
     "prettier": "^1.16.4",
     "prettier-eslint": "^8.8.2",
     "ts-jest": "^24.0.0",
+    "ts-loader": "^5.4.4",
     "tslint": "^5.14.0",
     "typedoc": "^0.14.2",
     "typedoc-plugin-markdown": "^1.1.27",
-    "typescript": "^3.3.4000"
+    "typescript": "^3.3.4000",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1"
   }
 }
