@@ -4,6 +4,7 @@ import Config from './modules/config'
 import Comments from './modules/comments'
 import Contacts from './modules/contacts'
 import Feed from './modules/feed'
+import File from './modules/file'
 import Files from './modules/files'
 import Invites from './modules/invites'
 import IPFS from './modules/ipfs'
@@ -40,6 +41,8 @@ export class Textile {
   contacts: Contacts
   /** @property {Feed} feed - Manage the Textile Feed */
   feed: Feed
+  /** @property {File} file - Manage a Textile File */
+  file: File
   /** @property {Files} files - Manage Textile Files */
   files: Files
   /** @property {Invites} invites - Manage Textile Invites */
@@ -74,6 +77,7 @@ export class Textile {
     this.comments = new Comments(this.opts)
     this.contacts = new Contacts(this.opts)
     this.feed = new Feed(this.opts)
+    this.file = new File(this.opts)
     this.files = new Files(this.opts)
     this.invites = new Invites(this.opts)
     this.ipfs = new IPFS(this.opts)

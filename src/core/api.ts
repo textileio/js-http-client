@@ -52,6 +52,7 @@ export const createHeaders = (args?: string[], opts?: KeyValue, headers?: KeyVal
 class API {
   opts: ApiOptions
   private baseURL: string
+  private gatewayURL: string
   constructor(opts: ApiOptions = { url: 'http://127.0.0.1', port: 40600, version: 0 }) {
     this.opts = opts
     const url = new URL(opts.url)
@@ -60,6 +61,25 @@ class API {
     }
     url.set('pathname', `/api/v${opts.version || 0}/`)
     this.baseURL = url.toString()
+
+    const gateway = new URL(this.opts.url)
+    gateway.set('port', 5052)
+    gateway.set('pathname', `/ipfs/`)
+    this.gatewayURL = gateway.toString()
+  }
+
+  /**
+   * Make a get request to the Textile node
+   *
+   * @param url The relative URL of the API endpoint
+   * @param args An array of arguments to pass as Textile args headers
+   * @param opts An object of options to pass as Textile options headers
+   */
+  protected async sendGatewayGet(path: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
+    return fetch(buildAbsoluteURL(this.gatewayURL, path), {
+      method: 'GET',
+      headers: createHeaders(args, opts, headers)
+    })
   }
 
   /**

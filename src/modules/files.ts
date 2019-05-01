@@ -1,5 +1,5 @@
 import { API } from '../core/api'
-import { ApiOptions, Node, FilesList, Files as File, Keys, DirectoryList } from '../models'
+import { ApiOptions, Node, FilesList, Files as FilesType, Keys, DirectoryList } from '../models'
 import SchemaMiller, { MillOpts } from '../helpers/schema-miller'
 import Mills from './mills'
 import Threads from './threads'
@@ -29,7 +29,7 @@ export default class Files extends API {
    */
   async get(id: string) {
     const response = await this.sendGet(`files/${id}`)
-    return response.json() as Promise<File>
+    return response.json() as Promise<FilesType>
   }
 
   /**
@@ -85,7 +85,7 @@ export default class Files extends API {
    * @param caption Caption to associated with the added file object
    * @returns An array of created File objects
    */
-  async addFile(file: any, caption: string, thread?: string): Promise<File> {
+  async addFile(file: any, caption: string, thread?: string): Promise<FilesType> {
     if (!thread) {
       thread = 'default'
     }
