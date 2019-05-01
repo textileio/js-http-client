@@ -14,7 +14,7 @@ export default class File extends API {
     this.opts = opts
   }
   /**
-   * 
+   *
    * Get raw data for a File
    *
    * @param file File object
