@@ -44,6 +44,13 @@ export const createHeaders = (args?: string[], opts?: KeyValue, headers?: KeyVal
   }
 }
 
+const handleErrors = (response: Response) => {
+  if (!response.ok) {
+    throw Error(response.statusText)
+  }
+  return response
+}
+
 /**
  * API is the base class for all SDK modules.
  *
@@ -91,11 +98,12 @@ class API {
    * @param data An object of data to post
    */
   protected async sendPost(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
-    return fetch(buildAbsoluteURL(this.baseURL, url), {
+    const response = await fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'POST',
       headers: createHeaders(args, opts, headers),
       body: JSON.stringify(data)
     })
+    return handleErrors(response)
   }
 
   /**
@@ -111,11 +119,12 @@ class API {
     if (!h['content-type']) {
       h['content-type'] = 'multipart/form-data'
     }
-    return fetch(buildAbsoluteURL(this.baseURL, url), {
+    const response = await fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'POST',
       headers: new Headers(h),
       body: data
     })
+    return handleErrors(response)
   }
 
   /**
@@ -126,10 +135,11 @@ class API {
    * @param opts An object of options to pass as Textile options headers
    */
   protected async sendGet(url: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
-    return fetch(buildAbsoluteURL(this.baseURL, url), {
+    const response = await fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'GET',
       headers: createHeaders(args, opts, headers)
     })
+    return handleErrors(response)
   }
 
   /**
@@ -140,10 +150,11 @@ class API {
    * @param opts An object of options to pass as Textile options headers
    */
   protected async sendDelete(url: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
-    return fetch(buildAbsoluteURL(this.baseURL, url), {
+    const response = await fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'DELETE',
       headers: createHeaders(args, opts, headers)
     })
+    return handleErrors(response)
   }
 
   /**
@@ -155,11 +166,12 @@ class API {
    * @param data An object of data to put
    */
   protected async sendPut(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
-    return fetch(buildAbsoluteURL(this.baseURL, url), {
+    const response = await fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'PUT',
       headers: createHeaders(args, opts, headers),
       body: JSON.stringify(data)
     })
+    return handleErrors(response)
   }
 
   /**
@@ -171,11 +183,12 @@ class API {
    * @param data An object of data to put
    */
   protected async sendPatch(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
-    return fetch(buildAbsoluteURL(this.baseURL, url), {
+    const response = await fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'patch',
       headers: createHeaders(args, opts, headers),
       body: JSON.stringify(data)
     })
+    return handleErrors(response)
   }
 }
 

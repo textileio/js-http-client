@@ -20,7 +20,7 @@ export default class IPFS extends API {
    */
   async id() {
     const response = await this.sendGet(`ipfs/id`)
-    return response.json() as Promise<string>
+    return response.text() as Promise<string>
   }
 
   /**
