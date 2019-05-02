@@ -76,7 +76,8 @@ export class Textile {
     this.opts = {
       ...{
         url: '127.0.0.1',
-        port: 40600
+        port: 40600,
+        version: 0
       },
       ...options
     }

@@ -60,7 +60,7 @@ class API {
   opts: ApiOptions
   private baseURL: string
   private gatewayURL: string
-  constructor(opts: ApiOptions = { url: 'http://127.0.0.1', port: 40600, version: 0 }) {
+  constructor(opts: ApiOptions) {
     this.opts = opts
     const url = new URL(opts.url)
     if (opts.port) {
