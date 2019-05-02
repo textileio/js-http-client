@@ -72,8 +72,14 @@ export class Textile {
   tokens: Tokens
   /** @property {Utils} utils - Get information about the Textile node */
   utils: Utils
-  constructor(options: ApiOptions) {
-    this.opts = options || {}
+  constructor(options?: ApiOptions) {
+    this.opts = {
+      ...{
+        url: '127.0.0.1',
+        port: 40600
+      },
+      ...options
+    }
     this.account = new Account(this.opts)
     this.blocks = new Blocks(this.opts)
     this.cafes = new Cafes(this.opts)
