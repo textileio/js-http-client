@@ -1,4 +1,5 @@
 import Account from './modules/account'
+import Blocks from './modules/blocks'
 import Cafes from './modules/cafes'
 import Config from './modules/config'
 import Comments from './modules/comments'
@@ -31,6 +32,8 @@ export class Textile {
   opts: ApiOptions
   /** @property {Account} account - Manage Textile wallet account */
   account: Account
+  /** @property {Blocks} blocks - Manage Textile Blocks */
+  blocks: Blocks
   /** @property {Cafes} account - Manage Textile Cafes */
   cafes: Cafes
   /** @property {Config} config - Manage Textile Config settings */
@@ -72,6 +75,7 @@ export class Textile {
   constructor(options: ApiOptions) {
     this.opts = options || {}
     this.account = new Account(this.opts)
+    this.blocks = new Blocks(this.opts)
     this.cafes = new Cafes(this.opts)
     this.config = new Config(this.opts)
     this.comments = new Comments(this.opts)
