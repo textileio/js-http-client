@@ -15,10 +15,21 @@ export * from './view_pb'
  * @property port The port of the Textile node API (default 40600)
  * @property version The Textile node API version (default 0)
  */
-export interface ApiOptions {
-  url: string
+export interface TextileOptions {
+  url?: string
   port?: number
   version?: number
+}
+/**
+ * The options object for the client object
+ * @property url The base URL of the Textile node API (default 'http://127.0.0.1')
+ * @property port The port of the Textile node API (default 40600)
+ * @property version The Textile node API version (default 0)
+ */
+export interface ApiOptions {
+  url: string
+  port: number
+  version: number
 }
 
 /**

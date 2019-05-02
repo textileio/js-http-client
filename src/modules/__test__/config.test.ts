@@ -5,7 +5,8 @@ import { config as response } from './__static__/config'
 
 const opts: ApiOptions = {
   url: 'http://127.0.0.1',
-  port: 40600
+  port: 40600,
+  version: 0
 }
 
 const ROOT = `${opts.url}:${opts.port}`

@@ -6,7 +6,8 @@ const token = 'RgUbEwnaifcr6WoM2ZfnnGr9dAf1QtWhdWVChzd6ui55To52F1DRkGsRni4H'
 
 const opts: ApiOptions = {
   url: 'http://127.0.0.1',
-  port: 40600
+  port: 40600,
+  version: 0
 }
 
 const ROOT = `${opts.url}:${opts.port}`
