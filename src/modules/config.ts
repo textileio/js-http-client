@@ -1,5 +1,4 @@
 import { API } from '../core/api'
-import { ApiOptions } from '../models'
 
 /**
  * Config is an API module for controling peer node configuration variables
@@ -8,16 +7,9 @@ import { ApiOptions } from '../models'
  * inside your Textile repository. Getting config values will report the currently active
  * config settings. This may differ from the values specifed when setting values.
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Config extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Report the currently active config settings
    *

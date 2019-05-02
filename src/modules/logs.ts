@@ -1,21 +1,13 @@
 import { API } from '../core/api'
-import { ApiOptions } from '../models'
 
 /**
  * Logs is an API module for managing the verbosity of one or all subsystems logs
  *
  * Textile logs piggyback on the IPFS event logs
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Logs extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * List the verbosity of one or all subsystems logs
    *

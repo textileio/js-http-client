@@ -1,21 +1,14 @@
 import { API } from '../core/api'
-import { ApiOptions, Text, TextList, Block } from '../models'
+import { Text, TextList, Block } from '../models'
 
 /**
  * Messages is an API module for managing thread/block messages
  *
  * Messages are added as blocks in a thread
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Messages extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Adds a message to a thread
    *

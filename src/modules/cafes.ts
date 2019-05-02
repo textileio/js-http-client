@@ -1,21 +1,14 @@
 import { API } from '../core/api'
-import { ApiOptions, CafeSessionList, CafeSession } from '../models'
+import { CafeSessionList, CafeSession } from '../models'
 
 /**
  * Cafes is an API module for managing Cafe access, messages, and services
  *
  * Cafes are other peers on the network who offer pinning, backup, and inbox services.
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Cafes extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Registers with a cafe and saves an expiring service session token
    *

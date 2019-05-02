@@ -1,21 +1,14 @@
 import { API } from '../core/api'
 import { streamHandler } from '../helpers/handlers'
-import { ApiOptions, Contact, ContactList, QueryOptions, QueryResult } from '../models'
+import { Contact, ContactList, QueryOptions, QueryResult } from '../models'
 import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
 /**
  * Contacts is an API module for managing local contacts and finding contacts on the network
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Contacts extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Adds or updates a contact directly, usually from a search
    *

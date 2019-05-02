@@ -1,19 +1,11 @@
 import { API } from '../core/api'
-import { ApiOptions, KeyValue } from '../models'
 
 /**
  * IPFS is an API module for working with an underlying IPFS peer
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class IPFS extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Retrieves underlying IPFS peer ID
    * @returns The underlying IPFS peer ID

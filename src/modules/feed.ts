@@ -1,22 +1,14 @@
 import { API } from '../core/api'
-import { ApiOptions, FeedItemList } from '../models'
+import { FeedItemList } from '../models'
 
 export type FeedModes = 'chrono' | 'annotated' | 'stacks'
 
 /**
  * Feed is an API module for paginating post and annotation block types
  *
- * @param {Object} opts Connection options object
- * @param {string} opts.url
  * @extends API
  */
 export default class Feed extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Retrieves post (join|leave|files|message) and annotation (comment|like) block type
    *

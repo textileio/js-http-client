@@ -1,19 +1,12 @@
 import { API } from '../core/api'
-import { ApiOptions, Peer } from '../models/index'
+import { Peer } from '../models/index'
 
 /**
  * Profile is an API module for accessing public profile information
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Profile extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Retrieve the local node's public profile peer information
    * @returns The local node's peer information

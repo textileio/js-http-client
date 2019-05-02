@@ -3,6 +3,12 @@ import URL from 'url-parse'
 import { buildAbsoluteURL } from 'url-toolkit'
 import { KeyValue, ApiOptions } from '../models'
 
+export const DEFAULT_API_OPTIONS = {
+  url: 'http://127.0.0.1',
+  port: 40600,
+  version: 0
+}
+
 /**
  * Create 'args' like a CLI command would take
  *
@@ -57,29 +63,10 @@ const handleErrors = (response: Response) => {
  * @params {ApiOptions] opts API options object
  */
 class API {
-  opts: ApiOptions
+  private opts: ApiOptions
   private baseURL: string
   private gatewayURL: string
-  constructor(opts: ApiOptions) {
-    this.opts = opts
-    const url = new URL(opts.url)
-    if (opts.port) {
-      url.set('port', opts.port)
-    }
-    url.set('pathname', `/api/v${opts.version || 0}/`)
-    this.baseURL = url.toString()
-
-    const gateway = new URL(this.opts.url)
-    gateway.set('port', 5052)
-    gateway.set('pathname', `/ipfs/`)
-    this.gatewayURL = gateway.toString()
-  }
-  /**
-   * Update the API settings
-   *
-   * @param opts An ApiOptions object
-   */
-  setOptions(opts: ApiOptions) {
+  constructor(opts: ApiOptions = DEFAULT_API_OPTIONS) {
     this.opts = opts
     const url = new URL(opts.url)
     if (opts.port) {

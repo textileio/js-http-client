@@ -1,5 +1,4 @@
 import { API } from '../core/api'
-import { ApiOptions, KeyValue } from '../models'
 
 /**
  * Tokens is an API module for managing Cafe access tokens
@@ -7,16 +6,9 @@ import { ApiOptions, KeyValue } from '../models'
  * Tokens allow other peers to register with a Cafe peer. Use this API to create, list, validate,
  * and remove tokens required for access to this Cafe.
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Tokens extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Creates an access token
    *

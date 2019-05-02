@@ -1,19 +1,12 @@
 import { API } from '../core/api'
-import { ApiOptions, Block, ExternalInvite, InviteViewList } from '../models'
+import { Block, ExternalInvite, InviteViewList } from '../models'
 
 /**
  * Invites is an API module for managing thread invites
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Invites extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Accept an invite to a thread
    *

@@ -1,19 +1,12 @@
 import { API } from '../core/api'
-import { ApiOptions, KeyValue, FileIndex } from '../models'
+import { KeyValue, FileIndex } from '../models'
 
 /**
  * Mills is an API module for processing Textile mills
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Mills extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Run a mill over a given payload
    *

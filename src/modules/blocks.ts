@@ -1,4 +1,4 @@
-import { API } from '../core/api'
+import { API, DEFAULT_API_OPTIONS } from '../core/api'
 import { ApiOptions, Block, BlockList, Thread } from '../models'
 import Threads from './threads'
 
@@ -22,15 +22,12 @@ import Threads from './threads'
  * -  COMMENT:  Comment added to another block.
  * -  LIKE:     Like added to another block.
  *
- * @param {ApiOptions} API options object
  * @extends {API}
  */
 export default class Blocks extends API {
-  opts: ApiOptions
   threads: Threads
-  constructor(opts: ApiOptions) {
+  constructor(opts: ApiOptions = DEFAULT_API_OPTIONS) {
     super(opts)
-    this.opts = opts
     this.threads = new Threads(opts)
   }
 

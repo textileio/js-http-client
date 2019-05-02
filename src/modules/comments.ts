@@ -1,21 +1,14 @@
 import { API } from '../core/api'
-import { ApiOptions, Comment, CommentList, Block } from '../models'
+import { Comment, CommentList, Block } from '../models'
 
 /**
  * Comments is an API module for managing thread/block comments
  *
  * Comments are added as blocks in a thread, which target another block, usually a file(s).
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Comments extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Adds a comment to a block
    *

@@ -1,20 +1,14 @@
 import { API } from '../core/api'
 import { streamHandler } from '../helpers/handlers'
-import { ApiOptions, FeedItem, Block } from '../models'
+import { FeedItem, Block } from '../models'
 import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
 /**
  * Subscribe is an API to stream updates from a thread or all threads
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Subscribe extends API {
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Subscribe to updates in a thread or all threads
    * An update is generated when a new block is added to a thread. See [[Block.BlockType]] for

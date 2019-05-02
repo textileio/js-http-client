@@ -1,21 +1,14 @@
 import { API } from '../core/api'
-import { ApiOptions, Like, LikeList, Block } from '../models'
+import { Like, LikeList, Block } from '../models'
 
 /**
  * Likes is an API module for managing thread/block likes
  *
  * Likes are added as blocks in a thread, which target another block, usually a file(s).
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Likes extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Adds a like to a block
    *

@@ -1,4 +1,4 @@
-import { API } from '../core/api'
+import { API, DEFAULT_API_OPTIONS } from '../core/api'
 import { ApiOptions, Node, FilesList, Files as FilesType, Keys, DirectoryList } from '../models'
 import SchemaMiller, { MillOpts } from '../helpers/schema-miller'
 import Mills from './mills'
@@ -7,16 +7,13 @@ import Threads from './threads'
 /**
  * Files is an API module for managing Textile files
  *
- * @param {ApiOptions} API options object
  * @extends {API}
  */
 export default class Files extends API {
-  opts: ApiOptions
   mills: Mills
   threads: Threads
-  constructor(opts: ApiOptions) {
+  constructor(opts: ApiOptions = DEFAULT_API_OPTIONS) {
     super(opts)
-    this.opts = opts
     this.mills = new Mills(opts)
     this.threads = new Threads(opts)
   }

@@ -1,20 +1,13 @@
 import { API } from '../../core/api'
 import defaults from './defaults'
-import { ApiOptions, Node, FileIndex } from '../../models'
+import { Node, FileIndex } from '../../models'
 
 /**
  * Schemas is an API module for managing Textile schemas
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Schemas extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Default Textile schemas
    * @returns An object with various commonly used schemas

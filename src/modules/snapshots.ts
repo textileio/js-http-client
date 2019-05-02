@@ -1,19 +1,14 @@
 import { API } from '../core/api'
 import { streamHandler } from '../helpers/handlers'
-import { ApiOptions, QueryResult, Thread } from '../models'
+import { QueryResult, Thread } from '../models'
 import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
 /**
  * Snapshots is an API module for managing thread snapshots
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Snapshots extends API {
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
 
   /**
    * Snapshot all threads and push to registered cafes

@@ -1,19 +1,16 @@
-import { API } from '../core/api'
+import { API, DEFAULT_API_OPTIONS } from '../core/api'
 import { ApiOptions, Contact } from '../models'
 import Snapshots from './snapshots'
 
 /**
  * Account is an API module for managing a wallet account
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Account extends API {
-  opts: ApiOptions
   private snapshots: Snapshots
-  constructor(opts: ApiOptions) {
+  constructor(opts: ApiOptions = DEFAULT_API_OPTIONS) {
     super(opts)
-    this.opts = opts
     this.snapshots = new Snapshots(opts)
   }
 

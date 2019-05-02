@@ -1,19 +1,12 @@
 import { API } from '../core/api'
-import { ApiOptions, Versions, Summary } from '../models'
+import { Versions, Summary } from '../models'
 
 /**
  * Utils is an API module for various Textile node utilities
  *
- * @param {ApiOptions} opts API options object
  * @extends API
  */
 export default class Utils extends API {
-  opts: ApiOptions
-  constructor(opts: ApiOptions) {
-    super(opts)
-    this.opts = opts
-  }
-
   /**
    * Get the current node's API, and application versions
    * @returns Version of Cafe API and node binary release
