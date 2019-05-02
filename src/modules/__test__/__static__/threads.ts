@@ -17,7 +17,7 @@ export const threads = {
     id: 'thread',
     initiator: 'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW',
     key: '1234',
-    members: [
+    whitelist: [
       'P4RaCnWZYhKCztWK7mii1WQZmXVAtBVdRAyBU6Em51agxTfW'
     ],
     name: 'test',

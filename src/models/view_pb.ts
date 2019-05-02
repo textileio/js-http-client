@@ -10,7 +10,7 @@ export interface AddThreadConfig {
   schema: AddThreadConfig.Schema
   type: model.Thread.Type
   sharing: model.Thread.Sharing
-  members: string[]
+  whitelist: string[]
   force: boolean
 }
 

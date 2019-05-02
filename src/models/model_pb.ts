@@ -45,7 +45,7 @@ export interface Thread {
   initiator: string
   type: Thread.Type
   sharing: Thread.Sharing
-  members: string[]
+  whitelist: string[]
   state: Thread.State
   head: string
   head_block: Block

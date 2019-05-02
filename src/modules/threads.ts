@@ -14,16 +14,16 @@ export type ThreadSharing = 'not_shared' | 'invite_only' | 'shared'
  *
  * Thread type controls read (R), annotate (A), and write (W) access:
  *
- * private  --> initiator: RAW, members:
- * readonly --> initiator: RAW, members: R
- * public   --> initiator: RAW, members: RA
- * open     --> initiator: RAW, members: RAW
+ * private  --> initiator: RAW, whitelist:
+ * readonly --> initiator: RAW, whitelist: R
+ * public   --> initiator: RAW, whitelist: RA
+ * open     --> initiator: RAW, whitelist: RAW
  *
  * Thread sharing style controls if (Y/N) a thread can be shared:
  *
- * notshared  --> initiator: N, members: N
- * inviteonly --> initiator: Y, members: N
- * shared     --> initiator: Y, members: Y
+ * notshared  --> initiator: N, whitelist: N
+ * inviteonly --> initiator: Y, whitelist: N
+ * shared     --> initiator: Y, whitelist: Y
  *
  * @param {Object} opts Connection options object
  * @param {string} opts.url
@@ -47,12 +47,12 @@ export default class Threads extends API {
    * @param type The type of thread, must be one of 'private' (default), 'read_only', 'public', or 'open'
    * @param sharing The sharing style of thread, must be one of 'notshared'
    * (default), 'inviteonly', or 'shared'
-   * @param members An array of contact addresses. When supplied, the thread will not allow
+   * @param whitelist An array of contact addresses. When supplied, the thread will not allow
    * additional peers, useful for 1-1 chat/file sharing or private groups.
    * @param schema Schema ID for the new thread
    * @returns The newly generated thread info
    */
-  async add(name: string, schema?: string | object, key?: string, type?: ThreadType, sharing?: ThreadSharing, members?: string[]) {
+  async add(name: string, schema?: string | object, key?: string, type?: ThreadType, sharing?: ThreadSharing, whitelist?: string[]) {
     let targetSchema: string | undefined
     // Attempt to create the schema on the fly
     if (schema && typeof schema === 'object') {
@@ -69,7 +69,7 @@ export default class Threads extends API {
         key: key || '',
         type: type || 'private',
         sharing: sharing || 'not_shared',
-        members: (members || []).join(',')
+        whitelist: (whitelist || []).join(',')
       }
     )
     return response.json() as Promise<Thread>
