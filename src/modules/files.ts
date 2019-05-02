@@ -85,7 +85,7 @@ export default class Files extends API {
    * @param caption Caption to associated with the added file object
    * @returns An array of created File objects
    */
-  async addFile(file: any, caption: string, thread?: string): Promise<FilesType> {
+  async add(file: any, caption: string, thread?: string): Promise<FilesType> {
     if (!thread) {
       thread = 'default'
     }
