@@ -1,5 +1,5 @@
 import { API } from '../core/api'
-import { ApiOptions, Block, BlockList } from '../models'
+import { ApiOptions, Block, BlockList, Thread } from '../models'
 import Threads from './threads'
 
 /**
@@ -38,7 +38,7 @@ export default class Blocks extends API {
    * Retrieves a block by ID
    *
    * @param id ID of the target block
-   * @returns The thread object
+   * @returns The block object
    */
   async get(id: string) {
     const response = await this.sendGet(`blocks/${id}`)

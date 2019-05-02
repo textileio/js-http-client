@@ -1,6 +1,7 @@
 import { API } from '../core/api'
 import { ApiOptions, Thread, ThreadList, ContactList } from '../models/index'
 import Snapshots from './snapshots'
+import Schemas from './schemas'
 
 export type ThreadType = 'private' | 'read_only' | 'public' | 'open'
 export type ThreadSharing = 'not_shared' | 'invite_only' | 'shared'
@@ -31,12 +32,13 @@ export type ThreadSharing = 'not_shared' | 'invite_only' | 'shared'
 export default class Threads extends API {
   opts: ApiOptions
   snapshots: Snapshots
+  schemas: Schemas
   constructor(opts: ApiOptions) {
     super(opts)
     this.snapshots = new Snapshots(opts)
     this.opts = opts
+    this.schemas = new Schemas(opts)
   }
-
   /**
    * Adds and joins a new thread
    *
@@ -50,12 +52,20 @@ export default class Threads extends API {
    * @param schema Schema ID for the new thread
    * @returns The newly generated thread info
    */
-  async add(name: string, schema?: string, key?: string, type?: ThreadType, sharing?: ThreadSharing, members?: string[]) {
+  async add(name: string, schema?: string | object, key?: string, type?: ThreadType, sharing?: ThreadSharing, members?: string[]) {
+    let targetSchema: string | undefined
+    // Attempt to create the schema on the fly
+    if (schema && typeof schema === 'object') {
+      const fileIndex = await this.schemas.add(schema)
+      targetSchema = fileIndex.key
+    } else if (schema && typeof schema === 'string') {
+      targetSchema = schema
+    }
     const response = await this.sendPost(
       'threads',
       [name],
       {
-        schema: schema || '',
+        schema: targetSchema || '',
         key: key || '',
         type: type || 'private',
         sharing: sharing || 'not_shared',
