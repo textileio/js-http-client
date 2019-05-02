@@ -21,7 +21,7 @@ export default class Config extends API {
   async get(path?: string) {
     const cleanPath = path ? `/${path.replace(/\./g, '/')}` : ''
     const response = await this.sendGet(`config${cleanPath}`)
-    return response.json() as Promise<object>
+    return response.json() as Promise<object | string>
   }
 
   /**

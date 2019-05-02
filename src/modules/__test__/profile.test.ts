@@ -32,16 +32,6 @@ describe('profile get name', () => {
   })
 })
 
-describe('profile set avatar', () => {
-  it('should resolve to boolean', async () => {
-    nock(ROOT)
-      .post('/api/v0/profile/avatar')
-      .reply(201)
-
-    expect(await profile.setAvatar(response.get.avatar)).toEqual(true)
-  })
-})
-
 describe('profile get avatar', () => {
   it('should resolve to avatar hash string', async () => {
     nock(ROOT)

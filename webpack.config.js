@@ -15,7 +15,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions,
+    extensions
   },
   output: {
     filename: "bundle.js",
@@ -24,7 +24,7 @@ module.exports = {
     libraryTarget: "var"
   },
   devServer: {
-    filename: 'bundle.js',
-    publicPath: '/dist/'
+    filename: "bundle.js",
+    publicPath: "/dist/"
   }
 };

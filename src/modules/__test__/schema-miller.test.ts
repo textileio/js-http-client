@@ -15,10 +15,10 @@ describe('simple schema', () => {
   it.skip('should have normalized options', () => {
     const { links: { thumb } } = schema
     const node = thumb
-    const normalized = SchemaMiller.normalizeOptions(node.opts)
+    const normalized = SchemaMiller.normalizeOptions(node)
 
-    expect(normalized.opts.pin).toEqual(true)
-    expect(normalized.opts.plaintext).toEqual(false)
+    expect(normalized.pin).toEqual(true)
+    expect(normalized.plaintext).toEqual(false)
   })
 
   // it('should have resolved use', () => {

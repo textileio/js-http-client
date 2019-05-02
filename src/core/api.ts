@@ -122,9 +122,9 @@ class API {
    */
   protected async sendPostMultiPart(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
     const h = createHeaders(args, opts, headers)
-    if (!h['content-type']) {
-      h['content-type'] = 'multipart/form-data'
-    }
+    // Remove 'Content-Type' header to allow fetch to add along with the correct 'boundary'
+    delete h['content-type']
+    delete h['Content-Type'] // TODO: Find nicer way to do this
     const response = await fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'POST',
       headers: new Headers(h),

@@ -1,10 +1,7 @@
 import toposort from 'toposort'
-import { Link, Directory, Node, Step, FileIndex } from '../models'
+import { Link, Directory, Node, FileIndex } from '../models'
 
-export interface MillOpts {
-  opts: { [k: string]: string }
-  // mill: string
-}
+export type MillOpts = Record<string, string>
 
 export type MillFunction = (mill: string, opts: MillOpts, form: any, headers: { [k: string]: string }) => Promise<FileIndex>
 
@@ -29,11 +26,11 @@ export default class SchemaMiller {
     )
   }
 
-  static normalizeOptions(schemaOpts: { [k: string]: string }) {
-    const opts: MillOpts = { opts: schemaOpts }
+  static normalizeOptions(info: Node | Link) {
+    const opts: MillOpts = info.opts
     // Check for top level opts
-    opts.opts.plaintext = (schemaOpts.plaintext || false).toString()
-    opts.opts.pin = (schemaOpts.pin || false).toString()
+    opts.plaintext = (info.plaintext || false).toString()
+    opts.pin = (info.pin || false).toString()
     return opts
   }
 
@@ -41,15 +38,15 @@ export default class SchemaMiller {
     let use
 
     // Convert 'use' to hash of payload
-    if (method.opts.use && method.opts.use !== ':file') {
+    if (method.use && method.use !== ':file') {
       // TODO: This is a hack, should use multihash JS lib in future
-      use = (method.opts.use.length === 46 && method.opts.use.startsWith('Qm')) ?
-        method.opts.use :
-        payloadsByName.files[method.opts.use].hash
+      use = (method.use.length === 46 && method.use.startsWith('Qm')) ?
+        method.use :
+        payloadsByName.files[method.use].hash
     }
 
     const resolvedMethod = { ...method }
-    resolvedMethod.opts.use = use || ''
+    resolvedMethod.use = use || ''
     return resolvedMethod
   }
 
@@ -59,25 +56,17 @@ export default class SchemaMiller {
 
     // Traverse the schema and collect generated files
     if (node.mill) {
-      const normal = SchemaMiller.normalizeOptions(node.opts || {})
+      const normal = SchemaMiller.normalizeOptions(node)
       const resolved = SchemaMiller.resolveDependency(normal, dir)
-      let headers = {}
       let form
-      if (resolved.opts.use) {
+      if (resolved.use) {
         form = undefined
       } else if (typeof payload === 'function') {
         form = payload()
       } else {
         form = payload
       }
-      if (form && form.getHeaders) {
-        headers = form.getHeaders()
-      } else {
-        headers = {
-          'content-type': 'application/json'
-        }
-      }
-      const file = await remoteMill(node.mill, resolved, form, headers)
+      const file = await remoteMill(node.mill, resolved, form, {})
       dir.files[':single'] = file
     } else if (node.links) {
       // Determine order
@@ -85,27 +74,19 @@ export default class SchemaMiller {
       // Send each link
       // eslint-disable-next-line no-restricted-syntax
       for (const step of steps) {
-        const body = payload
         let form
-        const normal = SchemaMiller.normalizeOptions(step.link.opts || {})
+        const normal = SchemaMiller.normalizeOptions(step.link || {})
         const resolved = SchemaMiller.resolveDependency(normal, dir)
-        let headers = {}
-
-        if (resolved.opts.use) {
-          // It's a file, the hash will pass as the payload, don't send file again
+        if (resolved.use) {
+          // It's an existing 'file', hash will pass as payload, so don't send file again
           form = undefined
-        } else if (typeof body === 'function') {
-          form = body()
+        } else if (typeof payload === 'function') {
+          form = payload()
         } else {
-          form = body
+          form = payload
         }
-
-        if (form && form.getHeaders) {
-          headers = form.getHeaders()
-        }
-
         // Must be synchronous for dependencies
-        const file = await remoteMill(step.link.mill, resolved, form, headers)
+        const file = await remoteMill(step.link.mill, resolved, form, {})
         dir.files[step.name] = file
       }
     }

@@ -96,8 +96,8 @@ export default class Files extends API {
     const dir = await SchemaMiller.mill(
       file,
       schemaNode,
-      async (mill: string, link: MillOpts, form: any, headers: { [key: string]: string }) => {
-        const file = await this.mills.run(mill, link.opts, form, headers)
+      async (mill: string, opts: MillOpts, form: any, headers: { [key: string]: string }) => {
+        const file = await this.mills.run(mill, opts, form, headers)
         return file
       }
     )
