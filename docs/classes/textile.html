@@ -69,11 +69,6 @@
 					<div class="lead">
 						<p>Textile is the main client class</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>param</dt>
-						<dd><p>The API options object</p>
-						</dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,12 +84,6 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="textile.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#account" class="tsd-kind-icon">account</a></li>
@@ -104,6 +93,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#config" class="tsd-kind-icon">config</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#contacts" class="tsd-kind-icon">contacts</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#feed" class="tsd-kind-icon">feed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#file" class="tsd-kind-icon">file</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#files" class="tsd-kind-icon">files</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#invites" class="tsd-kind-icon">invites</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#ipfs" class="tsd-kind-icon">ipfs</a></li>
@@ -111,7 +101,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#logs" class="tsd-kind-icon">logs</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#messages" class="tsd-kind-icon">messages</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#notifications" class="tsd-kind-icon">notifications</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#opts" class="tsd-kind-icon">opts</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#profile" class="tsd-kind-icon">profile</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#schemas" class="tsd-kind-icon">schemas</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#subscribe" class="tsd-kind-icon">subscribe</a></li>
@@ -120,33 +109,19 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="textile.html#utils" class="tsd-kind-icon">utils</a></li>
 							</ul>
 						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Textile<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="textile.html" class="tsd-signature-type">Textile</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L68">index.ts:68</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>options: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h5>
-								</li>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="textile.html#setoptions" class="tsd-kind-icon">set<wbr>Options</a></li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="textile.html" class="tsd-signature-type">Textile</a></h4>
-						</li>
-					</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="textile.html#opts" class="tsd-kind-icon">opts</a></li>
+							</ul>
+						</section>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -154,10 +129,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="account" class="tsd-anchor"></a>
 					<h3>account</h3>
-					<div class="tsd-signature tsd-kind-icon">account<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Account</span></div>
+					<div class="tsd-signature tsd-kind-icon">account<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Account</span><span class="tsd-signature-symbol"> =&nbsp;new Account(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L33">index.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L37">index.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -171,10 +146,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="blocks" class="tsd-anchor"></a>
 					<h3>blocks</h3>
-					<div class="tsd-signature tsd-kind-icon">blocks<span class="tsd-signature-symbol">:</span> <a href="blocks.html" class="tsd-signature-type">Blocks</a></div>
+					<div class="tsd-signature tsd-kind-icon">blocks<span class="tsd-signature-symbol">:</span> <a href="blocks.html" class="tsd-signature-type">Blocks</a><span class="tsd-signature-symbol"> =&nbsp;new Blocks(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L35">index.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L39">index.ts:39</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -188,10 +163,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="cafes" class="tsd-anchor"></a>
 					<h3>cafes</h3>
-					<div class="tsd-signature tsd-kind-icon">cafes<span class="tsd-signature-symbol">:</span> <a href="cafes.html" class="tsd-signature-type">Cafes</a></div>
+					<div class="tsd-signature tsd-kind-icon">cafes<span class="tsd-signature-symbol">:</span> <a href="cafes.html" class="tsd-signature-type">Cafes</a><span class="tsd-signature-symbol"> =&nbsp;new Cafes(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L37">index.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L41">index.ts:41</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -205,10 +180,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="comments" class="tsd-anchor"></a>
 					<h3>comments</h3>
-					<div class="tsd-signature tsd-kind-icon">comments<span class="tsd-signature-symbol">:</span> <a href="comments.html" class="tsd-signature-type">Comments</a></div>
+					<div class="tsd-signature tsd-kind-icon">comments<span class="tsd-signature-symbol">:</span> <a href="comments.html" class="tsd-signature-type">Comments</a><span class="tsd-signature-symbol"> =&nbsp;new Comments(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L41">index.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L45">index.ts:45</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -222,10 +197,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="config" class="tsd-anchor"></a>
 					<h3>config</h3>
-					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <a href="config.html" class="tsd-signature-type">Config</a></div>
+					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <a href="config.html" class="tsd-signature-type">Config</a><span class="tsd-signature-symbol"> =&nbsp;new Config(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L39">index.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L43">index.ts:43</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -239,10 +214,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="contacts" class="tsd-anchor"></a>
 					<h3>contacts</h3>
-					<div class="tsd-signature tsd-kind-icon">contacts<span class="tsd-signature-symbol">:</span> <a href="contacts.html" class="tsd-signature-type">Contacts</a></div>
+					<div class="tsd-signature tsd-kind-icon">contacts<span class="tsd-signature-symbol">:</span> <a href="contacts.html" class="tsd-signature-type">Contacts</a><span class="tsd-signature-symbol"> =&nbsp;new Contacts(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L43">index.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L47">index.ts:47</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -256,10 +231,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="feed" class="tsd-anchor"></a>
 					<h3>feed</h3>
-					<div class="tsd-signature tsd-kind-icon">feed<span class="tsd-signature-symbol">:</span> <a href="feed.html" class="tsd-signature-type">Feed</a></div>
+					<div class="tsd-signature tsd-kind-icon">feed<span class="tsd-signature-symbol">:</span> <a href="feed.html" class="tsd-signature-type">Feed</a><span class="tsd-signature-symbol"> =&nbsp;new Feed(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L45">index.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L49">index.ts:49</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -271,12 +246,29 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="files" class="tsd-anchor"></a>
-					<h3>files</h3>
-					<div class="tsd-signature tsd-kind-icon">files<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Files</span></div>
+					<a name="file" class="tsd-anchor"></a>
+					<h3>file</h3>
+					<div class="tsd-signature tsd-kind-icon">file<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">File</span><span class="tsd-signature-symbol"> =&nbsp;new File(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L47">index.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L51">index.ts:51</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>property</dt>
+							<dd><p>{File} file - Manage a Textile File</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="files" class="tsd-anchor"></a>
+					<h3>files</h3>
+					<div class="tsd-signature tsd-kind-icon">files<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Files</span><span class="tsd-signature-symbol"> =&nbsp;new Files(this.opts)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L53">index.ts:53</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -290,10 +282,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="invites" class="tsd-anchor"></a>
 					<h3>invites</h3>
-					<div class="tsd-signature tsd-kind-icon">invites<span class="tsd-signature-symbol">:</span> <a href="invites.html" class="tsd-signature-type">Invites</a></div>
+					<div class="tsd-signature tsd-kind-icon">invites<span class="tsd-signature-symbol">:</span> <a href="invites.html" class="tsd-signature-type">Invites</a><span class="tsd-signature-symbol"> =&nbsp;new Invites(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L49">index.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L55">index.ts:55</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -307,10 +299,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="ipfs" class="tsd-anchor"></a>
 					<h3>ipfs</h3>
-					<div class="tsd-signature tsd-kind-icon">ipfs<span class="tsd-signature-symbol">:</span> <a href="ipfs.html" class="tsd-signature-type">IPFS</a></div>
+					<div class="tsd-signature tsd-kind-icon">ipfs<span class="tsd-signature-symbol">:</span> <a href="ipfs.html" class="tsd-signature-type">IPFS</a><span class="tsd-signature-symbol"> =&nbsp;new IPFS(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L51">index.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L57">index.ts:57</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -324,10 +316,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="likes" class="tsd-anchor"></a>
 					<h3>likes</h3>
-					<div class="tsd-signature tsd-kind-icon">likes<span class="tsd-signature-symbol">:</span> <a href="likes.html" class="tsd-signature-type">Likes</a></div>
+					<div class="tsd-signature tsd-kind-icon">likes<span class="tsd-signature-symbol">:</span> <a href="likes.html" class="tsd-signature-type">Likes</a><span class="tsd-signature-symbol"> =&nbsp;new Likes(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L53">index.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L59">index.ts:59</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -341,10 +333,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="logs" class="tsd-anchor"></a>
 					<h3>logs</h3>
-					<div class="tsd-signature tsd-kind-icon">logs<span class="tsd-signature-symbol">:</span> <a href="logs.html" class="tsd-signature-type">Logs</a></div>
+					<div class="tsd-signature tsd-kind-icon">logs<span class="tsd-signature-symbol">:</span> <a href="logs.html" class="tsd-signature-type">Logs</a><span class="tsd-signature-symbol"> =&nbsp;new Logs(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L55">index.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L61">index.ts:61</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -358,10 +350,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="messages" class="tsd-anchor"></a>
 					<h3>messages</h3>
-					<div class="tsd-signature tsd-kind-icon">messages<span class="tsd-signature-symbol">:</span> <a href="messages.html" class="tsd-signature-type">Messages</a></div>
+					<div class="tsd-signature tsd-kind-icon">messages<span class="tsd-signature-symbol">:</span> <a href="messages.html" class="tsd-signature-type">Messages</a><span class="tsd-signature-symbol"> =&nbsp;new Messages(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L57">index.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L63">index.ts:63</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -375,10 +367,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="notifications" class="tsd-anchor"></a>
 					<h3>notifications</h3>
-					<div class="tsd-signature tsd-kind-icon">notifications<span class="tsd-signature-symbol">:</span> <a href="notifications.html" class="tsd-signature-type">Notifications</a></div>
+					<div class="tsd-signature tsd-kind-icon">notifications<span class="tsd-signature-symbol">:</span> <a href="notifications.html" class="tsd-signature-type">Notifications</a><span class="tsd-signature-symbol"> =&nbsp;new Notifications(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L59">index.ts:59</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L65">index.ts:65</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -390,22 +382,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="opts" class="tsd-anchor"></a>
-					<h3>opts</h3>
-					<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L31">index.ts:31</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="profile" class="tsd-anchor"></a>
 					<h3>profile</h3>
-					<div class="tsd-signature tsd-kind-icon">profile<span class="tsd-signature-symbol">:</span> <a href="profile.html" class="tsd-signature-type">Profile</a></div>
+					<div class="tsd-signature tsd-kind-icon">profile<span class="tsd-signature-symbol">:</span> <a href="profile.html" class="tsd-signature-type">Profile</a><span class="tsd-signature-symbol"> =&nbsp;new Profile(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L61">index.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L67">index.ts:67</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -419,10 +401,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="schemas" class="tsd-anchor"></a>
 					<h3>schemas</h3>
-					<div class="tsd-signature tsd-kind-icon">schemas<span class="tsd-signature-symbol">:</span> <a href="schemas.html" class="tsd-signature-type">Schemas</a></div>
+					<div class="tsd-signature tsd-kind-icon">schemas<span class="tsd-signature-symbol">:</span> <a href="schemas.html" class="tsd-signature-type">Schemas</a><span class="tsd-signature-symbol"> =&nbsp;new Schemas(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L63">index.ts:63</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L69">index.ts:69</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -436,10 +418,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="subscribe" class="tsd-anchor"></a>
 					<h3>subscribe</h3>
-					<div class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">:</span> <a href="subscribe.html" class="tsd-signature-type">Subscribe</a></div>
+					<div class="tsd-signature tsd-kind-icon">subscribe<span class="tsd-signature-symbol">:</span> <a href="subscribe.html" class="tsd-signature-type">Subscribe</a><span class="tsd-signature-symbol"> =&nbsp;new Subscribe(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L62">index.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L71">index.ts:71</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -453,10 +435,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="threads" class="tsd-anchor"></a>
 					<h3>threads</h3>
-					<div class="tsd-signature tsd-kind-icon">threads<span class="tsd-signature-symbol">:</span> <a href="threads.html" class="tsd-signature-type">Threads</a></div>
+					<div class="tsd-signature tsd-kind-icon">threads<span class="tsd-signature-symbol">:</span> <a href="threads.html" class="tsd-signature-type">Threads</a><span class="tsd-signature-symbol"> =&nbsp;new Threads(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L64">index.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L73">index.ts:73</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -470,10 +452,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="tokens" class="tsd-anchor"></a>
 					<h3>tokens</h3>
-					<div class="tsd-signature tsd-kind-icon">tokens<span class="tsd-signature-symbol">:</span> <a href="tokens.html" class="tsd-signature-type">Tokens</a></div>
+					<div class="tsd-signature tsd-kind-icon">tokens<span class="tsd-signature-symbol">:</span> <a href="tokens.html" class="tsd-signature-type">Tokens</a><span class="tsd-signature-symbol"> =&nbsp;new Tokens(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L66">index.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L75">index.ts:75</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -487,10 +469,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="utils" class="tsd-anchor"></a>
 					<h3>utils</h3>
-					<div class="tsd-signature tsd-kind-icon">utils<span class="tsd-signature-symbol">:</span> <a href="utils.html" class="tsd-signature-type">Utils</a></div>
+					<div class="tsd-signature tsd-kind-icon">utils<span class="tsd-signature-symbol">:</span> <a href="utils.html" class="tsd-signature-type">Utils</a><span class="tsd-signature-symbol"> =&nbsp;new Utils(this.opts)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L68">index.ts:68</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L77">index.ts:77</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -500,6 +482,83 @@
 							</dd>
 						</dl>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setoptions" class="tsd-anchor"></a>
+					<h3>set<wbr>Options</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Options<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/textileoptions.html" class="tsd-signature-type">TextileOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L84">index.ts:84</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Textile is the main client class</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/textileoptions.html" class="tsd-signature-type">TextileOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The Textile options object</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
+					<a name="opts" class="tsd-anchor"></a>
+					<h3>opts</h3>
+					<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L31">index.ts:31</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="opts.port" class="tsd-anchor"></a>
+						<h3>port</h3>
+						<div class="tsd-signature tsd-kind-icon">port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;40600</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L33">index.ts:33</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="opts.url" class="tsd-anchor"></a>
+						<h3>url</h3>
+						<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;127.0.0.1&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L32">index.ts:32</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="opts.version" class="tsd-anchor"></a>
+						<h3>version</h3>
+						<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/index.ts#L34">index.ts:34</a></li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -518,9 +577,6 @@
 					<li class="current tsd-kind-class">
 						<a href="textile.html" class="tsd-kind-icon">Textile</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="textile.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="textile.html#account" class="tsd-kind-icon">account</a>
 							</li>
@@ -541,6 +597,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="textile.html#feed" class="tsd-kind-icon">feed</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="textile.html#file" class="tsd-kind-icon">file</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="textile.html#files" class="tsd-kind-icon">files</a>
@@ -564,9 +623,6 @@
 								<a href="textile.html#notifications" class="tsd-kind-icon">notifications</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="textile.html#opts" class="tsd-kind-icon">opts</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="textile.html#profile" class="tsd-kind-icon">profile</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -583,6 +639,12 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="textile.html#utils" class="tsd-kind-icon">utils</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="textile.html#setoptions" class="tsd-kind-icon">set<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
+								<a href="textile.html#opts" class="tsd-kind-icon">opts</a>
 							</li>
 						</ul>
 					</li>

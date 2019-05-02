@@ -74,7 +74,6 @@
 								<li class="tsd-kind-module"><a href="modules/caferequest.html" class="tsd-kind-icon">Cafe<wbr>Request</a></li>
 								<li class="tsd-kind-module"><a href="modules/directory.html" class="tsd-kind-icon">Directory</a></li>
 								<li class="tsd-kind-module"><a href="modules/feedrequest.html" class="tsd-kind-icon">Feed<wbr>Request</a></li>
-								<li class="tsd-kind-module"><a href="modules/file.html" class="tsd-kind-icon">File</a></li>
 								<li class="tsd-kind-module"><a href="modules/keys.html" class="tsd-kind-icon">Keys</a></li>
 								<li class="tsd-kind-module"><a href="modules/link.html" class="tsd-kind-icon">Link</a></li>
 								<li class="tsd-kind-module"><a href="modules/loglevel.html" class="tsd-kind-icon">Log<wbr>Level</a></li>
@@ -108,6 +107,7 @@
 								<li class="tsd-kind-class"><a href="classes/config.html" class="tsd-kind-icon">Config</a></li>
 								<li class="tsd-kind-class"><a href="classes/contacts.html" class="tsd-kind-icon">Contacts</a></li>
 								<li class="tsd-kind-class"><a href="classes/feed.html" class="tsd-kind-icon">Feed</a></li>
+								<li class="tsd-kind-class"><a href="classes/file.html" class="tsd-kind-icon">File</a></li>
 								<li class="tsd-kind-class"><a href="classes/files.html" class="tsd-kind-icon">Files</a></li>
 								<li class="tsd-kind-class"><a href="classes/ipfs.html" class="tsd-kind-icon">IPFS</a></li>
 								<li class="tsd-kind-class"><a href="classes/invites.html" class="tsd-kind-icon">Invites</a></li>
@@ -210,6 +210,7 @@
 								<li class="tsd-kind-interface"><a href="interfaces/summary.html" class="tsd-kind-icon">Summary</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/text.html" class="tsd-kind-icon">Text</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/textlist.html" class="tsd-kind-icon">Text<wbr>List</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/textileoptions.html" class="tsd-kind-icon">Textile<wbr>Options</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/threadadd.html" class="tsd-kind-icon">Thread<wbr>Add</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/threadannounce.html" class="tsd-kind-icon">Thread<wbr>Announce</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/threadblock.html" class="tsd-kind-icon">Thread<wbr>Block</a></li>
@@ -275,7 +276,7 @@
 					<div class="tsd-signature tsd-kind-icon">Key<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/index.ts#L38">models/index.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/index.ts#L50">models/index.ts:50</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -330,7 +331,7 @@
 					<div class="tsd-signature tsd-kind-icon">Thread<wbr>Sharing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"not_shared"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"invite_only"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"shared"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/threads.ts#L6">modules/threads.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/threads.ts#L7">modules/threads.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -340,7 +341,7 @@
 					<div class="tsd-signature tsd-kind-icon">Thread<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"private"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"read_only"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"public"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"open"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/threads.ts#L5">modules/threads.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/threads.ts#L6">modules/threads.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -741,9 +742,6 @@
 						<a href="modules/feedrequest.html">Feed<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/file.html">File</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="modules/keys.html">Keys</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -815,6 +813,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/feed.html" class="tsd-kind-icon">Feed</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/file.html" class="tsd-kind-icon">File</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/files.html" class="tsd-kind-icon">Files</a>
@@ -1106,6 +1107,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/textlist.html" class="tsd-kind-icon">Text<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/textileoptions.html" class="tsd-kind-icon">Textile<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/threadadd.html" class="tsd-kind-icon">Thread<wbr>Add</a>
