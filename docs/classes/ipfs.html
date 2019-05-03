@@ -70,9 +70,6 @@
 						<p>IPFS is an API module for working with an underlying IPFS peer</p>
 					</div>
 					<dl class="tsd-comment-tags">
-						<dt>param</dt>
-						<dd><p>API options object</p>
-						</dd>
 						<dt>extends</dt>
 						<dd><p>API</p>
 						</dd>
@@ -96,16 +93,10 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="ipfs.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="ipfs.html#opts" class="tsd-kind-icon">opts</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="ipfs.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -113,7 +104,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ipfs.html#cat" class="tsd-kind-icon">cat</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ipfs.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="ipfs.html#setoptions" class="tsd-kind-icon">set<wbr>Options</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ipfs.html#swarm" class="tsd-kind-icon">swarm</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ipfs.html#swarmconnect" class="tsd-kind-icon">swarm<wbr>Connect</a></li>
 							</ul>
@@ -121,45 +111,31 @@
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new IPFS<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ipfs.html" class="tsd-signature-type">IPFS</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">new IPFS<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ipfs.html" class="tsd-signature-type">IPFS</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides API.__constructor</p>
+								<p>Inherited from API.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L11">modules/ipfs.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/core/api.ts#L68">core/api.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol"> =&nbsp;DEFAULT_API_OPTIONS</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="ipfs.html" class="tsd-signature-type">IPFS</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-					<a name="opts" class="tsd-anchor"></a>
-					<h3>opts</h3>
-					<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></div>
-					<aside class="tsd-sources">
-						<p>Overrides API.opts</p>
-						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L11">modules/ipfs.ts:11</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -174,7 +150,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L55">modules/ipfs.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L47">modules/ipfs.ts:47</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -212,7 +188,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L21">modules/ipfs.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L13">modules/ipfs.ts:13</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -222,38 +198,6 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>The underlying IPFS peer ID</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="setoptions" class="tsd-anchor"></a>
-					<h3>set<wbr>Options</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Options<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from API.setOptions</p>
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/core/api.ts#L82">core/api.ts:82</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Update the API settings</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An ApiOptions object</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -267,7 +211,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L34">modules/ipfs.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L26">modules/ipfs.ts:26</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -316,7 +260,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L66">modules/ipfs.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/ipfs.ts#L58">modules/ipfs.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -355,20 +299,14 @@
 					<li class="current tsd-kind-class">
 						<a href="ipfs.html" class="tsd-kind-icon">IPFS</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
 								<a href="ipfs.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-								<a href="ipfs.html#opts" class="tsd-kind-icon">opts</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="ipfs.html#cat" class="tsd-kind-icon">cat</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="ipfs.html#id" class="tsd-kind-icon">id</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="ipfs.html#setoptions" class="tsd-kind-icon">set<wbr>Options</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="ipfs.html#swarm" class="tsd-kind-icon">swarm</a>

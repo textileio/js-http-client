@@ -29,7 +29,6 @@ code should be updated to reflect this change.
   - [Background](#background)
   - [Development](#development)
   - [Documentation](#documentation)
-  - [Roadmap](#roadmap)
   - [Maintainer](#maintainer)
   - [Contributing](#contributing)
   - [Contributors](#contributors)
@@ -71,8 +70,6 @@ These will both build and add the exported Javascript files to `dist`, ready to 
 We also provide scripts to run a light-weight `webpack-dev-server` to test out the browser builds. Try something like `yarn serve`, and then browse to `http://127.0.0.1:8080/examples/browser` in your favorite browser for a simple example.
 
 ## Documentation
-
-[View Documentation](./config/DOCS_TEMPLATE.md)
 
 The auto-generated documentation can be found at https://textileio.github.io/js-http-client/.
 

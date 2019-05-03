@@ -70,9 +70,6 @@
 						<p>Files is an API module for managing Textile files</p>
 					</div>
 					<dl class="tsd-comment-tags">
-						<dt>param</dt>
-						<dd><p>options object</p>
-						</dd>
 						<dt>extends</dt>
 						<dd><p>{API}</p>
 						</dd>
@@ -112,7 +109,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="files.html#files-1" class="tsd-kind-icon">files</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="files.html#likes" class="tsd-kind-icon">likes</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="files.html#mills" class="tsd-kind-icon">mills</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="files.html#opts" class="tsd-kind-icon">opts</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="files.html#target" class="tsd-kind-icon">target</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="files.html#threads" class="tsd-kind-icon">threads</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="files.html#user" class="tsd-kind-icon">user</a></li>
@@ -126,7 +122,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="files.html#ignore" class="tsd-kind-icon">ignore</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="files.html#keys" class="tsd-kind-icon">keys</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="files.html#list" class="tsd-kind-icon">list</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="files.html#setoptions" class="tsd-kind-icon">set<wbr>Options</a></li>
 							</ul>
 						</section>
 					</div>
@@ -138,20 +133,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Files<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="files.html" class="tsd-signature-type">Files</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Files<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="files.html" class="tsd-signature-type">Files</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides API.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L16">modules/files.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L14">modules/files.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol"> =&nbsp;DEFAULT_API_OPTIONS</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="files.html" class="tsd-signature-type">Files</a></h4>
@@ -227,18 +222,7 @@
 					<div class="tsd-signature tsd-kind-icon">mills<span class="tsd-signature-symbol">:</span> <a href="mills.html" class="tsd-signature-type">Mills</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L15">modules/files.ts:15</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-					<a name="opts" class="tsd-anchor"></a>
-					<h3>opts</h3>
-					<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></div>
-					<aside class="tsd-sources">
-						<p>Overrides API.opts</p>
-						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L14">modules/files.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L13">modules/files.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -259,7 +243,7 @@
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/view_pb.ts#L188">models/view_pb.ts:188</a></li>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L16">modules/files.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L14">modules/files.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -286,7 +270,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L88">modules/files.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L85">modules/files.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -330,7 +314,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L30">modules/files.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L27">modules/files.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -362,7 +346,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L75">modules/files.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L72">modules/files.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -396,7 +380,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L61">modules/files.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L58">modules/files.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -430,7 +414,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L43">modules/files.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/files.ts#L40">modules/files.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -461,38 +445,6 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/fileslist.html" class="tsd-signature-type">FilesList</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An array of Thread objects</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="setoptions" class="tsd-anchor"></a>
-					<h3>set<wbr>Options</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Options<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from API.setOptions</p>
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/core/api.ts#L82">core/api.ts:82</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Update the API settings</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An ApiOptions object</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -537,9 +489,6 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="files.html#mills" class="tsd-kind-icon">mills</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-								<a href="files.html#opts" class="tsd-kind-icon">opts</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="files.html#target" class="tsd-kind-icon">target</a>
 							</li>
@@ -563,9 +512,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="files.html#list" class="tsd-kind-icon">list</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="files.html#setoptions" class="tsd-kind-icon">set<wbr>Options</a>
 							</li>
 						</ul>
 					</li>

@@ -80,9 +80,6 @@
 						<dt>property</dt>
 						<dd><p>address The Ed25519 public key</p>
 						</dd>
-						<dt>param</dt>
-						<dd><p>API options object</p>
-						</dd>
 						<dt>extends</dt>
 						<dd><p>API</p>
 						</dd>
@@ -117,7 +114,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="account.html#address" class="tsd-kind-icon">address</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="account.html#index" class="tsd-kind-icon">index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="account.html#opts" class="tsd-kind-icon">opts</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="account.html#seed" class="tsd-kind-icon">seed</a></li>
 							</ul>
 						</section>
@@ -125,7 +121,6 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="account.html#contact" class="tsd-kind-icon">contact</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="account.html#setoptions" class="tsd-kind-icon">set<wbr>Options</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="account.html#sync" class="tsd-kind-icon">sync</a></li>
 							</ul>
 						</section>
@@ -138,20 +133,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Account<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="account.html" class="tsd-signature-type">Account</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Account<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="account.html" class="tsd-signature-type">Account</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides API.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L13">modules/account.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L11">modules/account.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol"> =&nbsp;DEFAULT_API_OPTIONS</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="account.html" class="tsd-signature-type">Account</a></h4>
@@ -171,7 +166,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L25">modules/account.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L22">modules/account.ts:22</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -194,17 +189,6 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-					<a name="opts" class="tsd-anchor"></a>
-					<h3>opts</h3>
-					<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></div>
-					<aside class="tsd-sources">
-						<p>Overrides API.opts</p>
-						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L12">modules/account.ts:12</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="seed" class="tsd-anchor"></a>
 					<h3>seed</h3>
@@ -215,7 +199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L35">modules/account.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L32">modules/account.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -241,7 +225,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L45">modules/account.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L42">modules/account.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -251,38 +235,6 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/contact.html" class="tsd-signature-type">Contact</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>The current wallet account&#39;s contact info</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="setoptions" class="tsd-anchor"></a>
-					<h3>set<wbr>Options</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Options<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from API.setOptions</p>
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/core/api.ts#L82">core/api.ts:82</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Update the API settings</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An ApiOptions object</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -296,7 +248,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L57">modules/account.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L54">modules/account.ts:54</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -350,17 +302,11 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="account.html#index" class="tsd-kind-icon">index</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
-								<a href="account.html#opts" class="tsd-kind-icon">opts</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="account.html#seed" class="tsd-kind-icon">seed</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="account.html#contact" class="tsd-kind-icon">contact</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="account.html#setoptions" class="tsd-kind-icon">set<wbr>Options</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="account.html#sync" class="tsd-kind-icon">sync</a>
