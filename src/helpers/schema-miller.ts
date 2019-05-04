@@ -27,7 +27,7 @@ export default class SchemaMiller {
   }
 
   static normalizeOptions(info: Node | Link) {
-    const opts: MillOpts = info.opts
+    const opts: MillOpts = info.opts || {}
     // Check for top level opts
     opts.plaintext = (info.plaintext || false).toString()
     opts.pin = (info.pin || false).toString()
