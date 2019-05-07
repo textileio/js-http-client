@@ -21,7 +21,7 @@ export default class Subscribe extends API {
    * @returns A ReadableStream of FeedItem objects.
    */
   async stream(types?: Block.BlockType[], thread?: string) {
-    const response = await this.sendGet(`subcribe${thread ? `/${thread}` : ''}`, undefined, {
+    const response = await this.sendGet(`subscribe${thread ? `/${thread}` : ''}`, undefined, {
       type: (types || []).join('|')
      })
     if (!response.body) {
