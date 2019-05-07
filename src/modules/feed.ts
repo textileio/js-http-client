@@ -31,7 +31,7 @@ export default class Feed extends API {
    * @param limit List page size (default: 5)
    * @param mode Feed mode (one of 'chrono’, 'annotated’, or ‘stacks’)
    */
-  async get(thread?: string, offset?: string, limit?: number, mode?: FeedModes) {
+  async list(thread?: string, offset?: string, limit?: number, mode?: FeedModes) {
     const response = await this.sendGet(
       'feed',
       undefined,

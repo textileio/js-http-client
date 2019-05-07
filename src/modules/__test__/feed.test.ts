@@ -18,7 +18,7 @@ describe('feed get stacked', () => {
       .get('/api/v0/feed')
       .reply(200, stacks)
 
-    expect(await feed.get(undefined, undefined, 5, 'stacks')).toEqual(stacks)
+    expect(await feed.list(undefined, undefined, 5, 'stacks')).toEqual(stacks)
   })
 })
 
@@ -28,6 +28,6 @@ describe('feed get chrono (default)', () => {
       .get('/api/v0/feed')
       .reply(200, chrono)
 
-    expect(await feed.get()).toEqual(chrono)
+    expect(await feed.list()).toEqual(chrono)
   })
 })
