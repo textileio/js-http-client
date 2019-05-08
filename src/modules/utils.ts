@@ -31,7 +31,7 @@ export default class Utils extends API {
    * @returns Whether the peer is online
    */
   async ping(id: string) {
-    const response = await this.sendGet('ping')
+    const response = await this.sendGet('ping', [id])
     return response.text()
   }
 
