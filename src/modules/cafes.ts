@@ -51,7 +51,7 @@ export default class Cafes extends API {
    * New messages are downloaded and processed opportunistically.
    * @returns Whether the operation was successfull
    */
-  async checkMessages() {
+  async messages() {
     const response = await this.sendPost('cafes/messages')
     return response.status === 200
   }

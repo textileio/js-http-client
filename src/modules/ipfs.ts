@@ -23,7 +23,7 @@ export default class IPFS extends API {
    * @param streams Also list information about open streams for each peer
    * @param direction Also list information about the direction of connection
    */
-  async swarm(verbose?: boolean, latency?: boolean, streams?: boolean, direction?: boolean) {
+  async peers(verbose?: boolean, latency?: boolean, streams?: boolean, direction?: boolean) {
     const response = await this.sendGet(
       'api/v0/ipfs/swarm/peers',
       undefined,
@@ -55,7 +55,7 @@ export default class IPFS extends API {
    * @param addr Peer IPFS multiaddr
    * @returns Whether the peer swarm connect was successfull
    */
-  async swarmConnect(addr: string) {
+  async connect(addr: string) {
     const response = await this.sendGet(`ipfs/swarm/connect`, [addr])
     return response.status === 200
   }
