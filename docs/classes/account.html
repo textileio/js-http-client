@@ -67,19 +67,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A derived Wallet account
-						Account is an API module for managing a wallet account</p>
+						<p>Account is an API module for managing a wallet account</p>
 					</div>
 					<dl class="tsd-comment-tags">
-						<dt>property</dt>
-						<dd><p>index The index for the given account</p>
-						</dd>
-						<dt>property</dt>
-						<dd><p>seed The Ed25519 private seed/key</p>
-						</dd>
-						<dt>property</dt>
-						<dd><p>address The Ed25519 public key</p>
-						</dd>
 						<dt>extends</dt>
 						<dd><p>API</p>
 						</dd>
@@ -110,17 +100,11 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="account.html#address" class="tsd-kind-icon">address</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="account.html#index" class="tsd-kind-icon">index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="account.html#seed" class="tsd-kind-icon">seed</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="account.html#address" class="tsd-kind-icon">address</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="account.html#contact" class="tsd-kind-icon">contact</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="account.html#seed" class="tsd-kind-icon">seed</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="account.html#sync" class="tsd-kind-icon">sync</a></li>
 							</ul>
 						</section>
@@ -155,11 +139,11 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="address" class="tsd-anchor"></a>
 					<h3>address</h3>
-					<ul class="tsd-signatures tsd-kind-property tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">address<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -179,42 +163,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="index" class="tsd-anchor"></a>
-					<h3>index</h3>
-					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/models/index.ts#L69">models/index.ts:69</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="seed" class="tsd-anchor"></a>
-					<h3>seed</h3>
-					<ul class="tsd-signatures tsd-kind-property tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">seed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L32">modules/account.ts:32</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieve the local wallet account seed</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>The current wallet account&#39;s seed</p>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="contact" class="tsd-anchor"></a>
 					<h3>contact</h3>
@@ -235,6 +183,29 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/contact.html" class="tsd-signature-type">Contact</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>The current wallet account&#39;s contact info</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="seed" class="tsd-anchor"></a>
+					<h3>seed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">seed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/account.ts#L32">modules/account.ts:32</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieve the local wallet account seed</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The current wallet account&#39;s seed</p>
 						</li>
 					</ul>
 				</section>
@@ -296,17 +267,14 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="account.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="account.html#address" class="tsd-kind-icon">address</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="account.html#index" class="tsd-kind-icon">index</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="account.html#seed" class="tsd-kind-icon">seed</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="account.html#contact" class="tsd-kind-icon">contact</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="account.html#seed" class="tsd-kind-icon">seed</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="account.html#sync" class="tsd-kind-icon">sync</a>

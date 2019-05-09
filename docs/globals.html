@@ -100,7 +100,6 @@
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-class"><a href="classes/account.html" class="tsd-kind-icon">Account</a></li>
-								<li class="tsd-kind-class"><a href="classes/bip32.html" class="tsd-kind-icon">BIP32</a></li>
 								<li class="tsd-kind-class"><a href="classes/blocks.html" class="tsd-kind-icon">Blocks</a></li>
 								<li class="tsd-kind-class"><a href="classes/cafes.html" class="tsd-kind-icon">Cafes</a></li>
 								<li class="tsd-kind-class"><a href="classes/comments.html" class="tsd-kind-icon">Comments</a></li>
@@ -111,7 +110,6 @@
 								<li class="tsd-kind-class"><a href="classes/files.html" class="tsd-kind-icon">Files</a></li>
 								<li class="tsd-kind-class"><a href="classes/ipfs.html" class="tsd-kind-icon">IPFS</a></li>
 								<li class="tsd-kind-class"><a href="classes/invites.html" class="tsd-kind-icon">Invites</a></li>
-								<li class="tsd-kind-class"><a href="classes/keypair.html" class="tsd-kind-icon">Keypair</a></li>
 								<li class="tsd-kind-class"><a href="classes/likes.html" class="tsd-kind-icon">Likes</a></li>
 								<li class="tsd-kind-class"><a href="classes/logs.html" class="tsd-kind-icon">Logs</a></li>
 								<li class="tsd-kind-class"><a href="classes/messages.html" class="tsd-kind-icon">Messages</a></li>
@@ -122,13 +120,11 @@
 								<li class="tsd-kind-class"><a href="classes/schemamiller.html" class="tsd-kind-icon">Schema<wbr>Miller</a></li>
 								<li class="tsd-kind-class"><a href="classes/schemas.html" class="tsd-kind-icon">Schemas</a></li>
 								<li class="tsd-kind-class"><a href="classes/snapshots.html" class="tsd-kind-icon">Snapshots</a></li>
-								<li class="tsd-kind-class"><a href="classes/strkey.html" class="tsd-kind-icon">Str<wbr>Key</a></li>
 								<li class="tsd-kind-class"><a href="classes/subscribe.html" class="tsd-kind-icon">Subscribe</a></li>
 								<li class="tsd-kind-class"><a href="classes/textile.html" class="tsd-kind-icon">Textile</a></li>
 								<li class="tsd-kind-class"><a href="classes/threads.html" class="tsd-kind-icon">Threads</a></li>
 								<li class="tsd-kind-class"><a href="classes/tokens.html" class="tsd-kind-icon">Tokens</a></li>
 								<li class="tsd-kind-class"><a href="classes/utils.html" class="tsd-kind-icon">Utils</a></li>
-								<li class="tsd-kind-class"><a href="classes/wallet.html" class="tsd-kind-icon">Wallet</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -245,14 +241,9 @@
 								<li class="tsd-kind-function"><a href="globals.html#createheaders" class="tsd-kind-icon">create<wbr>Headers</a></li>
 								<li class="tsd-kind-function tsd-is-private"><a href="globals.html#getargs" class="tsd-kind-icon">get<wbr>Args</a></li>
 								<li class="tsd-kind-function tsd-is-private"><a href="globals.html#getopts" class="tsd-kind-icon">get<wbr>Opts</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#hash160" class="tsd-kind-icon">hash160</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#hmacsha512" class="tsd-kind-icon">hmacSHA512</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#readablenodetoweb" class="tsd-kind-icon">readable<wbr>Node<wbr>ToWeb</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#readablewebtonode" class="tsd-kind-icon">readable<wbr>Web<wbr>ToNode</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#sign" class="tsd-kind-icon">sign</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#streamhandler" class="tsd-kind-icon">stream<wbr>Handler</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#verify" class="tsd-kind-icon">verify</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#verifychecksum" class="tsd-kind-icon">verify<wbr>Checksum</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -459,73 +450,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="hash160" class="tsd-anchor"></a>
-					<h3>hash160</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">hash160<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/helpers/crypto.ts#L12">helpers/crypto.ts:12</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Node style rmd160 + sha256 hash for use in the browser, with native hashing in node.</p>
-								</div>
-								<p>API is the same as hashes in node</p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>buffer: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="hmacsha512" class="tsd-anchor"></a>
-					<h3>hmacSHA512</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">hmacSHA512<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/helpers/crypto.ts#L30">helpers/crypto.ts:30</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Node style SHA512 HMAC for use in the browser, with native SHA512 HMAC in node.</p>
-								</div>
-								<p>API is the same as HMACs in node</p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Secret key</p>
-									</div>
-								</li>
-								<li>
-									<h5>data: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Buffer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Input data</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 					<a name="readablenodetoweb" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> readable<wbr>Node<wbr>ToWeb</h3>
@@ -584,43 +508,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="sign" class="tsd-anchor"></a>
-					<h3>sign</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">sign<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, secretKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/wallet/signing.ts#L8">modules/wallet/signing.ts:8</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Signs the message using the secret key and returns a signed message</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>data: <span class="tsd-signature-type">Buffer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the message to sign</p>
-									</div>
-								</li>
-								<li>
-									<h5>secretKey: <span class="tsd-signature-type">Buffer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the secret key to use for signing</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Buffer</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 					<a name="streamhandler" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> stream<wbr>Handler</h3>
@@ -647,87 +534,6 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReadableStream</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="verify" class="tsd-anchor"></a>
-					<h3>verify</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">verify<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, signature<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, publicKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/wallet/signing.ts#L21">modules/wallet/signing.ts:21</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Verifies the signature for the message.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>data: <span class="tsd-signature-type">Buffer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the message for which to verify the signature</p>
-									</div>
-								</li>
-								<li>
-									<h5>signature: <span class="tsd-signature-type">Buffer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the signature applied ot the message</p>
-									</div>
-								</li>
-								<li>
-									<h5>publicKey: <span class="tsd-signature-type">Buffer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the public key of the signer</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="verifychecksum" class="tsd-anchor"></a>
-					<h3>verify<wbr>Checksum</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">verify<wbr>Checksum<span class="tsd-signature-symbol">(</span>expected<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, actual<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/helpers/checksum.ts#L8">helpers/checksum.ts:8</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Verify two checksums against each other</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>expected: <span class="tsd-signature-type">Buffer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Expected checksum value</p>
-									</div>
-								</li>
-								<li>
-									<h5>actual: <span class="tsd-signature-type">Buffer</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Actual observed checksum value</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Whether the two checksums are equal</p>
 						</li>
 					</ul>
 				</section>
@@ -853,9 +659,6 @@
 						<a href="classes/account.html" class="tsd-kind-icon">Account</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/bip32.html" class="tsd-kind-icon">BIP32</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/blocks.html" class="tsd-kind-icon">Blocks</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -884,9 +687,6 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/invites.html" class="tsd-kind-icon">Invites</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/keypair.html" class="tsd-kind-icon">Keypair</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/likes.html" class="tsd-kind-icon">Likes</a>
@@ -919,9 +719,6 @@
 						<a href="classes/snapshots.html" class="tsd-kind-icon">Snapshots</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/strkey.html" class="tsd-kind-icon">Str<wbr>Key</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/subscribe.html" class="tsd-kind-icon">Subscribe</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -935,9 +732,6 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/utils.html" class="tsd-kind-icon">Utils</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/wallet.html" class="tsd-kind-icon">Wallet</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/announce.html" class="tsd-kind-icon">Announce</a>
@@ -1242,29 +1036,14 @@
 					<li class=" tsd-kind-function tsd-is-private">
 						<a href="globals.html#getopts" class="tsd-kind-icon">get<wbr>Opts</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#hash160" class="tsd-kind-icon">hash160</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#hmacsha512" class="tsd-kind-icon">hmacSHA512</a>
-					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#readablenodetoweb" class="tsd-kind-icon">readable<wbr>Node<wbr>ToWeb</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#readablewebtonode" class="tsd-kind-icon">readable<wbr>Web<wbr>ToNode</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#sign" class="tsd-kind-icon">sign</a>
-					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#streamhandler" class="tsd-kind-icon">stream<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#verify" class="tsd-kind-icon">verify</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#verifychecksum" class="tsd-kind-icon">verify<wbr>Checksum</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#default_api_options" class="tsd-kind-icon">DEFAULT_<wbr>API_<wbr>OPTIONS</a>
