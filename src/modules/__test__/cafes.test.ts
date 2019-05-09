@@ -48,7 +48,7 @@ describe('cafes checkMessages', () => {
       .post('/api/v0/cafes/messages')
       .reply(200, 'ok')
 
-    expect(await cafes.checkMessages()).toEqual(true)
+    expect(await cafes.messages()).toEqual(true)
   })
 })
 

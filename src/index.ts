@@ -21,7 +21,6 @@ import Tokens from './modules/tokens'
 import Utils from './modules/utils'
 import { TextileOptions } from './models'
 import { DEFAULT_API_OPTIONS as defaults } from './core/api'
-export { default as Wallet } from './modules/wallet'
 export * from './models'
 
 /**
@@ -36,7 +35,7 @@ export class Textile {
   static create(options?: TextileOptions) {
     return new this(options)
   }
-  /** @property {Account} account - Manage Textile wallet account */
+  /** @property {Account} account - Manage Textile node account */
   account: Account
   /** @property {Blocks} blocks - Manage Textile Blocks */
   blocks: Blocks

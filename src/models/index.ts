@@ -58,15 +58,3 @@ export interface Versions {
   cafe_version: string
   node_version: string
 }
-
-/**
- * A derived Wallet account
- * @property index The index for the given account
- * @property seed The Ed25519 private seed/key
- * @property address The Ed25519 public key
- */
-export interface Account {
-  index: number
-  seed: string
-  address: string
-}
