@@ -57,7 +57,7 @@ export default class Threads extends API {
       targetSchema = fileIndex.key
     } else if (schema && typeof schema === 'string') {
       // check if it is one of the default schemas
-      const known = this.schemas.defaultByName(schema)
+      const known = await this.schemas.defaultByName(schema)
       if (known) {
         // if one of the default, add it or get it to find the hash
         const added = await this.schemas.add(known)
