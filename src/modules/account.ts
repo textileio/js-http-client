@@ -3,7 +3,7 @@ import { ApiOptions, Contact } from '../models'
 import Snapshots from './snapshots'
 
 /**
- * Account is an API module for managing a wallet account
+ * Account is an API module for managing a node account
  *
  * @extends API
  */
@@ -15,9 +15,9 @@ export default class Account extends API {
   }
 
   /**
-   * Retrieve the local wallet account address
+   * Retrieve the local node account address
    *
-   * @returns The current wallet account's address
+   * @returns The current node account's address
    */
   async address() {
     const response = await this.sendGet('account/address')
@@ -25,9 +25,9 @@ export default class Account extends API {
   }
 
   /**
-   * Retrieve the local wallet account seed
+   * Retrieve the local node account seed
    *
-   * @returns The current wallet account's seed
+   * @returns The current node account's seed
    */
   async seed() {
     const response = await this.sendGet('account/seed')
@@ -35,9 +35,9 @@ export default class Account extends API {
   }
 
   /**
-   * Retrieve the local wallet account's own contact info
+   * Retrieve the local node account's own contact info
    *
-   * @returns The current wallet account's contact info
+   * @returns The current node account's contact info
    */
   async contact(): Promise<Contact> {
     const response = await this.sendGet('account')
@@ -45,7 +45,7 @@ export default class Account extends API {
   }
 
   /**
-   * Syncs the local wallet account with all thread snapshots found on the network
+   * Syncs the local node account with all thread snapshots found on the network
    *
    * @param apply Whether to apply the discovered thread snapshots as they are found (default false)
    * @param wait Stops searching after 'wait' seconds have elapsed (max 30 default 2)

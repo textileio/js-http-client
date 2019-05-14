@@ -76,7 +76,7 @@ class API {
     this.baseURL = url.toString()
 
     const gateway = new URL(this.opts.url)
-    gateway.set('port', 5052)
+    gateway.set('port', 5050)
     gateway.set('pathname', `/ipfs/`)
     this.gatewayURL = gateway.toString()
   }
@@ -88,10 +88,10 @@ class API {
    * @param args An array of arguments to pass as Textile args headers
    * @param opts An object of options to pass as Textile options headers
    */
-  protected async sendGatewayGet(path: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
+  protected async sendGatewayGet(path: string, headers?: KeyValue) {
     return fetch(buildAbsoluteURL(this.gatewayURL, path), {
       method: 'GET',
-      headers: createHeaders(args, opts, headers)
+      headers: createHeaders([], {}, headers)
     })
   }
 
