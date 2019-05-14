@@ -56,7 +56,16 @@ export default class Threads extends API {
       const fileIndex = await this.schemas.add(schema)
       targetSchema = fileIndex.key
     } else if (schema && typeof schema === 'string') {
-      targetSchema = schema
+      // check if it is one of the default schemas
+      const known = this.schemas.defaultByName(schema)
+      if (known) {
+        // if one of the default, add it or get it to find the hash
+        const added = await this.schemas.add(known)
+        targetSchema = added.hash
+      } else {
+        // @todo - perhaps a specific warning if schema here doesn't match a hash len
+        targetSchema = schema
+      }
     }
     const response = await this.sendPost(
       'threads',

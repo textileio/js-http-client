@@ -17,6 +17,18 @@ export default class Schemas extends API {
   }
 
   /**
+   * Default Textile schemas
+   * @returns An object with various commonly used schemas
+   */
+  async defaultByName(name: string) {
+    const key = Object.keys(defaults).find((known: string) => known === name)
+    if (key) {
+      return defaults[key]
+    }
+    return
+  }
+
+  /**
    * Creates and validates a new schema from input JSON
    *
    * @param schema Input JSON-based thread schema
