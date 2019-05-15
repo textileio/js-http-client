@@ -16,7 +16,7 @@ jobs:
                 key: node-v1-{{ checksum "package.json" }}-{{ arch }}
             - run: yarn install
             - run:
-                name: lint
+                name: Lint
                 command: |
                     yarn lint
             - save_cache:
@@ -28,7 +28,7 @@ jobs:
                 paths:
                     - node_modules
             - run:
-                name: test
+                name: Test
                 command: |
                     mkdir -p test-results/jest
                     yarn test
@@ -50,11 +50,14 @@ jobs:
             - attach_workspace:
                 at: ~/js-http-client
             - run:
-                name: Authenticate with registry
+                name: Authenticate
                 command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/js-http-client/.npmrc
             - run:
-                name: Publish package
+                name: Publish Package
                 command: npm publish --access=public --dry-run --unsafe-perm
+            - run:
+                name: Create Release
+                command: ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG}
                         
 workflows:
     version: 2
@@ -63,7 +66,7 @@ workflows:
             - lint-test:
                 filters:
                     tags:
-                        only: /^v.*/
+                        only: /.*/
             - deploy:
                 requires:
                     - lint-test
