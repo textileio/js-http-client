@@ -54,7 +54,7 @@ export default class Threads extends API {
     // Attempt to create the schema on the fly
     if (schema && typeof schema === 'object') {
       const fileIndex = await this.schemas.add(schema)
-      targetSchema = fileIndex.key
+      targetSchema = fileIndex.hash
     } else if (schema && typeof schema === 'string') {
       // check if it is one of the default schemas
       const known = await this.schemas.defaultByName(schema)

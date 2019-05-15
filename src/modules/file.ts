@@ -11,11 +11,11 @@ export default class File extends API {
    *
    * Get raw data for a File
    *
-   * @param file File object
+   * @param hash The hash for the requested file
    * @returns Raw data
    */
-  async content(hash: string): Promise<string> {
+  async content(hash: string) {
     const response = await this.sendGet(`file/${hash}/data`)
-    return response.text() as Promise<string>
+    return response.blob()
   }
 }

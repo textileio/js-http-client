@@ -1,5 +1,6 @@
 import { API } from '../core/api'
 import { KeyValue, FileIndex } from '../models'
+import FormData from 'isomorphic-form-data'
 
 /**
  * Mills is an API module for processing Textile mills
@@ -24,13 +25,22 @@ export default class Mills extends API {
    * @returns The generated FileIndex object
    */
   async run(name: string, options: KeyValue, payload: any, headers: KeyValue): Promise<FileIndex> {
-    // Perhaps this should use a new function dedicated to application/json
-    const response = await this.sendPostMultiPart(
+    let data: any
+    if (payload && name !== '/json' && name !== '/schema') {
+      // Unless explicitly using a json-based mill, assume binary data
+      data = new FormData()
+      data.append('file', payload, payload.name || 'milled')
+    } else if (payload) {
+      // Otherwise, assume JSON data
+      data = JSON.stringify(payload)
+    }
+    const response = await this.sendPost(
       `mills${name}`,
       [],
       options,
-      payload,
-      headers
+      data,
+      headers,
+      true // Don't strinify on the other end
     )
     return response.json()
   }

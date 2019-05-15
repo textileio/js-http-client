@@ -1,4 +1,5 @@
-import fetch from 'isomorphic-fetch'
+import { fetch, Headers } from '@softwareventures/fetch-ponyfill-preconfigured'
+import FormData from 'isomorphic-form-data'
 import URL from 'url-parse'
 import { buildAbsoluteURL } from 'url-toolkit'
 import { KeyValue, ApiOptions } from '../models'
@@ -103,32 +104,12 @@ class API {
    * @param opts An object of options to pass as Textile options headers
    * @param data An object of data to post
    */
-  protected async sendPost(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
-    const response = await fetch(buildAbsoluteURL(this.baseURL, url), {
-      method: 'POST',
-      headers: createHeaders(args, opts, headers),
-      body: JSON.stringify(data)
-    })
-    return handleErrors(response)
-  }
-
-  /**
-   * Make a post request to the Textile node using a multi-part form
-   *
-   * @param url The relative URL of the API endpoint
-   * @param args An array of arguments to pass as Textile args headers
-   * @param opts An object of options to pass as Textile options headers
-   * @param data An object of data to post
-   */
-  protected async sendPostMultiPart(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue) {
+  protected async sendPost(url: string, args?: string[], opts?: KeyValue, data?: any, headers?: KeyValue, raw?: boolean) {
     const h = createHeaders(args, opts, headers)
-    // Remove 'Content-Type' header to allow fetch to add along with the correct 'boundary'
-    delete h['content-type']
-    delete h['Content-Type'] // TODO: Find nicer way to do this
     const response = await fetch(buildAbsoluteURL(this.baseURL, url), {
       method: 'POST',
       headers: new Headers(h),
-      body: data
+      body: raw ? data : JSON.stringify(data)
     })
     return handleErrors(response)
   }
