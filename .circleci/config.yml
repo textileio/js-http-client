@@ -54,10 +54,12 @@ jobs:
                 command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/js-http-client/.npmrc
             - run:
                 name: Publish Package
-                command: npm publish --access=public --dry-run --unsafe-perm
+                command: npm publish --access=public --unsafe-perm
             - run:
                 name: Create Release
-                command: ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG}
+                command: yarn gh-release --yes
+                environment:
+                  GH_RELEASE_GITHUB_API_TOKEN: $GITHUB_TOKEN
                         
 workflows:
     version: 2
