@@ -146,6 +146,11 @@
   optionalDependencies:
     node-fetch "^2.2.0"
 
+"@ef-carbon/url@^2.4.3":
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/@ef-carbon/url/-/url-2.4.3.tgz#e6ee87d6e160eeff4be7678f835cf8acf03dfb72"
+  integrity sha512-7Hkdf/qsmPcCMoa9mtqWf4EatgFyFgH3EKZ/xTvMA87LsPFvl44kvCWCyMVsODSdk7XceBeEqQZwuXtYkpG3zA==
+
 "@jest/console@^24.7.1":
   version "24.7.1"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.7.1.tgz#32a9e42535a97aedfe037e725bd67e954b459545"
