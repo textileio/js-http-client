@@ -54,7 +54,7 @@ export default class Profile extends API {
   }
 
   /**
-   * Forces local node to update avatar image to latest image added to 'account' thread
+   * Set the local node's public profile avatar image
    *
    * @param image Image to use as new avatar. Can be any input type accepted by [[Files.add]].
    * @returns Whether the update was successful
