@@ -27,15 +27,14 @@ export default class Invites extends API {
    *
    * @param thread Thread ID (can also use ‘default’)
    * @param address Account Address (omit to create an external invite)
-   * @returns A p2p invite object
-   * @see Contacts#search for searching for contacts prior to an invite
+   * @returns Whether the operation was successfull
    */
   async add(thread: string, address: string) {
-    const response = await this.sendPost(`invites/`, undefined, {
+    const response = await this.sendPost(`invites`, undefined, {
       thread,
       address: address || ''
     })
-    return response.json() as Promise<ExternalInvite>
+    return response.status === 201
   }
 
   /**
@@ -45,7 +44,7 @@ export default class Invites extends API {
    * @returns An external invite object
    */
   async addExternal(thread: string) {
-    const response = await this.sendPost(`invites/`, undefined, {
+    const response = await this.sendPost(`invites`, undefined, {
       thread
     })
     return response.json() as Promise<ExternalInvite>

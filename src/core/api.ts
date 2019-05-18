@@ -1,5 +1,4 @@
-import { fetch, Headers } from '@softwareventures/fetch-ponyfill-preconfigured'
-import FormData from 'isomorphic-form-data'
+import '@ef-carbon/fetch/install'
 import URL from 'url-parse'
 import { buildAbsoluteURL } from 'url-toolkit'
 import { KeyValue, ApiOptions } from '../models'
