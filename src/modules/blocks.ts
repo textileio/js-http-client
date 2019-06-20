@@ -60,13 +60,13 @@ export default class Blocks extends API {
   }
 
   /**
-   * Remove a thread block by ID
+   * Ignores a block by its ID
    *
    * @param id ID of the block
-   * @returns Whether or not the operation was successful
+   * @returns The added ignore block
    */
-  async remove(id: string) {
+  async ignore(id: string) {
     const response = await this.sendDelete(`blocks/${id}`)
-    return response.status === 204
+    return response.json() as Promise<Block>
   }
 }
