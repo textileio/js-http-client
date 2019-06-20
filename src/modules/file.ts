@@ -15,7 +15,7 @@ export default class File extends API {
    * @returns Raw data
    */
   async content(hash: string) {
-    const response = await this.sendGet(`file/${hash}/data`)
+    const response = await this.sendGet(`file/${hash}/content`)
     return response.blob()
   }
 }
