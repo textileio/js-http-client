@@ -1,5 +1,5 @@
 import { API, DEFAULT_API_OPTIONS } from '../core/api'
-import { ApiOptions, Node, FilesList, Files as FilesType, Keys, DirectoryList } from '../models'
+import { ApiOptions, Node, FilesList, Files as FilesType, Keys, DirectoryList, Block } from '../models'
 import SchemaMiller, { MillOpts } from '../helpers/schema-miller'
 import Mills from './mills'
 import Threads from './threads'
@@ -67,11 +67,11 @@ export default class Files extends API {
    * Ignored blocks are by default not returned when listing.
    *
    * @param id ID of the thread file
-   * @returns Whether or not the operation was successfull
+   * @returns The added ignore block
    */
   async ignore(id: string) {
     const response = await this.sendDelete(`blocks/${id}`)
-    return response.status === 204
+    return response.json() as Promise<Block>
   }
 
   /**

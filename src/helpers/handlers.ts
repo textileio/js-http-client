@@ -1,6 +1,12 @@
 import { Readable } from 'stream'
 import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
+// polyfill TextDecoder to be backward compatible with older
+// nodejs that doesn't expose TextDecoder as a global variable
+if (typeof TextDecoder === 'undefined' && typeof require !== 'undefined') {
+  (global as any).TextDecoder  = require('util').TextDecoder
+}
+
 // https://github.com/gwicke/node-web-streams
 export const readableNodeToWeb = <T>(nodeStream: Readable | ReadableStream<T>) => {
   if (!(nodeStream instanceof Readable)) {
