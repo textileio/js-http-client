@@ -1,6 +1,8 @@
 import { API, DEFAULT_API_OPTIONS } from '../core/api'
-import { ApiOptions, Block, BlockList, Thread } from '../models'
+import { ApiOptions, Block, BlockList } from '../models'
 import Threads from './threads'
+
+const dot = '%2E' // needed as curl shortens /. to /
 
 /**
  * Blocks is an API module for managing Textile blocks
@@ -37,8 +39,8 @@ export default class Blocks extends API {
    * @param id ID of the target block
    * @returns The block object
    */
-  async get(id: string) {
-    const response = await this.sendGet(`blocks/${id}`)
+  async meta(id: string) {
+    const response = await this.sendGet(`blocks/${id}/meta`)
     return response.json() as Promise<Block>
   }
 
@@ -68,5 +70,31 @@ export default class Blocks extends API {
   async ignore(id: string) {
     const response = await this.sendDelete(`blocks/${id}`)
     return response.json() as Promise<Block>
+  }
+
+  /**
+   * Get the decrypted file content of a file within a files block
+   *
+   * @param id ID of the target block
+   * @param index Index of the target file (defaults to '0')
+   * @param path Path of the target file under the index (e.g., 'small')
+   * @returns The file contents as an arrayBuffer (for a blob, use `file.content()`)
+   */
+  async fileContent(id: string, index?: string, path?: string) {
+    const response = await this.sendGet(`blocks/${id}/files/${index || '0'}/${path || dot}/content`)
+    return response.arrayBuffer()
+  }
+
+  /**
+   * Get the metadata of a file within a files block
+   *
+   * @param id ID of the target block
+   * @param index Index of the target file (defaults to '0')
+   * @param path Path of the target file under the index (e.g., 'small')
+   * @returns The file contents as an arrayBuffer (for a blob, use `file.meta()`)
+   */
+  async fileMeta(id: string, index?: string, path?: string) {
+    const response = await this.sendGet(`blocks/${id}/files/${index || '0'}/${path || dot}/meta`)
+    return response.arrayBuffer()
   }
 }

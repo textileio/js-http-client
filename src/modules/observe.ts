@@ -4,15 +4,13 @@ import { FeedItem, Block } from '../models'
 import { ReadableStream } from 'web-streams-polyfill/ponyfill'
 
 /**
- * Subscribe is an API to stream updates from a thread or all threads
- *
- * @extends API
+ * Observe is an API to stream updates from a thread or all threads
  */
-export default class Subscribe extends API {
+export default class Observe extends API {
   /**
-   * Subscribe to updates in a thread or all threads
+   * Observe to updates in a thread or all threads
    * An update is generated when a new block is added to a thread. See [[Block.BlockType]] for
-   * details and a list of block types to which you can subscribe.
+   * details and a list of block types to which you can observe.
    *
    * @param types List of event types to stream (e.g., ['FILES', 'COMMENTS', 'LIKES']. Leave
    * undefined or empty to include all types.
@@ -20,8 +18,8 @@ export default class Subscribe extends API {
    * stream events across all threads.
    * @returns A ReadableStream of FeedItem objects.
    */
-  async stream(types?: Block.BlockType[], thread?: string) {
-    const response = await this.sendGet(`subscribe${thread ? `/${thread}` : ''}`, undefined, {
+  async events(types?: Block.BlockType[], thread?: string) {
+    const response = await this.sendGet(`observe${thread ? `/${thread}` : ''}`, undefined, {
       type: (types || []).join('|')
      })
     if (!response.body) {

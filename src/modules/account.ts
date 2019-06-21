@@ -49,7 +49,6 @@ export default class Account extends API {
    *
    * @param apply Whether to apply the discovered thread snapshots as they are found (default false)
    * @param wait Stops searching after 'wait' seconds have elapsed (max 30 default 2)
-   * @returns An event emmiter for snapshot search events
    */
   sync(apply?: boolean, wait?: number) {
     if (apply) {

@@ -16,6 +16,19 @@ export default class File extends API {
    */
   async content(hash: string) {
     const response = await this.sendGet(`file/${hash}/content`)
+    // @todo: change this (back) to `response.arrayBuffer()`?
     return response.blob()
+  }
+
+  /**
+   *
+   * Get metadata for a File
+   *
+   * @param target The hash for the target file
+   * @returns Metadata object
+   */
+  async meta(target: string) {
+    const response = await this.sendGet(`file/${target}/meta`)
+    return response.json()
   }
 }

@@ -15,7 +15,7 @@ import Messages from './modules/messages'
 import Notifications from './modules/notifications'
 import Profile from './modules/profile'
 import Schemas from './modules/schemas'
-import Subscribe from './modules/subscribe'
+import Observe from './modules/observe'
 import Threads from './modules/threads'
 import Tokens from './modules/tokens'
 import Utils from './modules/utils'
@@ -69,8 +69,8 @@ export class Textile {
   profile: Profile
   /** @property {Schemas} schemas - Manage Textile Schemas */
   schemas: Schemas
-  /** @property {Subscribe} subscribe - Subscribe to thread updates */
-  subscribe: Subscribe
+  /** @property {Observe} observe - Observe (real-time) thread updates */
+  observe: Observe
   /** @property {Threads} threads - Manage Textile Threads */
   threads: Threads
   /** @property {Tokens} tokens - Manage Textile Threads */
@@ -105,7 +105,7 @@ export class Textile {
     this.notifications = new Notifications(_options)
     this.profile = new Profile(_options)
     this.schemas = new Schemas(_options)
-    this.subscribe = new Subscribe(_options)
+    this.observe = new Observe(_options)
     this.threads = new Threads(_options)
     this.tokens = new Tokens(_options)
     this.utils = new Utils(_options)

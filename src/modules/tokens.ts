@@ -22,7 +22,7 @@ export default class Tokens extends API {
    * @see Cafes#add
    * @returns New token as string
    */
-  async create(token?: string, store?: boolean) {
+  async add(token?: string, store?: boolean) {
     const response = await this.sendPost(`tokens`, undefined, {
       token: token || '',
       store: store || false

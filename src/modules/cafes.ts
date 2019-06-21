@@ -15,7 +15,7 @@ export default class Cafes extends API {
    * An access token is required to register, and should be obtained separately from the target
    * Cafe.
    *
-   * @param cafe The host Cafe public url
+   * @param cafe The host Cafe address
    * @param token An access token supplied by the target Cafe
    * @see Tokens#create
    * @returns A new Cafe session JWT

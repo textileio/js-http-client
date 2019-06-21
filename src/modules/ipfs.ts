@@ -25,7 +25,7 @@ export default class IPFS extends API {
    */
   async peers(verbose?: boolean, latency?: boolean, streams?: boolean, direction?: boolean) {
     const response = await this.sendGet(
-      'api/v0/ipfs/swarm/peers',
+      'ipfs/swarm/peers',
       undefined,
       {
         verbose: (!!verbose).toString(),

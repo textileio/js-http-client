@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Subscribe | @textile/js-http-client</title>
+	<title>Observe | @textile/js-http-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="subscribe.html">Subscribe</a>
+					<a href="observe.html">Observe</a>
 				</li>
 			</ul>
-			<h1>Class Subscribe</h1>
+			<h1>Class Observe</h1>
 		</div>
 	</div>
 </header>
@@ -67,13 +67,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Subscribe is an API to stream updates from a thread or all threads</p>
+						<p>Observe is an API to stream updates from a thread or all threads</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>extends</dt>
-						<dd><p>API</p>
-						</dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -83,7 +78,7 @@
 						<span class="tsd-signature-type">API</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">Subscribe</span>
+								<span class="target">Observe</span>
 							</li>
 						</ul>
 					</li>
@@ -96,13 +91,13 @@
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="subscribe.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="observe.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="subscribe.html#stream" class="tsd-kind-icon">stream</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="observe.html#events" class="tsd-kind-icon">events</a></li>
 							</ul>
 						</section>
 					</div>
@@ -114,7 +109,7 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Subscribe<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="subscribe.html" class="tsd-signature-type">Subscribe</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Observe<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="observe.html" class="tsd-signature-type">Observe</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -130,7 +125,7 @@
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> opts: <a href="../interfaces/apioptions.html" class="tsd-signature-type">ApiOptions</a><span class="tsd-signature-symbol"> =&nbsp;DEFAULT_API_OPTIONS</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="subscribe.html" class="tsd-signature-type">Subscribe</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="observe.html" class="tsd-signature-type">Observe</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -138,23 +133,23 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="stream" class="tsd-anchor"></a>
-					<h3>stream</h3>
+					<a name="events" class="tsd-anchor"></a>
+					<h3>events</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">stream<span class="tsd-signature-symbol">(</span>types<span class="tsd-signature-symbol">?: </span><a href="../enums/block.blocktype.html" class="tsd-signature-type">BlockType</a><span class="tsd-signature-symbol">[]</span>, thread<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadableStream</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/feeditem.html" class="tsd-signature-type">FeedItem</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">events<span class="tsd-signature-symbol">(</span>types<span class="tsd-signature-symbol">?: </span><a href="../enums/block.blocktype.html" class="tsd-signature-type">BlockType</a><span class="tsd-signature-symbol">[]</span>, thread<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadableStream</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/feeditem.html" class="tsd-signature-type">FeedItem</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/subscribe.ts#L23">modules/subscribe.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-http-client/blob/master/src/modules/observe.ts#L21">modules/observe.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Subscribe to updates in a thread or all threads
+									<p>Observe to updates in a thread or all threads
 										An update is generated when a new block is added to a thread. See <a href="../enums/block.blocktype.html">Block.BlockType</a> for
-									details and a list of block types to which you can subscribe.</p>
+									details and a list of block types to which you can observe.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -194,13 +189,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="subscribe.html" class="tsd-kind-icon">Subscribe</a>
+						<a href="observe.html" class="tsd-kind-icon">Observe</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-								<a href="subscribe.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="observe.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="subscribe.html#stream" class="tsd-kind-icon">stream</a>
+								<a href="observe.html#events" class="tsd-kind-icon">events</a>
 							</li>
 						</ul>
 					</li>

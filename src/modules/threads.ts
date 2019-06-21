@@ -164,22 +164,12 @@ export default class Threads extends API {
   }
 
   /**
-   * Gets information about the default thread (if selected)
-   *
-   * @returns Info about the default thread
-   */
-  async default() {
-    const response = await this.sendGet('threads/default')
-    return response.json() as Promise<Thread>
-  }
-
-  /**
    * Renames a thread
    *
    * Note: Only initiators can rename a thread.
    * @param thread ID of the thread
    * @param name New name for the thread
-   * @returns Whether the rename was successfull
+   * @returns Whether the rename was successfully
    */
   async rename(thread: string, name: string) {
     const response = await this.sendPut(`threads/${thread}/name`)

@@ -19,7 +19,7 @@ describe('tokens create', () => {
       .post('/api/v0/tokens')
       .reply(201, token)
 
-    expect(await tokens.create()).toEqual(token)
+    expect(await tokens.add()).toEqual(token)
   })
 })
 
