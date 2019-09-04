@@ -48,7 +48,7 @@ export interface Thread {
   whitelist: string[]
   state: Thread.State
   head: string
-  head_block: Block
+  head_blocks: Block[]
   schema_node: Node
   block_count: number
   peer_count: number
