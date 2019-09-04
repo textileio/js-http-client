@@ -56,7 +56,7 @@ export default class IPFS extends API {
    * @returns Whether the peer swarm connect was successfull
    */
   async connect(addr: string) {
-    const response = await this.sendGet(`ipfs/swarm/connect`, [addr])
+    const response = await this.sendPost(`ipfs/swarm/connect`, [addr])
     return response.status === 200
   }
 }
