@@ -176,6 +176,25 @@ class API {
     })
     return handleErrors(response)
   }
+
+  /**
+   * Make an EventSource request to the Textile node
+   *
+   * @param url The relative URL of the API endpoint
+   * @param args An array of arguments to pass as query in native EventSource or Textile args headers in EventSourcePolyfill
+   * @param opts An object of options to pass as Textile options headers
+   */
+  protected sendEventSource(url: string, args?: string[], opts?: KeyValue, headers?: KeyValue) {
+    // native EventSource can't set header, but can CORS
+    return new EventSource(buildAbsoluteURL(this.baseURL, `${url}${opts ? `?${URL.qs.stringify(opts)}` : ''}`))
+
+    // EventSourcePolyfill of eventsource@1.0.7 can set header, but can't CORS
+    // return new EventSourcePolyfill(buildAbsoluteURL(this.baseURL, url), {
+    //     headers: {
+    //         'X-Textile-Opts': getOpts(opts),
+    //     }
+    // });
+  }
 }
 
 export { API }

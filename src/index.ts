@@ -4,6 +4,7 @@ import Cafes from './modules/cafes'
 import Config from './modules/config'
 import Comments from './modules/comments'
 import Contacts from './modules/contacts'
+import Events from './modules/events'
 import Feed from './modules/feed'
 import File from './modules/file'
 import Files from './modules/files'
@@ -47,6 +48,8 @@ export class Textile {
   comments: Comments
   /** @property {Contacts} contacts - Manage Textile peer Contacts */
   contacts: Contacts
+  /** @property {Events} events - Manage the Textile Events */
+  events: Events
   /** @property {Feed} feed - Manage the Textile Feed */
   feed: Feed
   /** @property {File} file - Manage a Textile File */
@@ -94,6 +97,7 @@ export class Textile {
     this.config = new Config(_options)
     this.comments = new Comments(_options)
     this.contacts = new Contacts(_options)
+    this.events = new Events(_options)
     this.feed = new Feed(_options)
     this.file = new File(_options)
     this.files = new Files(_options)
