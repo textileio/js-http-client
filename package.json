@@ -42,6 +42,7 @@
   "dependencies": {
     "@ef-carbon/fetch": "^2.1.3",
     "@ef-carbon/url": "^2.4.3",
+    "@therebel/ksuid": "^1.1.2-alpha1",
     "isomorphic-form-data": "^2.0.0",
     "toposort": "^2.0.2",
     "url-parse": "^1.4.4",

@@ -8,6 +8,7 @@ export * from './message_pb'
 export * from './query_pb'
 export * from './threads_service_pb'
 export * from './view_pb'
+export * from './mobile_pb'
 
 /**
  * The options object for the client object
